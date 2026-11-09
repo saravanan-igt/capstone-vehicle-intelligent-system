@@ -6,6 +6,15 @@ A capstone application that checks vehicle-loan eligibility against a lender's *
 
 ## Quick start
 
+### One command (Python 3.12+ and Node.js 20.9+)
+
+```powershell
+python run.py            # creates .env, installs deps, migrates/seeds, builds, runs, opens http://localhost:3000
+python run.py --help     # --dev (hot reload), --test, --skip-install, --no-browser, --backend-port, --frontend-port
+```
+
+Ctrl+C stops both servers.
+
 ### Option A: local processes (verified)
 
 ```powershell
