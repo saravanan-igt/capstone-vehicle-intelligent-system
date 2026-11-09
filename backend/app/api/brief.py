@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy.orm import Session
 
-from app.api.deps import correlation_id, get_principal, get_session
+from app.api.deps import correlation_id, get_brief_principal, get_session
 from app.application import advisor
 from app.application import services as svc
 from app.application.errors import unprocessable
@@ -18,7 +18,7 @@ from app.infrastructure.observability import EXPLANATIONS
 
 router = APIRouter(tags=["advisor"])
 SessionDep = Annotated[Session, Depends(get_session)]
-PrincipalDep = Annotated[Principal, Depends(get_principal)]
+PrincipalDep = Annotated[Principal, Depends(get_brief_principal)]
 CidDep = Annotated[str | None, Depends(correlation_id)]
 Money = Annotated[Decimal, Field(ge=0, le=Decimal("100000000"), max_digits=12, decimal_places=2)]
 

@@ -6,8 +6,9 @@ This runbook covers the capstone deployment: one API process with SQLite, plus t
 
 | Component           | Local process                                         | Compose service                 | Port | Health                                                                                                           |
 | ------------------- | ----------------------------------------------------- | ------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------------- |
-| API (FastAPI)       | `uvicorn app.main:create_app --factory` in `backend/` | `api` (not published to host)   | 8000 | `GET /healthz` = process alive; `GET /readyz` = DB reachable, plus `ai` / `document_ai` = `gemini` or `disabled` |
+| API (FastAPI)       | `uvicorn app.main:create_app --factory` in `backend/` | `api` (8000 in `docker-compose.yml`; internal in `docker-compose.full.yml`) | 8000 | `GET /healthz` = process alive; `GET /readyz` = DB reachable, plus `ai` / `document_ai` = `gemini` or `disabled` |
 | Web + BFF (Next.js) | `npm run dev` in `frontend/`                          | `web`                           | 3000 | `GET /login` returns 200                                                                                         |
+| Advisor (Streamlit) | `streamlit run app.py` in `streamlit_app/`            | `streamlit`                     | 8501 | `GET /_stcore/health` returns 200                                                                                |
 | Data                | `backend/data/vla.db`, `backend/data/documents/`      | volume `api-data` → `/app/data` | —    | `python -m app.ops.backup verify` on the latest backup                                                           |
 
 **Correlation IDs:** every API response has an `X-Correlation-Id`. The UI shows it as `ref …` in error messages. Search the API log for that ID to find the failing request. Unhandled errors are logged with `unhandled error cid=<id>`, and no stack trace reaches the client.

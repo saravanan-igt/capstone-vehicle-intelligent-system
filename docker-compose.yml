@@ -20,8 +20,8 @@ services:
       AI_ENABLED: ${AI_ENABLED:-true}
     volumes:
       - api-data:/app/data
-    # Not published to the host: only the BFF talks to the API.
-    expose: ["8000"]
+    ports:
+      - "8000:8000"
     restart: unless-stopped
 
   web:

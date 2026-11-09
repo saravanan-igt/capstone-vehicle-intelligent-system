@@ -37,7 +37,7 @@ Beyond the brief, the project also provides:
 
 ## API endpoints (brief)
 
-All endpoints except `/health` need an authenticated identity. In local dev mode, both frontends send `X-Dev-User` and `X-Dev-Secret` from the server side.
+All `/v1` endpoints need an authenticated identity. In local dev mode (`AUTH_MODE=dev`), both frontends send `X-Dev-User` and `X-Dev-Secret` from the server side; for interactive testing in `/docs` or `curl`, the brief endpoints below default to the demo applicant (`u-alice`) when those headers are omitted.
 
 | Endpoint                  | Purpose                                                                                                                                                                                                                                                                                                             |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -114,7 +114,7 @@ The two `DEV_BFF_SHARED_SECRET` values must match. Data is stored in `backend/da
 
 ```powershell
 Copy-Item .env.example .env   # set DEV_BFF_SHARED_SECRET; optionally GEMINI_API_KEY
-docker compose up --build     # Next.js http://localhost:3000, Streamlit http://localhost:8501
+docker compose up --build     # API http://localhost:8000/docs, Next.js http://localhost:3000, Streamlit http://localhost:8501
 ```
 
 ### Option C: production-like stack (verified 2026-11-09)
@@ -161,7 +161,7 @@ The backend image is built from the repository root (`docker build -f backend/Do
 ### Tests
 
 ```powershell
-cd backend; .venv\Scripts\python -m pytest            # SQLite; PostgreSQL/Redis tests are skipped
+python -m pytest                          # from repo root (or `cd backend; python -m pytest`; SQLite by default)
 # Full: PostgreSQL (RLS as vla_app, one database per test) and real Redis/BullMQ
 docker run -d --name vla-test-pg -e POSTGRES_PASSWORD=postgres -p 55432:5432 postgres:18.6-alpine
 docker run -d --name vla-test-redis -p 56379:6379 redis:8.10.3-alpine

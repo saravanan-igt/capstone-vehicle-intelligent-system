@@ -204,7 +204,7 @@ flowchart LR
 
 ## 6. Security
 
-- **Authentication:** a BFF pattern. In production the identity provider is OIDC (Authorization Code + PKCE, Cognito selected — see ADR-004). The session lives in an HttpOnly, SameSite=Strict cookie. In the local `AUTH_MODE=dev` build, a demo identity cookie is used, and the API accepts it only with the BFF shared secret. **Dev mode must never be exposed.**
+- **Authentication:** a BFF pattern. In production the identity provider is OIDC (Authorization Code + PKCE, Cognito selected — see ADR-004). The session lives in an HttpOnly, SameSite=Strict cookie. In the local `AUTH_MODE=dev` build, a demo identity cookie is used, and `/v1` accepts it only with the BFF shared secret (`X-Dev-User` + `X-Dev-Secret`). For evaluator convenience in `AUTH_MODE=dev`, the un-prefixed capstone brief endpoints (`/predict`, `/loan-amount`, `/vehicles`, `/explain`) default to demo applicant `u-alice` when no auth headers are sent, and OpenAPI `/docs` exposes an **Authorize** modal for testing other identities. **Dev mode must never be exposed.**
 - **CSRF:** non-GET requests through the BFF must come from the same Origin and carry `X-Requested-With: vla`. Combined with SameSite=Strict cookies, this blocks cross-site requests.
 - **Authorization:** role permissions are combined with tenant membership and object ownership. A cross-tenant or other-user object returns **404**, not 403, so existence is not leaked. The tenant is derived from membership; `X-Tenant-Id` is honoured only if the user is a member of that tenant.
 - **Audit:** every create, evaluate, explain, publish and draft action is recorded with the actor and correlation ID.

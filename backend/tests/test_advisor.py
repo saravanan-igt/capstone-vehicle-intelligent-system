@@ -36,9 +36,12 @@ def test_health_reports_components(client: TestClient) -> None:
     assert body["knowledge"].startswith("local:")
 
 
-def test_endpoints_require_authentication(client: TestClient) -> None:
-    assert client.post("/predict", json=SCENARIO_APPROVED).status_code == 401
-    assert client.post("/vehicles", json={}).status_code == 401
+def test_endpoints_authenticate_or_use_dev_default(client: TestClient) -> None:
+    # In AUTH_MODE=dev without headers, brief endpoints fall back to demo applicant u-alice
+    assert client.post("/predict", json=SCENARIO_APPROVED).status_code == 201
+    # Invalid credentials are still rejected with 401
+    assert client.post("/predict", json=SCENARIO_APPROVED, headers={"X-Dev-User": "u-alice", "X-Dev-Secret": "wrong"}).status_code == 401
+    assert client.post("/v1/applications", json=SCENARIO_APPROVED).status_code == 401
 
 
 def test_scenario_approved_end_to_end(client: TestClient) -> None:
