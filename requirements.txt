@@ -1,0 +1,11 @@
+# Everything needed to run, test and reproduce the project locally in one environment:
+#   python -m venv backend/.venv && backend/.venv/Scripts/pip install -r requirements.txt   (Windows)
+# Containers use the hash-locked files instead: backend/requirements.lock, streamlit_app/requirements.lock.
+-r backend/requirements-dev.in
+-r streamlit_app/requirements.txt
+# Notebooks (EDA, model comparison) - verified against PyPI on 2026-11-09.
+matplotlib==3.11.2
+seaborn==0.13.2
+nbformat==5.11.1
+nbclient==0.11.0
+ipykernel==7.4.0

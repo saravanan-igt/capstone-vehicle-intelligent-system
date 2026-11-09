@@ -21,7 +21,14 @@ REASON_TEXT = {
     "NO_APPLICABLE_POLICY": "No published policy is effective for this product and date.",
     "POLICY_CONFLICT": "Multiple policies conflict for this date; manual review is needed.",
     "ALL_ELIGIBILITY_RULES_PASSED": "All eligibility rules passed.",
+    "ACTIVE_LOANS_ABOVE_MAX": "The applicant has more active loans than the policy allows.",
+    "CREDIT_RISK_BELOW_THRESHOLD": ("The lender's validated credit-risk model scored the application below the "
+                                    "approval threshold set in the policy."),
+    "CREDIT_RISK_MODEL_UNAVAILABLE": ("The policy requires a credit-risk model score, but the model was unavailable; "
+                                      "a credit officer must review the application."),
 }
+NOT_IN_POLICY = ("The policy documents do not contain a clause that justifies this; it is reported by the "
+                 "system, not decided by the policy.")
 
 
 class ExplanationPoint(BaseModel):
@@ -60,23 +67,56 @@ def template_explanation(decision: dict[str, Any]) -> ExplanationDraft:
             citations=[_rule_clause(result, "principal.capacity_min")]))
         for flag in result["flags"]:
             points.append(ExplanationPoint(text=f"Note: {flag.replace('_', ' ').lower()}.", citations=[]))
+        if "model_approval_probability" in c:
+            points.append(ExplanationPoint(
+                text=f"Credit-risk model approval probability {c['model_approval_probability']} meets the "
+                     f"policy threshold." + _factor_text(decision),
+                citations=[_rule_clause(result, "credit_risk.model")]))
     else:
         summary = f"Outcome: {outcome}. " + " ".join(REASON_TEXT.get(code, code) for code in result["reason_codes"])
         for rr in result["rule_results"]:
             if not rr["passed"]:
+                extra = _factor_text(decision) if rr["rule_id"] == "credit_risk.model" else ""
                 points.append(ExplanationPoint(
                     text=f"{REASON_TEXT.get(rr['reason_code'], rr['reason_code'])} Observed {rr['observed']}; "
-                         f"required {rr['threshold']}.",
+                         f"required {rr['threshold']}.{extra}",
                     citations=[rr["clause_id"]]))
         if result["missing_fields"]:
             points.append(ExplanationPoint(text="Missing: " + ", ".join(result["missing_fields"]) + ".", citations=[]))
+        failed_codes = {rr["reason_code"] for rr in result["rule_results"] if not rr["passed"]}
+        for code in result["reason_codes"]:
+            if code in failed_codes:
+                continue
+            cited = [cid for cid in result["citations"] if cid in clause_by_id]
+            if cited:
+                points.append(ExplanationPoint(text=REASON_TEXT.get(code, code), citations=cited))
+            else:
+                points.append(ExplanationPoint(text=f"{REASON_TEXT.get(code, code)} {NOT_IN_POLICY}", citations=[]))
+    cited_now = {cid for point in points for cid in point.citations} | set(result["citations"])
+    for clause in decision.get("clauses", []):
+        if clause["id"] not in cited_now and len(points) < 11 and not _is_rule_clause(result, clause["id"]):
+            points.append(ExplanationPoint(text=f"Related policy text ({clause.get('title', clause['section'])}): "
+                                                f"{clause['text']}", citations=[clause["id"]]))
+            cited_now.add(clause["id"])
     for point in points:
         point.citations = [cid for cid in point.citations if cid in clause_by_id]
     return ExplanationDraft(outcome=outcome, summary=summary, points=points)
 
 
+def _is_rule_clause(result: dict[str, Any], clause_id: str) -> bool:
+    return any(r["clause_id"] == clause_id for r in result["rule_results"])
+
+
 def _rule_clause(result: dict[str, Any], rule_id: str) -> str:
     return next((r["clause_id"] for r in result["rule_results"] if r["rule_id"] == rule_id), "")
+
+
+def _factor_text(decision: dict[str, Any]) -> str:
+    """Names the model's strongest factors without numbers (they are model internals, not policy values)."""
+    factors = (decision.get("model") or {}).get("top_factors") or []
+    if not factors:
+        return ""
+    return " Main model factors: " + "; ".join(f"{f['label']} {f['direction']} the score" for f in factors) + "."
 
 
 _NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?")
@@ -113,7 +153,8 @@ def validate_explanation(draft: ExplanationDraft, decision: dict[str, Any]) -> l
     """Returns violations; empty list means the draft is consistent with the recorded decision."""
     result = decision["result"]
     expected_outcome = result["outcome"] or result["status"]
-    authorised = set(result["citations"]) | {r["clause_id"] for r in result["rule_results"]}
+    authorised = (set(result["citations"]) | {r["clause_id"] for r in result["rule_results"]} |
+                  {c["id"] for c in decision.get("clauses", [])})
     problems: list[str] = []
     if draft.outcome != expected_outcome:
         problems.append(f"outcome '{draft.outcome}' disagrees with recorded '{expected_outcome}'")

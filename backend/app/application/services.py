@@ -18,10 +18,12 @@ from app.application.errors import AppError, conflict, not_found, unprocessable
 from app.application.security import Principal
 from app.domain import affordability, eligibility
 from app.domain.applicant import ApplicantInput, missing_fields
-from app.domain.explanation import ExplanationDraft, template_explanation, validate_explanation
+from app.domain.explanation import REASON_TEXT, ExplanationDraft, template_explanation, validate_explanation
 from app.domain.policy import PolicyDocument
 from app.infrastructure.gemini import Explainer, ExplainerUnavailable
 from app.infrastructure.quota import Quota
+from app.ml.model import RiskModel
+from app.rag.knowledge import KnowledgeBase
 from app.infrastructure.models import (
     Application,
     AuditEvent,
@@ -244,8 +246,22 @@ def decision_view(d: Decision) -> dict[str, Any]:
             "evaluated_at": _iso(d.evaluated_at), "snapshot": json.loads(d.snapshot_json)}
 
 
+def score_applicant(model: RiskModel | None, applicant: ApplicantInput,
+                    policy: PolicyDocument | None) -> dict[str, Any] | None:
+    """Model output for the snapshot. `applied` is true only when the policy cites this exact model."""
+    if model is None or missing_fields(applicant):
+        return None
+    score = model.score(applicant).to_dict()
+    rule = policy.rules.credit_risk if policy is not None else None
+    score["name"] = model.card.get("name")
+    score["applied"] = rule is not None and rule.model_name == score["name"]
+    if rule is not None:
+        score["policy_threshold"] = str(rule.min_approval_probability)
+    return score
+
+
 def evaluate_application(session: Session, p: Principal, app_id: str, idempotency_key: str | None,
-                         as_of: date, cid: str | None) -> tuple[Decision, bool]:
+                         as_of: date, cid: str | None, model: RiskModel | None = None) -> tuple[Decision, bool]:
     """Returns (decision, created). Replays with the same Idempotency-Key return the original decision."""
     app = get_application(session, p, app_id)
     if app.applicant_user_id != p.user_id and not p.has("application:read_all"):
@@ -268,6 +284,7 @@ def evaluate_application(session: Session, p: Principal, app_id: str, idempotenc
     policy_meta: dict[str, Any] = {}
     clauses: list[dict[str, Any]] = []
     policy_row: PolicyVersion | None = None
+    model_output = score_applicant(model, applicant, policy)
     if policy is None:
         # Missing data still reported as INCOMPLETE; an absent policy never becomes a rejection.
         missing = missing_fields(applicant)
@@ -276,7 +293,8 @@ def evaluate_application(session: Session, p: Principal, app_id: str, idempotenc
                   eligibility.EvaluationResult(status=eligibility.STATUS_NEEDS_REVIEW, reason_codes=[issue or ""]))
     else:
         policy_row = next(row for row, doc in candidates if doc is policy)
-        result = eligibility.evaluate(applicant, policy)
+        probability = model_output["approval_probability"] if model_output and model_output["applied"] else None
+        result = eligibility.evaluate(applicant, policy, probability)
         policy_meta = {"version_id": policy_row.id, "policy_code": policy.policy_code, "version": policy.version,
                        "lender_name": policy.lender_name, "product": policy.product,
                        "content_sha256": policy_row.content_sha256, "synthetic": policy.synthetic,
@@ -298,6 +316,7 @@ def evaluate_application(session: Session, p: Principal, app_id: str, idempotenc
                              "application_row_version": app.row_version, "verified": False},
         "policy": policy_meta,
         "clauses": clauses,
+        "model": model_output,
         "result": result_dict,
     }
     decision = Decision(tenant_id=p.tenant_id, application_id=app.id,
@@ -335,7 +354,8 @@ def latest_decision(session: Session, p: Principal, app_id: str) -> Decision:
     return d
 
 
-def replay_decision(session: Session, p: Principal, decision_id: str) -> dict[str, Any]:
+def replay_decision(session: Session, p: Principal, decision_id: str,
+                    model: RiskModel | None = None) -> dict[str, Any]:
     d = get_decision(session, p, decision_id)
     snap = json.loads(d.snapshot_json)
     applicant = ApplicantInput.model_validate(snap["input"])
@@ -345,13 +365,19 @@ def replay_decision(session: Session, p: Principal, decision_id: str) -> dict[st
     row = _policy_row(session, p.tenant_id, d.policy_version_id)
     policy_hash_ok = row.content_sha256 == snap["policy"]["content_sha256"]
     policy = PolicyDocument.model_validate_json(row.document_json)
-    replay = eligibility.evaluate(applicant, policy).to_dict()
+    # The engine is replayed with the recorded model score; the model itself is checked by artifact hash.
+    recorded = snap.get("model")
+    probability = recorded["approval_probability"] if recorded and recorded.get("applied") else None
+    replay = eligibility.evaluate(applicant, policy, probability).to_dict()
     replay_hash = sha256(canonical_json(replay))
+    model_unchanged = None if not recorded else (model is not None and
+                                                 model.card.get("artifact_sha256") == recorded["artifact_sha256"])
     return {
         "decision_id": d.id,
         "reproducible": policy_hash_ok and replay_hash == d.result_sha256 and
         d.engine_version == eligibility.ENGINE_VERSION,
         "policy_unchanged": policy_hash_ok,
+        "model_unchanged": model_unchanged,
         "engine_version_recorded": d.engine_version,
         "engine_version_current": eligibility.ENGINE_VERSION,
         "recorded_result_sha256": d.result_sha256,
@@ -361,8 +387,32 @@ def replay_decision(session: Session, p: Principal, decision_id: str) -> dict[st
 
 # ---------- explanations ----------
 
+def _retrieve_policy_context(session: Session, p: Principal, d: Decision, snap: dict[str, Any],
+                             kb: KnowledgeBase | None) -> tuple[list[dict[str, Any]], str | None]:
+    """Policy clauses from the vector store, restricted to the exact policy version the decision used."""
+    if kb is None or d.policy_version_id is None:
+        return [], None
+    policy = PolicyDocument.model_validate_json(_policy_row(session, p.tenant_id, d.policy_version_id).document_json)
+    by_id = {c.id: c for c in policy.clauses}
+    result = snap["result"]
+    cited = set(result["citations"])
+    query = " ".join([REASON_TEXT.get(code, code) for code in result["reason_codes"]] +
+                     [c["title"] for c in snap["clauses"] if c["id"] in cited] +
+                     [f.replace("_", " ").lower() for f in result["flags"]])
+    hits, threshold, index = kb.search(query, 5, {"doc_type": "policy", "policy_code": policy.policy_code,
+                                                 "version": policy.version})
+    sources = []
+    for hit in hits:
+        clause = by_id.get(hit.chunk.meta["clause_id"])
+        if clause is not None and hit.score >= threshold:
+            sources.append({**clause.model_dump(), "score": round(hit.score, 4), "chunk_id": hit.chunk.id,
+                            "source": hit.chunk.meta.get("source")})
+    return sources, index
+
+
 def explain_decision(session: Session, p: Principal, decision_id: str, explainer: Explainer,
-                     refresh: bool, cid: str | None, quota: Quota | None = None) -> dict[str, Any]:
+                     refresh: bool, cid: str | None, quota: Quota | None = None,
+                     kb: KnowledgeBase | None = None) -> dict[str, Any]:
     d = get_decision(session, p, decision_id)
     if not refresh:
         cached = session.scalar(select(Explanation).where(Explanation.tenant_id == p.tenant_id,
@@ -371,6 +421,11 @@ def explain_decision(session: Session, p: Principal, decision_id: str, explainer
         if cached is not None:
             return explanation_view(cached)
     snap = json.loads(d.snapshot_json)
+    retrieved, index = _retrieve_policy_context(session, p, d, snap, kb)
+    recorded_ids = {c["id"] for c in snap["clauses"]}
+    # Retrieved clauses join the evidence (and become citable); the recorded decision itself is unchanged.
+    snap["clauses"] = snap["clauses"] + [{k: c[k] for k in ("id", "section", "page", "title", "text")}
+                                         for c in retrieved if c["id"] not in recorded_ids]
     result = snap["result"]
     # Minimised facts: no identity, no free text from the applicant.
     facts = {"status": result["status"], "outcome": result["outcome"] or result["status"],
@@ -395,7 +450,8 @@ def explain_decision(session: Session, p: Principal, decision_id: str, explainer
         fallback_reason = str(exc)
         draft = template_explanation(snap)
     row = Explanation(tenant_id=p.tenant_id, decision_id=d.id, source=source, model=model,
-                      content_json=draft.model_dump_json(), fallback_reason=fallback_reason)
+                      content_json=draft.model_dump_json(), fallback_reason=fallback_reason,
+                      sources_json=canonical_json({"index": index, "items": retrieved}))
     session.add(row)
     session.flush()
     audit(session, p, "decision.explained", "decision", d.id, {"source": source}, cid)
@@ -403,9 +459,11 @@ def explain_decision(session: Session, p: Principal, decision_id: str, explainer
 
 
 def explanation_view(row: Explanation) -> dict[str, Any]:
+    sources = json.loads(row.sources_json) if row.sources_json else {"index": None, "items": []}
     return {"id": row.id, "decision_id": row.decision_id, "source": row.source, "model": row.model,
             "fallback_reason": row.fallback_reason, "created_at": _iso(row.created_at),
-            "content": ExplanationDraft.model_validate_json(row.content_json).model_dump()}
+            "content": ExplanationDraft.model_validate_json(row.content_json).model_dump(),
+            "retrieval_index": sources["index"], "retrieved_sources": sources["items"]}
 
 
 # ---------- vehicles ----------

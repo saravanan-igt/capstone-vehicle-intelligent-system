@@ -17,7 +17,7 @@ from app.domain.money import (
 )
 from app.domain.policy import CitedRule, FeeRule, PolicyDocument
 
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "1.1.0"
 
 STATUS_COMPLETED = "COMPLETED"
 STATUS_INCOMPLETE = "INCOMPLETE"
@@ -89,7 +89,9 @@ class _Trace:
         return passed
 
 
-def evaluate(applicant: ApplicantInput, policy: PolicyDocument) -> EvaluationResult:
+def evaluate(applicant: ApplicantInput, policy: PolicyDocument,
+             approval_probability: float | None = None) -> EvaluationResult:
+    """`approval_probability` is the saved model's score, recorded in the snapshot so replay is exact."""
     missing = missing_fields(applicant)
     if missing:
         return EvaluationResult(status=STATUS_INCOMPLETE, missing_fields=missing, reason_codes=["MISSING_REQUIRED_FIELDS"])
@@ -113,6 +115,8 @@ def evaluate(applicant: ApplicantInput, policy: PolicyDocument) -> EvaluationRes
     employed_for = applicant.employment_months
     assert score is not None and months is not None and requested is not None
     assert obligations is not None and category is not None and employed_for is not None
+    active = applicant.active_loans
+    assert active is not None
 
     income = qualifying_monthly_income(applicant)
     trace = _Trace()
@@ -128,6 +132,9 @@ def evaluate(applicant: ApplicantInput, policy: PolicyDocument) -> EvaluationRes
         required = r.employment.min_months[category]
         trace.check("employment.duration", r.employment, employed_for >= required, f"{employed_for} months",
                     f">= {required} months", "EMPLOYMENT_DURATION_BELOW_MIN")
+    if r.active_loans is not None:
+        trace.check("active_loans.max", r.active_loans, active <= r.active_loans.max_active_loans, active,
+                    f"<= {r.active_loans.max_active_loans}", "ACTIVE_LOANS_ABOVE_MAX")
     tenure_ok = trace.check("tenure.range", r.tenure, r.tenure.min_months <= months <= r.tenure.max_months,
                             f"{months} months", f"{r.tenure.min_months}-{r.tenure.max_months} months",
                             "TENURE_OUT_OF_RANGE")
@@ -169,6 +176,18 @@ def evaluate(applicant: ApplicantInput, policy: PolicyDocument) -> EvaluationRes
                         f">= {fmt(r.principal.min_amount)}", "REPAYMENT_CAPACITY_BELOW_MIN_PRINCIPAL")
 
     failed = [x for x in trace.results if not x.passed]
+    # The credit-risk rule only applies once every other rule has passed; it can decline, never approve.
+    if not failed and r.credit_risk is not None:
+        if approval_probability is None:
+            return EvaluationResult(status=STATUS_NEEDS_REVIEW, reason_codes=["CREDIT_RISK_MODEL_UNAVAILABLE"],
+                                    rule_results=trace.results, citations=[r.credit_risk.clause],
+                                    calculations=calcs, borrowing_capacity=capacity, annual_rate=annual_rate,
+                                    tenure_months=months)
+        probability = Decimal(str(round(approval_probability, 4)))
+        calcs["model_approval_probability"] = str(probability)
+        trace.check("credit_risk.model", r.credit_risk, probability >= r.credit_risk.min_approval_probability,
+                    probability, f">= {r.credit_risk.min_approval_probability}", "CREDIT_RISK_BELOW_THRESHOLD")
+        failed = [x for x in trace.results if not x.passed]
     if failed:
         return EvaluationResult(
             status=STATUS_COMPLETED,
@@ -202,6 +221,8 @@ def evaluate(applicant: ApplicantInput, policy: PolicyDocument) -> EvaluationRes
     })
     supporting = [r.interest_rate.clause, r.tenure.clause, r.debt_service.clause, r.principal.clause,
                   r.processing_fee.clause, r.rounding.clause]
+    if r.credit_risk is not None:
+        supporting.append(r.credit_risk.clause)
     return EvaluationResult(
         status=STATUS_COMPLETED,
         outcome=APPROVED,

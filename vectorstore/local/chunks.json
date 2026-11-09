@@ -1,0 +1,2908 @@
+[
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-1.1",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 1.1 Scope: This policy governs indicative eligibility for fixed-rate loans on new private passenger vehicles in India, denominated in INR. It is a synthetic document created for a capstone demonstration and is not an offer of credit.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-1.1",
+   "section": "1.1",
+   "title": "Scope",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-1.2",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 1.2 Purpose: The policy sets out who may borrow, how much may be lent, on what terms, and which vehicles may be financed. Every automated decision must cite the clause it relies on. Where this policy is silent, no automated rejection may be made on that ground.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-1.2",
+   "section": "1.2",
+   "title": "Purpose",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-2.1",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 2.1 Credit score: Applicants must have a credit score of at least 650 from an accepted bureau. Accepted bureaus are CIBIL and EXPERIAN.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-2.1",
+   "section": "2.1",
+   "title": "Credit score",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-2.2",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 2.2 Minimum income: Qualifying monthly income must be at least INR 25,000. Annual income is converted to a monthly figure by dividing by 12.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-2.2",
+   "section": "2.2",
+   "title": "Minimum income",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-2.3",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 2.3 Employment: Eligible employment categories are salaried and self-employed. Salaried applicants require at least 6 months of continuous employment. Self-employed applicants require at least 24 months in business.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-2.3",
+   "section": "2.3",
+   "title": "Employment",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-2.4",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 2.4 Active loans: Applicants may have at most 3 active loans of any type at the time of application.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-2.4",
+   "section": "2.4",
+   "title": "Active loans",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-2.5",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 2.5 Applicant-specific income evidence: For self-employed applicants, qualifying income is the average monthly income shown in the last two income-tax returns. For salaried applicants, qualifying income is the net monthly salary credited to the bank account over the last three months. Rental and investment income may be included only if it has been received for at least 12 months.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-2.5",
+   "section": "2.5",
+   "title": "Applicant-specific income evidence",
+   "page": 1,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.1",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.1 Debt-service limit: Total monthly debt obligations, including the proposed EMI, must not exceed 50% of qualifying monthly income. The maximum loan is the principal that the remaining monthly capacity can repay over the chosen tenure.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.1",
+   "section": "3.1",
+   "title": "Debt-service limit",
+   "page": 2,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.2",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.2 Interest rates: Interest is charged at a fixed nominal annual rate compounded monthly, determined by credit score: 750 to 900 at 8.75%; 700 to 749 at 9.75%; 650 to 699 at 11.25%.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.2",
+   "section": "3.2",
+   "title": "Interest rates",
+   "page": 2,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.3",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.3 Tenure: Loan tenure must be between 12 and 84 monthly instalments.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.3",
+   "section": "3.3",
+   "title": "Tenure",
+   "page": 2,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.4",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.4 Loan amount: The loan principal must be between INR 1,00,000 and INR 50,00,000.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.4",
+   "section": "3.4",
+   "title": "Loan amount",
+   "page": 2,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.5",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.5 Loan-to-value: The loan may not exceed 85% of the vehicle on-road price, being the ex-showroom price plus registration, insurance and other mandatory charges.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.5",
+   "section": "3.5",
+   "title": "Loan-to-value",
+   "page": 2,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.7",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.7 Credit risk assessment: Applications that satisfy sections 2 and 3 are scored by the lender's validated credit-risk model (vla-eligibility). An application is approved only if the model's estimated approval probability is at least 0.83; otherwise it is declined on credit-risk grounds and the applicant may request a manual review under section 5.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.7",
+   "section": "3.7",
+   "title": "Credit risk assessment",
+   "page": 2,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-3.6",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 3.6 Processing fee: A processing fee of 1% of the loan principal, subject to a minimum of INR 2,500 and a maximum of INR 15,000, is payable upfront and is not financed.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-3.6",
+   "section": "3.6",
+   "title": "Processing fee",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-4.1",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 4.1 Vehicle restrictions: Commercial vehicles are excluded. Vehicle prices older than 120 days must be re-verified before affordability is confirmed.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-4.1",
+   "section": "4.1",
+   "title": "Vehicle restrictions",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-4.2",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 4.2 Rounding: EMIs are rounded half-up to the nearest 0.01 rupee. The eligible principal is rounded down to the nearest INR 1,000.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-4.2",
+   "section": "4.2",
+   "title": "Rounding",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-5.1",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 5.1 Manual review: An applicant declined on credit-risk grounds under clause 3.7 may request a manual review by a credit officer. Manual review cannot override sections 2, 3.1, 3.3, 3.4 or 3.5.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-5.1",
+   "section": "5.1",
+   "title": "Manual review",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-5.2",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 5.2 Co-applicants: A spouse or parent may join as co-applicant. Co-applicant income is added to qualifying income only after manual review and is never applied by the automated assessment.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-5.2",
+   "section": "5.2",
+   "title": "Co-applicants",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-5.3",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 5.3 First-time borrowers: Applicants with no credit history cannot be assessed automatically and are referred to a credit officer.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-5.3",
+   "section": "5.3",
+   "title": "First-time borrowers",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:NW-AUTO-STD:2026.1:NW-6.2",
+  "text": "Northwind Auto Finance (SYNTHETIC) policy NW-AUTO-STD version 2026.1, clause 6.2 Additional documents for salaried applicants: salary slips for the last three months and the latest Form 16: Additional documents for self-employed applicants: income-tax returns for the last two years and proof of business continuity.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "NW-AUTO-STD",
+   "version": "2026.1",
+   "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+   "clause_id": "NW-6.2",
+   "section": "6.2",
+   "title": "Additional documents for salaried applicants: salary slips for the last three months and the latest Form 16",
+   "page": 3,
+   "source": "data/documents/policy/NW-AUTO-STD-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-A1",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause A1 Scope: Synthetic prime lending policy for new private passenger vehicles in India, denominated in INR. For capstone demonstration only.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-A1",
+   "section": "A1",
+   "title": "Scope",
+   "page": 1,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-B1",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause B1 Credit score: A CIBIL credit score of at least 700 is required. Other bureaus are not accepted.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-B1",
+   "section": "B1",
+   "title": "Credit score",
+   "page": 1,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-B2",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause B2 Income: Qualifying monthly income must be at least INR 40,000.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-B2",
+   "section": "B2",
+   "title": "Income",
+   "page": 1,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-B3",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause B3 Employment: Salaried applicants need 12 months of continuous employment; self-employed applicants need 36 months in business. Other categories are ineligible.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-B3",
+   "section": "B3",
+   "title": "Employment",
+   "page": 1,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-B4",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause B4 Active loans: No more than 2 active loans are permitted at the time of application.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-B4",
+   "section": "B4",
+   "title": "Active loans",
+   "page": 1,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C1",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C1 Debt-service limit: All monthly debt obligations including the new EMI must not exceed 40% of qualifying monthly income.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C1",
+   "section": "C1",
+   "title": "Debt-service limit",
+   "page": 2,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C2",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C2 Rates: Fixed nominal annual rate compounded monthly: score 750 to 900 at 9.25%; score 700 to 749 at 10.5%.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C2",
+   "section": "C2",
+   "title": "Rates",
+   "page": 2,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C3",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C3 Tenure: Tenure must be between 12 and 60 months.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C3",
+   "section": "C3",
+   "title": "Tenure",
+   "page": 2,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C4",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C4 Loan amount: Principal must be between INR 2,00,000 and INR 30,00,000.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C4",
+   "section": "C4",
+   "title": "Loan amount",
+   "page": 2,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C5",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C5 Loan-to-value: Maximum loan-to-value is 80% of the on-road price.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C5",
+   "section": "C5",
+   "title": "Loan-to-value",
+   "page": 2,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C7",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C7 Credit risk: Applications meeting parts B and C are approved only if the validated credit-risk model (vla-eligibility) estimates an approval probability of at least 0.88.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C7",
+   "section": "C7",
+   "title": "Credit risk",
+   "page": 2,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-C6",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause C6 Fees: Processing fee is 1.5% of principal, minimum INR 5,000, maximum INR 25,000, payable upfront.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-C6",
+   "section": "C6",
+   "title": "Fees",
+   "page": 3,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-D1",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause D1 Vehicles: Commercial vehicles are excluded. Prices older than 90 days must be re-verified.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-D1",
+   "section": "D1",
+   "title": "Vehicles",
+   "page": 3,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-D2",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause D2 Rounding: EMI rounded half-up to 0.01; principal rounded down to INR 1,000.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-D2",
+   "section": "D2",
+   "title": "Rounding",
+   "page": 3,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-E1",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause E1 Exceptions: Exceptions to parts B and C are not permitted for the prime product. Declined applicants may be offered the standard product of another lender.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-E1",
+   "section": "E1",
+   "title": "Exceptions",
+   "page": 3,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "policy:SB-AUTO-PRIME:2026.1:SB-E2",
+  "text": "Southbay Motor Credit (SYNTHETIC) policy SB-AUTO-PRIME version 2026.1, clause E2 Documentation: Identity and address proof, six months of bank statements, salary slips or two years of tax returns, and the dealer proforma invoice.",
+  "meta": {
+   "doc_type": "policy",
+   "policy_code": "SB-AUTO-PRIME",
+   "version": "2026.1",
+   "lender_name": "Southbay Motor Credit (SYNTHETIC)",
+   "clause_id": "SB-E2",
+   "section": "E2",
+   "title": "Documentation",
+   "page": 3,
+   "source": "data/documents/policy/SB-AUTO-PRIME-2026.1.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:overview",
+  "text": "Aurora Breeze. Overview.\nThe Breeze is Aurora's city hatchback: light controls, a tight turning circle and low running costs for first-time owners and daily commuters.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Overview",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:variants-and-prices",
+  "text": "Aurora Breeze. Variants and prices.\n- LXi (vehicle id aur-breeze-lxi): petrol, manual, 5 seats, 1197 cc, 61 kW, efficiency 20.1 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 6,50,000. Adds: Manual air conditioning; Steel wheels with covers.\n- ZXi AMT (vehicle id aur-breeze-zxi-amt): petrol, automatic, 5 seats, 1197 cc, 61 kW, efficiency 19.4 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 7,80,000. Adds: Automatic climate control; 15-inch alloy wheels; Push-button start.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:key-features",
+  "text": "Aurora Breeze. Key features.\n- 7-inch touchscreen with smartphone mirroring\n- Rear parking sensors\n- ISOFIX child-seat mounts\n- Electronic stability control",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Key features",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:dimensions",
+  "text": "Aurora Breeze. Dimensions.\n- length mm: 3845\n- width mm: 1735\n- height mm: 1530\n- wheelbase mm: 2450\n- turning radius m: 4.8",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:warranty-and-service",
+  "text": "Aurora Breeze. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:colours",
+  "text": "Aurora Breeze. Colours.\nArctic White, Sunset Red, Graphite Grey.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Colours",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-breeze:notes",
+  "text": "Aurora Breeze. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-breeze",
+   "make": "Aurora",
+   "model": "Breeze",
+   "body_type": "hatchback",
+   "section": "Notes",
+   "source": "data/documents/vehicles/aurora-breeze.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:overview",
+  "text": "Aurora Nano Plus. Overview.\nThe Nano Plus is the most affordable Aurora: a compact four-door hatchback designed for narrow city streets and easy parking.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Overview",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:variants-and-prices",
+  "text": "Aurora Nano Plus. Variants and prices.\n- STD (vehicle id aur-nano-std): petrol, manual, 4 seats, 998 cc, 49 kW, efficiency 24.4 km/l, 2 airbags. Ex-showroom price in Maharashtra INR 4,60,000.\n- VXi (vehicle id aur-nano-vxi): petrol, manual, 4 seats, 998 cc, 49 kW, efficiency 24.1 km/l, 2 airbags. Ex-showroom price in Maharashtra INR 5,40,000. Adds: Power windows (front and rear); Central locking.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:key-features",
+  "text": "Aurora Nano Plus. Key features.\n- Dual front airbags\n- ABS with EBD\n- Bluetooth audio",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Key features",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:dimensions",
+  "text": "Aurora Nano Plus. Dimensions.\n- length mm: 3495\n- width mm: 1515\n- height mm: 1560\n- wheelbase mm: 2380\n- turning radius m: 4.5",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:warranty-and-service",
+  "text": "Aurora Nano Plus. Warranty and service.\nStandard warranty: 2 years / 40,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:colours",
+  "text": "Aurora Nano Plus. Colours.\nSolid White, Lemon Yellow.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Colours",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-nano:notes",
+  "text": "Aurora Nano Plus. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-nano",
+   "make": "Aurora",
+   "model": "Nano Plus",
+   "body_type": "hatchback",
+   "section": "Notes",
+   "source": "data/documents/vehicles/aurora-nano.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:overview",
+  "text": "Aurora Quest. Overview.\nThe Quest is a compact SUV with a factory-fitted CNG option, built for buyers who want SUV styling with very low fuel costs.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:variants-and-prices",
+  "text": "Aurora Quest. Variants and prices.\n- S-CNG (vehicle id aur-quest-cng): cng, manual, 5 seats, 1462 cc, 64 kW, efficiency 25.5 km/kg, 6 airbags. Ex-showroom price in Maharashtra INR 9,90,000. Adds: Twin CNG cylinders under the boot floor.\n- ZXi AT (vehicle id aur-quest-zxi-at): petrol, automatic, 5 seats, 1462 cc, 75 kW, efficiency 19.8 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 12,40,000. Adds: Head-up display; Wireless phone charger.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:key-features",
+  "text": "Aurora Quest. Key features.\n- 8-inch touchscreen\n- Reverse camera\n- Roof rails\n- Tyre pressure monitoring",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:dimensions",
+  "text": "Aurora Quest. Dimensions.\n- length mm: 3995\n- width mm: 1790\n- height mm: 1640\n- wheelbase mm: 2500\n- ground clearance mm: 200",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:warranty-and-service",
+  "text": "Aurora Quest. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:colours",
+  "text": "Aurora Quest. Colours.\nGlacier White, Forest Green, Grey.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-quest:notes",
+  "text": "Aurora Quest. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-quest",
+   "make": "Aurora",
+   "model": "Quest",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/aurora-quest.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:overview",
+  "text": "Aurora Vista. Overview.\nThe Vista is a roomy three-box sedan with a 480-litre boot, aimed at families who want comfort on long highway drives.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Overview",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:variants-and-prices",
+  "text": "Aurora Vista. Variants and prices.\n- SX (vehicle id aur-vista-sx): petrol, manual, 5 seats, 1497 cc, 85 kW, efficiency 18.0 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 11,50,000. Adds: LED projector headlamps.\n- SX(O) CVT (vehicle id aur-vista-sxo-cvt): petrol, automatic, 5 seats, 1497 cc, 85 kW, efficiency 17.2 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 13,90,000. Adds: Electric sunroof; Ventilated front seats; 360-degree camera.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:key-features",
+  "text": "Aurora Vista. Key features.\n- 9-inch touchscreen\n- Rear AC vents\n- Cruise control\n- Hill-hold assist",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Key features",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:dimensions",
+  "text": "Aurora Vista. Dimensions.\n- length mm: 4490\n- width mm: 1765\n- height mm: 1485\n- wheelbase mm: 2650",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:warranty-and-service",
+  "text": "Aurora Vista. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:colours",
+  "text": "Aurora Vista. Colours.\nPearl White, Midnight Blue, Silver.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Colours",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:aurora-vista:notes",
+  "text": "Aurora Vista. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "aurora-vista",
+   "make": "Aurora",
+   "model": "Vista",
+   "body_type": "sedan",
+   "section": "Notes",
+   "source": "data/documents/vehicles/aurora-vista.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:overview",
+  "text": "Halcyon Family. Overview.\nThe Family is a seven-seat MPV with sliding rear doors, aimed at buyers who need easy third-row access.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:variants-and-prices",
+  "text": "Halcyon Family. Variants and prices.\n- 7-Seater (vehicle id hal-family-7): petrol, manual, 7 seats, 1497 cc, 77 kW, efficiency 16.8 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 11,20,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:key-features",
+  "text": "Halcyon Family. Key features.\n- Sliding rear doors\n- Rear sunshades\n- Second-row USB-C ports",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:dimensions",
+  "text": "Halcyon Family. Dimensions.\n- length mm: 4500\n- width mm: 1775\n- height mm: 1750\n- wheelbase mm: 2780",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:warranty-and-service",
+  "text": "Halcyon Family. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:colours",
+  "text": "Halcyon Family. Colours.\nWhite, Bronze.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-family:notes",
+  "text": "Halcyon Family. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-family",
+   "make": "Halcyon",
+   "model": "Family",
+   "body_type": "mpv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/halcyon-family.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:overview",
+  "text": "Halcyon Terra. Overview.\nThe Terra is a mid-size five-seat SUV with a 1.5-litre diesel and Level 1 driver assistance.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:variants-and-prices",
+  "text": "Halcyon Terra. Variants and prices.\n- Pro (vehicle id hal-terra-pro): diesel, manual, 5 seats, 1493 cc, 85 kW, efficiency 21.0 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 13,50,000.\n- Pro+ AT (vehicle id hal-terra-pro-plus-at): diesel, automatic, 5 seats, 1493 cc, 85 kW, efficiency 18.5 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 16,20,000. Adds: Level 2 ADAS; Ventilated seats; Bose-style 8-speaker audio.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:key-features",
+  "text": "Halcyon Terra. Key features.\n- 10.25-inch touchscreen\n- Panoramic sunroof\n- Forward collision warning\n- Powered driver seat",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:dimensions",
+  "text": "Halcyon Terra. Dimensions.\n- length mm: 4330\n- width mm: 1790\n- height mm: 1635\n- wheelbase mm: 2610\n- ground clearance mm: 190",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:warranty-and-service",
+  "text": "Halcyon Terra. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:colours",
+  "text": "Halcyon Terra. Colours.\nAbyss Black, Titan Grey, Fiery Red.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:halcyon-terra:notes",
+  "text": "Halcyon Terra. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "halcyon-terra",
+   "make": "Halcyon",
+   "model": "Terra",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/halcyon-terra.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:overview",
+  "text": "Kestrel Ridge. Overview.\nThe Ridge is a sub-four-metre SUV with a turbo-petrol option and a five-star synthetic crash rating, popular with young families upgrading from a hatchback.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:variants-and-prices",
+  "text": "Kestrel Ridge. Variants and prices.\n- E (vehicle id kes-ridge-e): petrol, manual, 5 seats, 1199 cc, 65 kW, efficiency 17.4 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 8,90,000.\n- S (vehicle id kes-ridge-s): petrol, manual, 5 seats, 1199 cc, 65 kW, efficiency 17.4 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 10,20,000. Adds: Electric sunroof; Auto headlamps.\n- S Turbo DCT (vehicle id kes-ridge-s-turbo-at): petrol, automatic, 5 seats, 1199 cc, 88 kW, efficiency 16.2 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 12,10,000. Adds: Paddle shifters; Ventilated seats.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:key-features",
+  "text": "Kestrel Ridge. Key features.\n- 7-inch touchscreen\n- Rear camera\n- Six airbags as standard\n- Electronic stability control",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:dimensions",
+  "text": "Kestrel Ridge. Dimensions.\n- length mm: 3995\n- width mm: 1804\n- height mm: 1620\n- wheelbase mm: 2498\n- ground clearance mm: 208",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:warranty-and-service",
+  "text": "Kestrel Ridge. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:colours",
+  "text": "Kestrel Ridge. Colours.\nDaytona Grey, Flame Red, Pure White.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-ridge:notes",
+  "text": "Kestrel Ridge. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-ridge",
+   "make": "Kestrel",
+   "model": "Ridge",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/kestrel-ridge.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:overview",
+  "text": "Kestrel Trail. Overview.\nThe Trail is a body-on-frame SUV with strong low-end torque and generous ground clearance for rough roads; the X 4x4 adds a third row and low-range transfer case.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:variants-and-prices",
+  "text": "Kestrel Trail. Variants and prices.\n- S (vehicle id kes-trail-s): diesel, manual, 5 seats, 1493 cc, 85 kW, efficiency 19.1 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 16,80,000.\n- X 4x4 (vehicle id kes-trail-x-4x4): diesel, automatic, 7 seats, 2184 cc, 128 kW, efficiency 14.8 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 24,50,000. Adds: Low-range 4x4 transfer case; Third-row seats.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:key-features",
+  "text": "Kestrel Trail. Key features.\n- 10-inch touchscreen\n- Hill-descent control\n- Terrain modes\n- LED headlamps",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:dimensions",
+  "text": "Kestrel Trail. Dimensions.\n- length mm: 4395\n- width mm: 1820\n- height mm: 1844\n- wheelbase mm: 2750",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:warranty-and-service",
+  "text": "Kestrel Trail. Warranty and service.\nStandard warranty: 3 years / unlimited km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:colours",
+  "text": "Kestrel Trail. Colours.\nEverest White, Napoli Black, Red Rage.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-trail:notes",
+  "text": "Kestrel Trail. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-trail",
+   "make": "Kestrel",
+   "model": "Trail",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/kestrel-trail.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:overview",
+  "text": "Kestrel Volt. Overview.\nThe Volt is Kestrel's electric compact SUV with a 45 kWh battery and DC fast charging from 10 to 80 percent in about 56 minutes on a 60 kW charger.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:variants-and-prices",
+  "text": "Kestrel Volt. Variants and prices.\n- Long Range (vehicle id kes-volt-ev): electric, automatic, 5 seats, 45 kWh battery, 110 kW, efficiency 465 km claimed range, 6 airbags. Ex-showroom price in Maharashtra INR 18,90,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:key-features",
+  "text": "Kestrel Volt. Key features.\n- Connected-car app\n- Regenerative braking with paddles\n- Vehicle-to-load socket\n- Air purifier",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:dimensions",
+  "text": "Kestrel Volt. Dimensions.\n- length mm: 4200\n- width mm: 1800\n- height mm: 1600\n- wheelbase mm: 2600",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:warranty-and-service",
+  "text": "Kestrel Volt. Warranty and service.\nStandard warranty: 3 years / 1,25,000 km; battery 8 years / 1,60,000 km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:colours",
+  "text": "Kestrel Volt. Colours.\nPristine White, Oxide Blue.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:kestrel-volt:notes",
+  "text": "Kestrel Volt. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "kestrel-volt",
+   "make": "Kestrel",
+   "model": "Volt",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/kestrel-volt.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:overview",
+  "text": "Lumen Glide. Overview.\nThe Glide is a compact sedan offered with petrol and CNG, with a 378-litre boot even in the CNG version thanks to an underfloor tank.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Overview",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:variants-and-prices",
+  "text": "Lumen Glide. Variants and prices.\n- S CNG (vehicle id lum-glide-s-cng): cng, manual, 5 seats, 1197 cc, 57 kW, efficiency 31.1 km/kg, 6 airbags. Ex-showroom price in Maharashtra INR 8,40,000.\n- VX (vehicle id lum-glide-vx): petrol, manual, 5 seats, 1197 cc, 66 kW, efficiency 20.0 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 7,60,000. Adds: Cruise control.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:key-features",
+  "text": "Lumen Glide. Key features.\n- 7-inch touchscreen\n- Rear AC vents\n- Steering-mounted controls",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Key features",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:dimensions",
+  "text": "Lumen Glide. Dimensions.\n- length mm: 3995\n- width mm: 1735\n- height mm: 1515\n- wheelbase mm: 2450",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:warranty-and-service",
+  "text": "Lumen Glide. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:colours",
+  "text": "Lumen Glide. Colours.\nWhite, Maroon, Blue.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Colours",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-glide:notes",
+  "text": "Lumen Glide. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-glide",
+   "make": "Lumen",
+   "model": "Glide",
+   "body_type": "sedan",
+   "section": "Notes",
+   "source": "data/documents/vehicles/lumen-glide.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:overview",
+  "text": "Lumen Pulse. Overview.\nThe Pulse is a compact crossover. The Standard variant's insurance quote is not yet available and the Turbo price list is from January 2025, so both must be re-verified with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:variants-and-prices",
+  "text": "Lumen Pulse. Variants and prices.\n- Standard (vehicle id lum-pulse): petrol, manual, 5 seats, 1199 cc, 66 kW, efficiency 18.6 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 9,80,000.\n- Turbo (vehicle id lum-pulse-turbo): petrol, automatic, 5 seats, 999 cc, 88 kW, efficiency 17.0 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 12,10,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:key-features",
+  "text": "Lumen Pulse. Key features.\n- 8-inch touchscreen\n- Rear camera",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:dimensions",
+  "text": "Lumen Pulse. Dimensions.\n- length mm: 3990\n- width mm: 1760\n- height mm: 1605",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:warranty-and-service",
+  "text": "Lumen Pulse. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:colours",
+  "text": "Lumen Pulse. Colours.\nIce White, Copper.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:lumen-pulse:notes",
+  "text": "Lumen Pulse. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "lumen-pulse",
+   "make": "Lumen",
+   "model": "Pulse",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/lumen-pulse.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:overview",
+  "text": "Nimbus Arc. Overview.\nThe Arc is a compact diesel sedan focused on highway economy and low maintenance cost.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Overview",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:variants-and-prices",
+  "text": "Nimbus Arc. Variants and prices.\n- D (vehicle id nim-arc-d): diesel, manual, 5 seats, 1498 cc, 74 kW, efficiency 24.7 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 9,60,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:key-features",
+  "text": "Nimbus Arc. Key features.\n- Cruise control\n- Rear AC vents\n- Auto-dimming mirror",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Key features",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:dimensions",
+  "text": "Nimbus Arc. Dimensions.\n- length mm: 3995\n- width mm: 1735\n- height mm: 1505",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:warranty-and-service",
+  "text": "Nimbus Arc. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:colours",
+  "text": "Nimbus Arc. Colours.\nWhite, Grey.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Colours",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-arc:notes",
+  "text": "Nimbus Arc. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-arc",
+   "make": "Nimbus",
+   "model": "Arc",
+   "body_type": "sedan",
+   "section": "Notes",
+   "source": "data/documents/vehicles/nimbus-arc.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:overview",
+  "text": "Nimbus Cruze. Overview.\nThe Cruze is a premium hatchback with a large cabin, a 339-litre boot and a strong safety package.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Overview",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:variants-and-prices",
+  "text": "Nimbus Cruze. Variants and prices.\n- Zeta (vehicle id nim-cruze-zeta): petrol, manual, 5 seats, 1197 cc, 66 kW, efficiency 22.4 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 8,40,000.\n- Alpha AT (vehicle id nim-cruze-alpha-at): petrol, automatic, 5 seats, 1197 cc, 66 kW, efficiency 22.9 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 9,60,000. Adds: Head-up display; 360-degree camera.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:key-features",
+  "text": "Nimbus Cruze. Key features.\n- 9-inch touchscreen\n- Wireless smartphone mirroring\n- Rear camera\n- LED DRLs",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Key features",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:dimensions",
+  "text": "Nimbus Cruze. Dimensions.\n- length mm: 3990\n- width mm: 1745\n- height mm: 1500\n- wheelbase mm: 2520",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:warranty-and-service",
+  "text": "Nimbus Cruze. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:colours",
+  "text": "Nimbus Cruze. Colours.\nNexa Blue, Splendid Silver.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Colours",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:nimbus-cruze:notes",
+  "text": "Nimbus Cruze. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "nimbus-cruze",
+   "make": "Nimbus",
+   "model": "Cruze",
+   "body_type": "hatchback",
+   "section": "Notes",
+   "source": "data/documents/vehicles/nimbus-cruze.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:overview",
+  "text": "Orion Hauler. Overview.\nThe Hauler Cargo is a two-seat panel van with a 1,000 kg payload for small businesses and last-mile delivery. It is a commercial vehicle.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Overview",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:variants-and-prices",
+  "text": "Orion Hauler. Variants and prices.\n- Cargo (vehicle id ori-hauler-cargo): diesel, manual, 2 seats, 1499 cc, not stated, efficiency not stated, 2 airbags. Ex-showroom price in Maharashtra INR 12,50,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:key-features",
+  "text": "Orion Hauler. Key features.\n- Partition wall\n- Sliding side door\n- Rear barn doors",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Key features",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:dimensions",
+  "text": "Orion Hauler. Dimensions.\n- length mm: 4500\n- width mm: 1700\n- height mm: 1940",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:warranty-and-service",
+  "text": "Orion Hauler. Warranty and service.\nStandard warranty: 2 years / 72,000 km. Scheduled service: Every 10,000 km or 6 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:colours",
+  "text": "Orion Hauler. Colours.\nWhite.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Colours",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-hauler:notes",
+  "text": "Orion Hauler. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-hauler",
+   "make": "Orion",
+   "model": "Hauler",
+   "body_type": "van",
+   "section": "Notes",
+   "source": "data/documents/vehicles/orion-hauler.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:overview",
+  "text": "Orion Metro. Overview.\nThe Metro CNG is a frugal hatchback with a factory CNG kit, one of the cheapest cars to run per kilometre in the catalogue.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Overview",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:variants-and-prices",
+  "text": "Orion Metro. Variants and prices.\n- CNG (vehicle id ori-metro-cng): cng, manual, 5 seats, 998 cc, 42 kW, efficiency 32.7 km/kg, 2 airbags. Ex-showroom price in Maharashtra INR 7,20,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:key-features",
+  "text": "Orion Metro. Key features.\n- Dual-fuel switch\n- Bluetooth audio\n- Rear defogger",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Key features",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:dimensions",
+  "text": "Orion Metro. Dimensions.\n- length mm: 3700\n- width mm: 1620\n- height mm: 1560",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:warranty-and-service",
+  "text": "Orion Metro. Warranty and service.\nStandard warranty: 2 years / 40,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:colours",
+  "text": "Orion Metro. Colours.\nWhite, Grey.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Colours",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-metro:notes",
+  "text": "Orion Metro. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-metro",
+   "make": "Orion",
+   "model": "Metro",
+   "body_type": "hatchback",
+   "section": "Notes",
+   "source": "data/documents/vehicles/orion-metro.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:overview",
+  "text": "Orion Ridgeback Pickup. Overview.\nThe Ridgeback is a single-cab pickup with a 1,250 kg payload and a 2,550 mm cargo bed for agricultural and construction work. It is registered as a commercial vehicle.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Overview",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:variants-and-prices",
+  "text": "Orion Ridgeback Pickup. Variants and prices.\n- Single Cab (vehicle id ori-ridgeback): diesel, manual, 2 seats, 2523 cc, not stated, efficiency not stated, 2 airbags. Ex-showroom price in Maharashtra INR 10,50,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:key-features",
+  "text": "Orion Ridgeback Pickup. Key features.\n- Tow hook\n- Rubber floor mats\n- Load-sensing rear brakes",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Key features",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:dimensions",
+  "text": "Orion Ridgeback Pickup. Dimensions.\n- length mm: 5215\n- width mm: 1775\n- height mm: 1830",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:warranty-and-service",
+  "text": "Orion Ridgeback Pickup. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 6 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:colours",
+  "text": "Orion Ridgeback Pickup. Colours.\nWhite, Silver.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Colours",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:orion-pickup:notes",
+  "text": "Orion Ridgeback Pickup. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "orion-pickup",
+   "make": "Orion",
+   "model": "Ridgeback Pickup",
+   "body_type": "van",
+   "section": "Notes",
+   "source": "data/documents/vehicles/orion-pickup.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:overview",
+  "text": "Solace Hybrid. Overview.\nThe Solace Hybrid is a mid-size sedan with a self-charging strong-hybrid system and very high claimed efficiency.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Overview",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:variants-and-prices",
+  "text": "Solace Hybrid. Variants and prices.\n- ZX e-HEV (vehicle id sol-hybrid-zx): hybrid, automatic, 5 seats, 1498 cc, 93 kW, efficiency 27.1 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 19,50,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:key-features",
+  "text": "Solace Hybrid. Key features.\n- Electric-only drive mode in traffic\n- Head-up display\n- Level 2 ADAS",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Key features",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:dimensions",
+  "text": "Solace Hybrid. Dimensions.\n- length mm: 4550\n- width mm: 1748\n- height mm: 1475\n- wheelbase mm: 2650",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:warranty-and-service",
+  "text": "Solace Hybrid. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km; hybrid battery 8 years / 1,60,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:colours",
+  "text": "Solace Hybrid. Colours.\nPearl White, Meteoroid Grey.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Colours",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:solace-hybrid:notes",
+  "text": "Solace Hybrid. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "solace-hybrid",
+   "make": "Solace",
+   "model": "Hybrid",
+   "body_type": "sedan",
+   "section": "Notes",
+   "source": "data/documents/vehicles/solace-hybrid.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:overview",
+  "text": "Terra Compact. Overview.\nThe Compact is an entry SUV with a turbo-petrol engine and a five-star synthetic safety rating.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:variants-and-prices",
+  "text": "Terra Compact. Variants and prices.\n- MT (vehicle id ter-compact-mt): petrol, manual, 5 seats, 1199 cc, 88 kW, efficiency 17.0 km/l, 6 airbags. Ex-showroom price in Maharashtra INR 8,20,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:key-features",
+  "text": "Terra Compact. Key features.\n- Six airbags\n- Electronic stability control\n- Reverse camera",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:dimensions",
+  "text": "Terra Compact. Dimensions.\n- length mm: 3995\n- width mm: 1790\n- height mm: 1620\n- ground clearance mm: 209",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:warranty-and-service",
+  "text": "Terra Compact. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:colours",
+  "text": "Terra Compact. Colours.\nRed, White.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-compact:notes",
+  "text": "Terra Compact. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-compact",
+   "make": "Terra",
+   "model": "Compact",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/terra-compact.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:overview",
+  "text": "Terra Volt Max. Overview.\nThe Volt Max is a mid-size electric SUV with a 60 kWh battery and 150 kW DC fast charging.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:variants-and-prices",
+  "text": "Terra Volt Max. Variants and prices.\n- Long Range (vehicle id ter-voltmax-lr): electric, automatic, 5 seats, 60 kWh battery, 150 kW, efficiency 520 km claimed range, 6 airbags. Ex-showroom price in Maharashtra INR 24,00,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:key-features",
+  "text": "Terra Volt Max. Key features.\n- Panoramic glass roof\n- Vehicle-to-load\n- Level 2 ADAS\n- Over-the-air updates",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:dimensions",
+  "text": "Terra Volt Max. Dimensions.\n- length mm: 4500\n- width mm: 1860\n- height mm: 1640\n- wheelbase mm: 2700",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:warranty-and-service",
+  "text": "Terra Volt Max. Warranty and service.\nStandard warranty: 3 years / 1,25,000 km; battery 8 years / 1,60,000 km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:colours",
+  "text": "Terra Volt Max. Colours.\nPristine White, Empowered Oxide.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:terra-volt-max:notes",
+  "text": "Terra Volt Max. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "terra-volt-max",
+   "make": "Terra",
+   "model": "Volt Max",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/terra-volt-max.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:overview",
+  "text": "Vanta Atlas. Overview.\nThe Atlas is a seven-seat MPV with sliding second-row seats and a flat third row, built for large families and airport transfers.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:variants-and-prices",
+  "text": "Vanta Atlas. Variants and prices.\n- 7-Seater (vehicle id van-atlas-7): petrol, manual, 7 seats, 1462 cc, 75 kW, efficiency 17.5 km/l, 4 airbags. Ex-showroom price in Maharashtra INR 15,50,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:key-features",
+  "text": "Vanta Atlas. Key features.\n- Roof-mounted rear AC\n- Captain-style second row\n- Rear camera",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:dimensions",
+  "text": "Vanta Atlas. Dimensions.\n- length mm: 4395\n- width mm: 1735\n- height mm: 1690\n- wheelbase mm: 2740",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:warranty-and-service",
+  "text": "Vanta Atlas. Warranty and service.\nStandard warranty: 2 years / 40,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:colours",
+  "text": "Vanta Atlas. Colours.\nSilky Silver, Pearl White.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-atlas:notes",
+  "text": "Vanta Atlas. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-atlas",
+   "make": "Vanta",
+   "model": "Atlas",
+   "body_type": "mpv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/vanta-atlas.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:overview",
+  "text": "Vanta City. Overview.\nThe City E is a four-seat electric city car with a 26 kWh battery, intended for short urban commutes with home overnight charging.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Overview",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:variants-and-prices",
+  "text": "Vanta City. Variants and prices.\n- E (vehicle id van-city-e): electric, automatic, 4 seats, 26 kWh battery, 55 kW, efficiency 315 km claimed range, 2 airbags. Ex-showroom price in Maharashtra INR 9,90,000. Adds: 7.2 kW AC wall-box included.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:key-features",
+  "text": "Vanta City. Key features.\n- Remote charging schedule via app\n- Single-pedal driving mode",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Key features",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:dimensions",
+  "text": "Vanta City. Dimensions.\n- length mm: 3600\n- width mm: 1650\n- height mm: 1575\n- wheelbase mm: 2350",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:warranty-and-service",
+  "text": "Vanta City. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km; battery 8 years / 1,20,000 km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:colours",
+  "text": "Vanta City. Colours.\nMint, White.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Colours",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-city:notes",
+  "text": "Vanta City. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-city",
+   "make": "Vanta",
+   "model": "City",
+   "body_type": "hatchback",
+   "section": "Notes",
+   "source": "data/documents/vehicles/vanta-city.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:overview",
+  "text": "Vanta Prime. Overview.\nThe Prime GT Hybrid is an executive sedan pairing a 2.0-litre petrol engine with an electric motor for strong economy in city traffic.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Overview",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:variants-and-prices",
+  "text": "Vanta Prime. Variants and prices.\n- GT Hybrid (vehicle id van-prime-gt): hybrid, automatic, 5 seats, 1987 cc, 137 kW, efficiency 23.2 km/l, 8 airbags. Ex-showroom price in Maharashtra INR 32,00,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:key-features",
+  "text": "Vanta Prime. Key features.\n- 12.3-inch digital cluster\n- Adaptive cruise control\n- Lane-keep assist\n- Premium 10-speaker audio",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Key features",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:dimensions",
+  "text": "Vanta Prime. Dimensions.\n- length mm: 4885\n- width mm: 1840\n- height mm: 1445\n- wheelbase mm: 2825",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:warranty-and-service",
+  "text": "Vanta Prime. Warranty and service.\nStandard warranty: 3 years / unlimited km; hybrid battery 8 years / 1,60,000 km. Scheduled service: Every 10,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:colours",
+  "text": "Vanta Prime. Colours.\nPlatinum White, Attitude Black.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Colours",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-prime:notes",
+  "text": "Vanta Prime. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-prime",
+   "make": "Vanta",
+   "model": "Prime",
+   "body_type": "sedan",
+   "section": "Notes",
+   "source": "data/documents/vehicles/vanta-prime.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:overview",
+  "text": "Vanta Spark EV. Overview.\nThe Spark EV is Vanta's lowest-priced five-seat electric hatchback with a 30 kWh battery and support for 50 kW DC fast charging.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Overview",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:variants-and-prices",
+  "text": "Vanta Spark EV. Variants and prices.\n- Medium Range (vehicle id van-spark-ev-mr): electric, automatic, 5 seats, 25 kWh battery, 45 kW, efficiency 250 km claimed range, 2 airbags. Ex-showroom price in Maharashtra INR 7,90,000.\n- Long Range (vehicle id van-spark-ev-lr): electric, automatic, 5 seats, 30 kWh battery, 55 kW, efficiency 320 km claimed range, 6 airbags. Ex-showroom price in Maharashtra INR 9,20,000. Adds: Six airbags.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:key-features",
+  "text": "Vanta Spark EV. Key features.\n- Connected-car telematics\n- Rear parking camera\n- Auto climate control",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Key features",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:dimensions",
+  "text": "Vanta Spark EV. Dimensions.\n- length mm: 3770\n- width mm: 1677\n- height mm: 1536\n- wheelbase mm: 2400",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:warranty-and-service",
+  "text": "Vanta Spark EV. Warranty and service.\nStandard warranty: 3 years / 1,00,000 km; battery 8 years / 1,60,000 km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:colours",
+  "text": "Vanta Spark EV. Colours.\nElectric Blue, Snow White, Charcoal.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Colours",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:vanta-spark:notes",
+  "text": "Vanta Spark EV. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "vanta-spark",
+   "make": "Vanta",
+   "model": "Spark EV",
+   "body_type": "hatchback",
+   "section": "Notes",
+   "source": "data/documents/vehicles/vanta-spark.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:overview",
+  "text": "Zephyr Coupe. Overview.\nThe Coupe Performance is a four-seat grand tourer with a twin-turbo six-cylinder engine.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Overview",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:variants-and-prices",
+  "text": "Zephyr Coupe. Variants and prices.\n- Performance (vehicle id zep-coupe): petrol, automatic, 4 seats, 2998 cc, 285 kW, efficiency 9.8 km/l, 8 airbags. Ex-showroom price in Maharashtra INR 85,00,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:key-features",
+  "text": "Zephyr Coupe. Key features.\n- Adaptive dampers\n- Launch control\n- Carbon-ceramic brakes",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Key features",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:dimensions",
+  "text": "Zephyr Coupe. Dimensions.\n- length mm: 4720\n- width mm: 1900\n- height mm: 1370",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:warranty-and-service",
+  "text": "Zephyr Coupe. Warranty and service.\nStandard warranty: 4 years / unlimited km. Scheduled service: Every 15,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:colours",
+  "text": "Zephyr Coupe. Colours.\nRacing Yellow, Black.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Colours",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-coupe:notes",
+  "text": "Zephyr Coupe. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-coupe",
+   "make": "Zephyr",
+   "model": "Coupe",
+   "body_type": "coupe",
+   "section": "Notes",
+   "source": "data/documents/vehicles/zephyr-coupe.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:overview",
+  "text": "Zephyr Executive. Overview.\nThe Executive is a long-wheelbase luxury sedan with rear-seat business-class comfort.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Overview",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:variants-and-prices",
+  "text": "Zephyr Executive. Variants and prices.\n- 450 Premium (vehicle id zep-executive-450): petrol, automatic, 5 seats, 1999 cc, 190 kW, efficiency 13.5 km/l, 8 airbags. Ex-showroom price in Maharashtra INR 48,00,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:key-features",
+  "text": "Zephyr Executive. Key features.\n- Rear reclining seats\n- Ambient lighting\n- Burmester-style 15-speaker audio\n- Level 2 ADAS",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Key features",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:dimensions",
+  "text": "Zephyr Executive. Dimensions.\n- length mm: 5180\n- width mm: 1950\n- height mm: 1470\n- wheelbase mm: 3215",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:warranty-and-service",
+  "text": "Zephyr Executive. Warranty and service.\nStandard warranty: 4 years / unlimited km. Scheduled service: Every 20,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:colours",
+  "text": "Zephyr Executive. Colours.\nSelenite Grey, White.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Colours",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-executive:notes",
+  "text": "Zephyr Executive. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-executive",
+   "make": "Zephyr",
+   "model": "Executive",
+   "body_type": "sedan",
+   "section": "Notes",
+   "source": "data/documents/vehicles/zephyr-executive.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:overview",
+  "text": "Zephyr Grand. Overview.\nThe Grand Signature is a full-size luxury SUV with air suspension and seven seats.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Overview",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:variants-and-prices",
+  "text": "Zephyr Grand. Variants and prices.\n- Signature (vehicle id zep-grand): diesel, automatic, 7 seats, 2993 cc, 195 kW, efficiency 12.4 km/l, 9 airbags. Ex-showroom price in Maharashtra INR 62,00,000.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Variants and prices",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:key-features",
+  "text": "Zephyr Grand. Key features.\n- Air suspension\n- Panoramic sunroof\n- Four-zone climate control\n- Massage front seats",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Key features",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:dimensions",
+  "text": "Zephyr Grand. Dimensions.\n- length mm: 5060\n- width mm: 2000\n- height mm: 1830\n- wheelbase mm: 3000",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Dimensions",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:warranty-and-service",
+  "text": "Zephyr Grand. Warranty and service.\nStandard warranty: 4 years / unlimited km. Scheduled service: Every 20,000 km or 12 months.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Warranty and service",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:colours",
+  "text": "Zephyr Grand. Colours.\nObsidian Black, Polar White.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Colours",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ },
+ {
+  "id": "vehicle:zephyr-grand:notes",
+  "text": "Zephyr Grand. Notes.\nPrices are synthetic and indicative. On-road price adds registration, insurance and other mandatory charges, which vary by state. Confirm the final quotation with the dealer.",
+  "meta": {
+   "doc_type": "vehicle",
+   "model_key": "zephyr-grand",
+   "make": "Zephyr",
+   "model": "Grand",
+   "body_type": "suv",
+   "section": "Notes",
+   "source": "data/documents/vehicles/zephyr-grand.md"
+  }
+ }
+]

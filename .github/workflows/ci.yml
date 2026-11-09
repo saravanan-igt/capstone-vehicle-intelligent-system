@@ -74,8 +74,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Build images
         run: |
-          docker build -t vla-api:${{ github.sha }} backend
+          docker build -f backend/Dockerfile -t vla-api:${{ github.sha }} .
           docker build -t vla-web:${{ github.sha }} frontend
+          docker build -t vla-streamlit:${{ github.sha }} streamlit_app
       - name: Scan API image
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
@@ -90,12 +91,21 @@ jobs:
           severity: CRITICAL,HIGH
           ignore-unfixed: true
           exit-code: "1"
+      - name: Scan Streamlit image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: vla-streamlit:${{ github.sha }}
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: "1"
       - name: Compose smoke test (SQLite demo stack)
         run: |
           printf 'DEV_BFF_SHARED_SECRET=%s\nPOSTGRES_OWNER_PASSWORD=%s\nPOSTGRES_APP_PASSWORD=%s\nAI_ENABLED=false\nINSECURE_COOKIES=true\n' \
             "$(openssl rand -hex 24)" "$(openssl rand -hex 16)" "$(openssl rand -hex 16)" > .env
           docker compose up -d --build --wait --wait-timeout 180
           curl -fsS -o /dev/null http://localhost:3000/login
+          curl -fsS http://localhost:8501/_stcore/health
+          docker compose exec -T api python -c "import json, urllib.request; r = json.load(urllib.request.urlopen('http://127.0.0.1:8000/health')); assert r['model'] and r['knowledge'], r; print(r)"
           docker compose exec -T api python -c "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8000/readyz').read().decode())"
           docker compose exec -T api python -m app.ops.backup backup --db /app/data/vla.db --docs /app/data/documents --out /tmp/backups
           docker compose down -v

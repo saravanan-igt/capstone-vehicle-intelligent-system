@@ -4,7 +4,9 @@ name: vehicle-loan-advisor
 
 services:
   api:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     environment:
       DATABASE_URL: sqlite:////app/data/vla.db
       AUTH_MODE: ${AUTH_MODE:-dev}
@@ -31,6 +33,19 @@ services:
       INSECURE_COOKIES: ${INSECURE_COOKIES:-true}
     ports:
       - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Streamlit frontend (the brief's UI). Server-side BFF in dev auth mode; talks only to the API.
+  streamlit:
+    build: ./streamlit_app
+    environment:
+      API_URL: http://api:8000
+      DEV_BFF_SHARED_SECRET: ${DEV_BFF_SHARED_SECRET:?set DEV_BFF_SHARED_SECRET in .env}
+    ports:
+      - "8501:8501"
     depends_on:
       api:
         condition: service_healthy

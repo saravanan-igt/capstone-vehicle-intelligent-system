@@ -1,0 +1,13 @@
+# Build context for backend/Dockerfile is the repository root (it bakes in data, models and the vector index).
+# Allowlist: everything else stays out of the image and the build context.
+*
+!backend/requirements.lock
+!backend/alembic.ini
+!backend/migrations/
+!backend/app/
+!data/raw/vehicles.json
+!data/documents/
+!models/
+!vectorstore/
+**/__pycache__
+**/*.pyc

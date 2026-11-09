@@ -44,7 +44,7 @@ def test_legacy_create_all_database_is_stamped_and_upgraded(tmp_path: Path) -> N
         tables = set(inspect(conn).get_table_names())
         version = conn.execute(text("SELECT version_num FROM alembic_version")).scalar_one()
     engine.dispose()
-    assert {"user_identities", "outbox_events"} <= tables and version == "0004_document_pending_job"
+    assert {"user_identities", "outbox_events"} <= tables and version == "0005_explanation_sources"
 
 
 @postgres_only

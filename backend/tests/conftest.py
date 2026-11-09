@@ -17,10 +17,11 @@ from app.domain.policy import PolicyDocument
 from app.infrastructure.document_ai import DocumentAIUnavailable
 from app.infrastructure.gemini import ExplainerUnavailable
 from app.main import create_app
+from app.ml.model import RiskScore
 
 TODAY = date(2026, 11, 7)
 SECRET = "test-secret"
-POLICY_DIR = Path(__file__).resolve().parents[1] / "app" / "seed" / "policies"
+POLICY_DIR = Path(__file__).resolve().parents[2] / "data" / "documents" / "policy"
 # e.g. postgresql://postgres:postgres@localhost:55432/postgres (superuser; creates a database per test)
 PG_ADMIN_URL = os.getenv("TEST_POSTGRES_URL")
 PG_ROLES = {"vla_owner": "owner-test-pw", "vla_app": "app-test-pw"}
@@ -64,6 +65,7 @@ def nw_policy() -> PolicyDocument:
 GOOD_APPLICANT: dict[str, Any] = {
     "income_amount": "120000", "income_frequency": "monthly", "credit_score": 780, "score_provider": "CIBIL",
     "employment_category": "salaried", "employment_months": 36, "existing_monthly_obligations": "10000",
+    "active_loans": 1,
     "requested_principal": "1200000", "requested_tenure_months": 60, "down_payment_available": "400000",
     "currency": "INR", "jurisdiction": "IN", "region": "IN-MH",
 }
@@ -116,6 +118,28 @@ def document_ai() -> StubDocumentAI:
     return StubDocumentAI()
 
 
+class StubRiskModel:
+    """Deterministic stand-in for the saved model; tests set `probability` to steer the credit-risk rule."""
+
+    card = {"name": "vla-eligibility", "version": "test", "algorithm": "stub", "artifact_sha256": "stub-sha",
+            "decision_threshold": 0.83}
+
+    def __init__(self) -> None:
+        self.probability = 0.95
+
+    def score(self, applicant: Any, top: int = 4) -> RiskScore:
+        return RiskScore(probability=self.probability,
+                         prediction="Approved" if self.probability >= 0.83 else "Rejected", threshold=0.83,
+                         model_version="test", algorithm="stub", artifact_sha256="stub-sha",
+                         factors=[{"feature": "credit_score", "label": "credit score", "value": 780,
+                                   "typical_value": 745, "effect": 0.05, "direction": "raises"}])
+
+
+@pytest.fixture()
+def risk_model() -> StubRiskModel:
+    return StubRiskModel()
+
+
 @pytest.fixture()
 def make_settings(tmp_path: Path, db_urls: dict[str, str | None]) -> Callable[..., Settings]:
     def build(**overrides: Any) -> Settings:
@@ -131,8 +155,9 @@ def make_settings(tmp_path: Path, db_urls: dict[str, str | None]) -> Callable[..
 
 @pytest.fixture()
 def client(make_settings: Callable[..., Settings], explainer: StubExplainer,
-           document_ai: StubDocumentAI) -> Iterator[TestClient]:
-    app = create_app(make_settings(), explainer=explainer, today=lambda: TODAY, document_ai=document_ai)
+           document_ai: StubDocumentAI, risk_model: StubRiskModel) -> Iterator[TestClient]:
+    app = create_app(make_settings(), explainer=explainer, today=lambda: TODAY, document_ai=document_ai,
+                     eligibility_model=risk_model)
     with TestClient(app) as test_client:
         yield test_client
     app.state.engine.dispose()

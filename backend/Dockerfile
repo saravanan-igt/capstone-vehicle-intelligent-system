@@ -2,12 +2,19 @@ FROM python:3.12-slim AS base
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
 WORKDIR /app
 
-COPY requirements.lock ./
+COPY backend/requirements.lock ./
 RUN pip install -r requirements.lock
 
-COPY alembic.ini ./
-COPY migrations ./migrations
-COPY app ./app
+COPY backend/alembic.ini ./
+COPY backend/migrations ./migrations
+COPY backend/app ./app
+# Read-only assets: policy and vehicle documents, catalogue, saved model, vector index.
+# Kept outside /app/data so the runtime data volume never hides them.
+COPY data/raw/vehicles.json ./assets/data/raw/vehicles.json
+COPY data/documents ./assets/data/documents
+COPY models ./assets/models
+COPY vectorstore ./assets/vectorstore
+ENV ASSETS_DIR=/app/assets
 RUN useradd --uid 10001 --create-home appuser && mkdir -p /app/data/documents && chown -R appuser /app/data
 USER 10001
 

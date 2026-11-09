@@ -1,0 +1,1864 @@
+{
+  "_note": "SYNTHETIC catalogue. Makes and models are fictional; prices are illustrative and not market data.",
+  "source": "Synthetic Catalogue v2026-10 (capstone)",
+  "vehicles": [
+    {
+      "id": "aur-breeze-lxi",
+      "model_key": "aurora-breeze",
+      "make": "Aurora",
+      "model": "Breeze",
+      "variant": "LXi",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1197,
+        "power_kw": 61,
+        "claimed_efficiency": "20.1 km/l",
+        "airbags": 6,
+        "boot_litres": 268,
+        "length_mm": 3845,
+        "width_mm": 1735,
+        "height_mm": 1530,
+        "wheelbase_mm": 2450,
+        "turning_radius_m": 4.8,
+        "features": [
+          "7-inch touchscreen with smartphone mirroring",
+          "Rear parking sensors",
+          "ISOFIX child-seat mounts",
+          "Electronic stability control",
+          "Manual air conditioning",
+          "Steel wheels with covers"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Arctic White",
+          "Sunset Red",
+          "Graphite Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-breeze.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "650000",
+          "registration": "65000",
+          "insurance": "26000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "650000",
+          "registration": "84500",
+          "insurance": "26000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-breeze-zxi-amt",
+      "model_key": "aurora-breeze",
+      "make": "Aurora",
+      "model": "Breeze",
+      "variant": "ZXi AMT",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1197,
+        "power_kw": 61,
+        "claimed_efficiency": "19.4 km/l",
+        "airbags": 6,
+        "boot_litres": 268,
+        "length_mm": 3845,
+        "width_mm": 1735,
+        "height_mm": 1530,
+        "wheelbase_mm": 2450,
+        "turning_radius_m": 4.8,
+        "features": [
+          "7-inch touchscreen with smartphone mirroring",
+          "Rear parking sensors",
+          "ISOFIX child-seat mounts",
+          "Electronic stability control",
+          "Automatic climate control",
+          "15-inch alloy wheels",
+          "Push-button start"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Arctic White",
+          "Sunset Red",
+          "Graphite Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-breeze.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "780000",
+          "registration": "78000",
+          "insurance": "31200",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-vista-sx",
+      "model_key": "aurora-vista",
+      "make": "Aurora",
+      "model": "Vista",
+      "variant": "SX",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1497,
+        "power_kw": 85,
+        "claimed_efficiency": "18.0 km/l",
+        "airbags": 6,
+        "boot_litres": 480,
+        "length_mm": 4490,
+        "width_mm": 1765,
+        "height_mm": 1485,
+        "wheelbase_mm": 2650,
+        "features": [
+          "9-inch touchscreen",
+          "Rear AC vents",
+          "Cruise control",
+          "Hill-hold assist",
+          "LED projector headlamps"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Pearl White",
+          "Midnight Blue",
+          "Silver"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-vista.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1150000",
+          "registration": "115000",
+          "insurance": "46000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "1150000",
+          "registration": "149500",
+          "insurance": "46000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-vista-sxo-cvt",
+      "model_key": "aurora-vista",
+      "make": "Aurora",
+      "model": "Vista",
+      "variant": "SX(O) CVT",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1497,
+        "power_kw": 85,
+        "claimed_efficiency": "17.2 km/l",
+        "airbags": 6,
+        "boot_litres": 480,
+        "length_mm": 4490,
+        "width_mm": 1765,
+        "height_mm": 1485,
+        "wheelbase_mm": 2650,
+        "features": [
+          "9-inch touchscreen",
+          "Rear AC vents",
+          "Cruise control",
+          "Hill-hold assist",
+          "Electric sunroof",
+          "Ventilated front seats",
+          "360-degree camera"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Pearl White",
+          "Midnight Blue",
+          "Silver"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-vista.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1390000",
+          "registration": "139000",
+          "insurance": "55600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-nano-std",
+      "model_key": "aurora-nano",
+      "make": "Aurora",
+      "model": "Nano Plus",
+      "variant": "STD",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 4,
+      "specs": {
+        "engine_cc": 998,
+        "power_kw": 49,
+        "claimed_efficiency": "24.4 km/l",
+        "airbags": 2,
+        "boot_litres": 214,
+        "length_mm": 3495,
+        "width_mm": 1515,
+        "height_mm": 1560,
+        "wheelbase_mm": 2380,
+        "turning_radius_m": 4.5,
+        "features": [
+          "Dual front airbags",
+          "ABS with EBD",
+          "Bluetooth audio"
+        ],
+        "warranty": "2 years / 40,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Solid White",
+          "Lemon Yellow"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-nano.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "460000",
+          "registration": "46000",
+          "insurance": "18400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "460000",
+          "registration": "59800",
+          "insurance": "18400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-nano-vxi",
+      "model_key": "aurora-nano",
+      "make": "Aurora",
+      "model": "Nano Plus",
+      "variant": "VXi",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 4,
+      "specs": {
+        "engine_cc": 998,
+        "power_kw": 49,
+        "claimed_efficiency": "24.1 km/l",
+        "airbags": 2,
+        "boot_litres": 214,
+        "length_mm": 3495,
+        "width_mm": 1515,
+        "height_mm": 1560,
+        "wheelbase_mm": 2380,
+        "turning_radius_m": 4.5,
+        "features": [
+          "Dual front airbags",
+          "ABS with EBD",
+          "Bluetooth audio",
+          "Power windows (front and rear)",
+          "Central locking"
+        ],
+        "warranty": "2 years / 40,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Solid White",
+          "Lemon Yellow"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-nano.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "540000",
+          "registration": "54000",
+          "insurance": "21600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-quest-cng",
+      "model_key": "aurora-quest",
+      "make": "Aurora",
+      "model": "Quest",
+      "variant": "S-CNG",
+      "body_type": "suv",
+      "fuel_type": "cng",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1462,
+        "power_kw": 64,
+        "claimed_efficiency": "25.5 km/kg",
+        "airbags": 6,
+        "boot_litres": 120,
+        "length_mm": 3995,
+        "width_mm": 1790,
+        "height_mm": 1640,
+        "wheelbase_mm": 2500,
+        "ground_clearance_mm": 200,
+        "features": [
+          "8-inch touchscreen",
+          "Reverse camera",
+          "Roof rails",
+          "Tyre pressure monitoring",
+          "Twin CNG cylinders under the boot floor"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Glacier White",
+          "Forest Green",
+          "Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-quest.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "990000",
+          "registration": "99000",
+          "insurance": "39600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "aur-quest-zxi-at",
+      "model_key": "aurora-quest",
+      "make": "Aurora",
+      "model": "Quest",
+      "variant": "ZXi AT",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1462,
+        "power_kw": 75,
+        "claimed_efficiency": "19.8 km/l",
+        "airbags": 6,
+        "boot_litres": 328,
+        "length_mm": 3995,
+        "width_mm": 1790,
+        "height_mm": 1640,
+        "wheelbase_mm": 2500,
+        "ground_clearance_mm": 200,
+        "features": [
+          "8-inch touchscreen",
+          "Reverse camera",
+          "Roof rails",
+          "Tyre pressure monitoring",
+          "Head-up display",
+          "Wireless phone charger"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Glacier White",
+          "Forest Green",
+          "Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/aurora-quest.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1240000",
+          "registration": "124000",
+          "insurance": "49600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "1240000",
+          "registration": "161200",
+          "insurance": "49600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "kes-trail-s",
+      "model_key": "kestrel-trail",
+      "make": "Kestrel",
+      "model": "Trail",
+      "variant": "S",
+      "body_type": "suv",
+      "fuel_type": "diesel",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1493,
+        "power_kw": 85,
+        "claimed_efficiency": "19.1 km/l",
+        "airbags": 6,
+        "ground_clearance_mm": 205,
+        "length_mm": 4395,
+        "width_mm": 1820,
+        "height_mm": 1844,
+        "wheelbase_mm": 2750,
+        "features": [
+          "10-inch touchscreen",
+          "Hill-descent control",
+          "Terrain modes",
+          "LED headlamps"
+        ],
+        "warranty": "3 years / unlimited km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Everest White",
+          "Napoli Black",
+          "Red Rage"
+        ]
+      },
+      "brochure": "data/documents/vehicles/kestrel-trail.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1680000",
+          "registration": "168000",
+          "insurance": "67200",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "1680000",
+          "registration": "218400",
+          "insurance": "67200",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "kes-trail-x-4x4",
+      "model_key": "kestrel-trail",
+      "make": "Kestrel",
+      "model": "Trail",
+      "variant": "X 4x4",
+      "body_type": "suv",
+      "fuel_type": "diesel",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 7,
+      "specs": {
+        "engine_cc": 2184,
+        "power_kw": 128,
+        "claimed_efficiency": "14.8 km/l",
+        "airbags": 6,
+        "ground_clearance_mm": 226,
+        "length_mm": 4395,
+        "width_mm": 1820,
+        "height_mm": 1844,
+        "wheelbase_mm": 2750,
+        "features": [
+          "10-inch touchscreen",
+          "Hill-descent control",
+          "Terrain modes",
+          "LED headlamps",
+          "Low-range 4x4 transfer case",
+          "Third-row seats"
+        ],
+        "warranty": "3 years / unlimited km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Everest White",
+          "Napoli Black",
+          "Red Rage"
+        ]
+      },
+      "brochure": "data/documents/vehicles/kestrel-trail.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "2450000",
+          "registration": "245000",
+          "insurance": "98000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "kes-volt-ev",
+      "model_key": "kestrel-volt",
+      "make": "Kestrel",
+      "model": "Volt",
+      "variant": "Long Range",
+      "body_type": "suv",
+      "fuel_type": "electric",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "battery_kwh": 45,
+        "power_kw": 110,
+        "claimed_range_km": 465,
+        "airbags": 6,
+        "dc_fast_charge_kw": 60,
+        "length_mm": 4200,
+        "width_mm": 1800,
+        "height_mm": 1600,
+        "wheelbase_mm": 2600,
+        "features": [
+          "Connected-car app",
+          "Regenerative braking with paddles",
+          "Vehicle-to-load socket",
+          "Air purifier"
+        ],
+        "warranty": "3 years / 1,25,000 km; battery 8 years / 1,60,000 km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Pristine White",
+          "Oxide Blue"
+        ]
+      },
+      "brochure": "data/documents/vehicles/kestrel-volt.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1890000",
+          "registration": "18900",
+          "insurance": "75600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "kes-ridge-e",
+      "model_key": "kestrel-ridge",
+      "make": "Kestrel",
+      "model": "Ridge",
+      "variant": "E",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1199,
+        "power_kw": 65,
+        "claimed_efficiency": "17.4 km/l",
+        "airbags": 6,
+        "boot_litres": 382,
+        "length_mm": 3995,
+        "width_mm": 1804,
+        "height_mm": 1620,
+        "wheelbase_mm": 2498,
+        "ground_clearance_mm": 208,
+        "features": [
+          "7-inch touchscreen",
+          "Rear camera",
+          "Six airbags as standard",
+          "Electronic stability control"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Daytona Grey",
+          "Flame Red",
+          "Pure White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/kestrel-ridge.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "890000",
+          "registration": "89000",
+          "insurance": "35600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "890000",
+          "registration": "115700",
+          "insurance": "35600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "kes-ridge-s",
+      "model_key": "kestrel-ridge",
+      "make": "Kestrel",
+      "model": "Ridge",
+      "variant": "S",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1199,
+        "power_kw": 65,
+        "claimed_efficiency": "17.4 km/l",
+        "airbags": 6,
+        "boot_litres": 382,
+        "length_mm": 3995,
+        "width_mm": 1804,
+        "height_mm": 1620,
+        "wheelbase_mm": 2498,
+        "ground_clearance_mm": 208,
+        "features": [
+          "7-inch touchscreen",
+          "Rear camera",
+          "Six airbags as standard",
+          "Electronic stability control",
+          "Electric sunroof",
+          "Auto headlamps"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Daytona Grey",
+          "Flame Red",
+          "Pure White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/kestrel-ridge.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1020000",
+          "registration": "102000",
+          "insurance": "40800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "kes-ridge-s-turbo-at",
+      "model_key": "kestrel-ridge",
+      "make": "Kestrel",
+      "model": "Ridge",
+      "variant": "S Turbo DCT",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1199,
+        "power_kw": 88,
+        "claimed_efficiency": "16.2 km/l",
+        "airbags": 6,
+        "boot_litres": 382,
+        "length_mm": 3995,
+        "width_mm": 1804,
+        "height_mm": 1620,
+        "wheelbase_mm": 2498,
+        "ground_clearance_mm": 208,
+        "features": [
+          "7-inch touchscreen",
+          "Rear camera",
+          "Six airbags as standard",
+          "Electronic stability control",
+          "Paddle shifters",
+          "Ventilated seats"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Daytona Grey",
+          "Flame Red",
+          "Pure White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/kestrel-ridge.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1210000",
+          "registration": "121000",
+          "insurance": "48400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "van-city-e",
+      "model_key": "vanta-city",
+      "make": "Vanta",
+      "model": "City",
+      "variant": "E",
+      "body_type": "hatchback",
+      "fuel_type": "electric",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 4,
+      "specs": {
+        "battery_kwh": 26,
+        "power_kw": 55,
+        "claimed_range_km": 315,
+        "airbags": 2,
+        "length_mm": 3600,
+        "width_mm": 1650,
+        "height_mm": 1575,
+        "wheelbase_mm": 2350,
+        "features": [
+          "Remote charging schedule via app",
+          "Single-pedal driving mode",
+          "7.2 kW AC wall-box included"
+        ],
+        "warranty": "3 years / 1,00,000 km; battery 8 years / 1,20,000 km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Mint",
+          "White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/vanta-city.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "990000",
+          "registration": "9900",
+          "insurance": "39600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "990000",
+          "registration": "9900",
+          "insurance": "39600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "van-spark-ev-mr",
+      "model_key": "vanta-spark",
+      "make": "Vanta",
+      "model": "Spark EV",
+      "variant": "Medium Range",
+      "body_type": "hatchback",
+      "fuel_type": "electric",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "battery_kwh": 25,
+        "power_kw": 45,
+        "claimed_range_km": 250,
+        "airbags": 2,
+        "dc_fast_charge_kw": 50,
+        "length_mm": 3770,
+        "width_mm": 1677,
+        "height_mm": 1536,
+        "wheelbase_mm": 2400,
+        "features": [
+          "Connected-car telematics",
+          "Rear parking camera",
+          "Auto climate control"
+        ],
+        "warranty": "3 years / 1,00,000 km; battery 8 years / 1,60,000 km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Electric Blue",
+          "Snow White",
+          "Charcoal"
+        ]
+      },
+      "brochure": "data/documents/vehicles/vanta-spark.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "790000",
+          "registration": "7900",
+          "insurance": "31600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "van-spark-ev-lr",
+      "model_key": "vanta-spark",
+      "make": "Vanta",
+      "model": "Spark EV",
+      "variant": "Long Range",
+      "body_type": "hatchback",
+      "fuel_type": "electric",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "battery_kwh": 30,
+        "power_kw": 55,
+        "claimed_range_km": 320,
+        "airbags": 6,
+        "dc_fast_charge_kw": 50,
+        "length_mm": 3770,
+        "width_mm": 1677,
+        "height_mm": 1536,
+        "wheelbase_mm": 2400,
+        "features": [
+          "Connected-car telematics",
+          "Rear parking camera",
+          "Auto climate control",
+          "Six airbags"
+        ],
+        "warranty": "3 years / 1,00,000 km; battery 8 years / 1,60,000 km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Electric Blue",
+          "Snow White",
+          "Charcoal"
+        ]
+      },
+      "brochure": "data/documents/vehicles/vanta-spark.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "920000",
+          "registration": "9200",
+          "insurance": "36800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "920000",
+          "registration": "9200",
+          "insurance": "36800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "van-prime-gt",
+      "model_key": "vanta-prime",
+      "make": "Vanta",
+      "model": "Prime",
+      "variant": "GT Hybrid",
+      "body_type": "sedan",
+      "fuel_type": "hybrid",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1987,
+        "power_kw": 137,
+        "claimed_efficiency": "23.2 km/l",
+        "airbags": 8,
+        "length_mm": 4885,
+        "width_mm": 1840,
+        "height_mm": 1445,
+        "wheelbase_mm": 2825,
+        "features": [
+          "12.3-inch digital cluster",
+          "Adaptive cruise control",
+          "Lane-keep assist",
+          "Premium 10-speaker audio"
+        ],
+        "warranty": "3 years / unlimited km; hybrid battery 8 years / 1,60,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Platinum White",
+          "Attitude Black"
+        ]
+      },
+      "brochure": "data/documents/vehicles/vanta-prime.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "3200000",
+          "registration": "320000",
+          "insurance": "128000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "van-atlas-7",
+      "model_key": "vanta-atlas",
+      "make": "Vanta",
+      "model": "Atlas",
+      "variant": "7-Seater",
+      "body_type": "mpv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 7,
+      "specs": {
+        "engine_cc": 1462,
+        "power_kw": 75,
+        "claimed_efficiency": "17.5 km/l",
+        "airbags": 4,
+        "length_mm": 4395,
+        "width_mm": 1735,
+        "height_mm": 1690,
+        "wheelbase_mm": 2740,
+        "features": [
+          "Roof-mounted rear AC",
+          "Captain-style second row",
+          "Rear camera"
+        ],
+        "warranty": "2 years / 40,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Silky Silver",
+          "Pearl White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/vanta-atlas.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1550000",
+          "registration": "155000",
+          "insurance": "62000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "ori-hauler-cargo",
+      "model_key": "orion-hauler",
+      "make": "Orion",
+      "model": "Hauler",
+      "variant": "Cargo",
+      "body_type": "van",
+      "fuel_type": "diesel",
+      "category": "commercial",
+      "transmission": "manual",
+      "seating": 2,
+      "specs": {
+        "engine_cc": 1499,
+        "payload_kg": 1000,
+        "airbags": 2,
+        "length_mm": 4500,
+        "width_mm": 1700,
+        "height_mm": 1940,
+        "features": [
+          "Partition wall",
+          "Sliding side door",
+          "Rear barn doors"
+        ],
+        "warranty": "2 years / 72,000 km",
+        "service_interval": "Every 10,000 km or 6 months",
+        "colours": [
+          "White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/orion-hauler.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1250000",
+          "registration": "125000",
+          "insurance": "50000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "ori-metro-cng",
+      "model_key": "orion-metro",
+      "make": "Orion",
+      "model": "Metro",
+      "variant": "CNG",
+      "body_type": "hatchback",
+      "fuel_type": "cng",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 998,
+        "power_kw": 42,
+        "claimed_efficiency": "32.7 km/kg",
+        "airbags": 2,
+        "length_mm": 3700,
+        "width_mm": 1620,
+        "height_mm": 1560,
+        "features": [
+          "Dual-fuel switch",
+          "Bluetooth audio",
+          "Rear defogger"
+        ],
+        "warranty": "2 years / 40,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "White",
+          "Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/orion-metro.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "720000",
+          "registration": "72000",
+          "insurance": "28800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "ori-ridgeback",
+      "model_key": "orion-pickup",
+      "make": "Orion",
+      "model": "Ridgeback Pickup",
+      "variant": "Single Cab",
+      "body_type": "van",
+      "fuel_type": "diesel",
+      "category": "commercial",
+      "transmission": "manual",
+      "seating": 2,
+      "specs": {
+        "engine_cc": 2523,
+        "payload_kg": 1250,
+        "airbags": 2,
+        "length_mm": 5215,
+        "width_mm": 1775,
+        "height_mm": 1830,
+        "features": [
+          "Tow hook",
+          "Rubber floor mats",
+          "Load-sensing rear brakes"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 6 months",
+        "colours": [
+          "White",
+          "Silver"
+        ]
+      },
+      "brochure": "data/documents/vehicles/orion-pickup.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1050000",
+          "registration": "105000",
+          "insurance": "42000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "lum-pulse",
+      "model_key": "lumen-pulse",
+      "make": "Lumen",
+      "model": "Pulse",
+      "variant": "Standard",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1199,
+        "power_kw": 66,
+        "claimed_efficiency": "18.6 km/l",
+        "airbags": 6,
+        "length_mm": 3990,
+        "width_mm": 1760,
+        "height_mm": 1605,
+        "features": [
+          "8-inch touchscreen",
+          "Rear camera"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Ice White",
+          "Copper"
+        ]
+      },
+      "brochure": "data/documents/vehicles/lumen-pulse.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "980000",
+          "registration": "98000",
+          "insurance": null,
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "lum-pulse-turbo",
+      "model_key": "lumen-pulse",
+      "make": "Lumen",
+      "model": "Pulse",
+      "variant": "Turbo",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 999,
+        "power_kw": 88,
+        "claimed_efficiency": "17.0 km/l",
+        "airbags": 6,
+        "length_mm": 3990,
+        "width_mm": 1760,
+        "height_mm": 1605,
+        "features": [
+          "8-inch touchscreen",
+          "Rear camera"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Ice White",
+          "Copper"
+        ]
+      },
+      "brochure": "data/documents/vehicles/lumen-pulse.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1210000",
+          "registration": "121000",
+          "insurance": "48400",
+          "other_charges": "15000",
+          "price_date": "2025-01-15"
+        }
+      ]
+    },
+    {
+      "id": "lum-glide-s-cng",
+      "model_key": "lumen-glide",
+      "make": "Lumen",
+      "model": "Glide",
+      "variant": "S CNG",
+      "body_type": "sedan",
+      "fuel_type": "cng",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1197,
+        "power_kw": 57,
+        "claimed_efficiency": "31.1 km/kg",
+        "airbags": 6,
+        "boot_litres": 378,
+        "length_mm": 3995,
+        "width_mm": 1735,
+        "height_mm": 1515,
+        "wheelbase_mm": 2450,
+        "features": [
+          "7-inch touchscreen",
+          "Rear AC vents",
+          "Steering-mounted controls"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "White",
+          "Maroon",
+          "Blue"
+        ]
+      },
+      "brochure": "data/documents/vehicles/lumen-glide.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "840000",
+          "registration": "84000",
+          "insurance": "33600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "lum-glide-vx",
+      "model_key": "lumen-glide",
+      "make": "Lumen",
+      "model": "Glide",
+      "variant": "VX",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1197,
+        "power_kw": 66,
+        "claimed_efficiency": "20.0 km/l",
+        "airbags": 6,
+        "boot_litres": 416,
+        "length_mm": 3995,
+        "width_mm": 1735,
+        "height_mm": 1515,
+        "wheelbase_mm": 2450,
+        "features": [
+          "7-inch touchscreen",
+          "Rear AC vents",
+          "Steering-mounted controls",
+          "Cruise control"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "White",
+          "Maroon",
+          "Blue"
+        ]
+      },
+      "brochure": "data/documents/vehicles/lumen-glide.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "760000",
+          "registration": "76000",
+          "insurance": "30400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "760000",
+          "registration": "98800",
+          "insurance": "30400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "zep-grand",
+      "model_key": "zephyr-grand",
+      "make": "Zephyr",
+      "model": "Grand",
+      "variant": "Signature",
+      "body_type": "suv",
+      "fuel_type": "diesel",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 7,
+      "specs": {
+        "engine_cc": 2993,
+        "power_kw": 195,
+        "claimed_efficiency": "12.4 km/l",
+        "airbags": 9,
+        "length_mm": 5060,
+        "width_mm": 2000,
+        "height_mm": 1830,
+        "wheelbase_mm": 3000,
+        "features": [
+          "Air suspension",
+          "Panoramic sunroof",
+          "Four-zone climate control",
+          "Massage front seats"
+        ],
+        "warranty": "4 years / unlimited km",
+        "service_interval": "Every 20,000 km or 12 months",
+        "colours": [
+          "Obsidian Black",
+          "Polar White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/zephyr-grand.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "6200000",
+          "registration": "620000",
+          "insurance": "248000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "zep-coupe",
+      "model_key": "zephyr-coupe",
+      "make": "Zephyr",
+      "model": "Coupe",
+      "variant": "Performance",
+      "body_type": "coupe",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 4,
+      "specs": {
+        "engine_cc": 2998,
+        "power_kw": 285,
+        "claimed_efficiency": "9.8 km/l",
+        "airbags": 8,
+        "length_mm": 4720,
+        "width_mm": 1900,
+        "height_mm": 1370,
+        "features": [
+          "Adaptive dampers",
+          "Launch control",
+          "Carbon-ceramic brakes"
+        ],
+        "warranty": "4 years / unlimited km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Racing Yellow",
+          "Black"
+        ]
+      },
+      "brochure": "data/documents/vehicles/zephyr-coupe.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "8500000",
+          "registration": "850000",
+          "insurance": "340000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "zep-executive-450",
+      "model_key": "zephyr-executive",
+      "make": "Zephyr",
+      "model": "Executive",
+      "variant": "450 Premium",
+      "body_type": "sedan",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1999,
+        "power_kw": 190,
+        "claimed_efficiency": "13.5 km/l",
+        "airbags": 8,
+        "length_mm": 5180,
+        "width_mm": 1950,
+        "height_mm": 1470,
+        "wheelbase_mm": 3215,
+        "features": [
+          "Rear reclining seats",
+          "Ambient lighting",
+          "Burmester-style 15-speaker audio",
+          "Level 2 ADAS"
+        ],
+        "warranty": "4 years / unlimited km",
+        "service_interval": "Every 20,000 km or 12 months",
+        "colours": [
+          "Selenite Grey",
+          "White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/zephyr-executive.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "4800000",
+          "registration": "480000",
+          "insurance": "192000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "hal-terra-pro",
+      "model_key": "halcyon-terra",
+      "make": "Halcyon",
+      "model": "Terra",
+      "variant": "Pro",
+      "body_type": "suv",
+      "fuel_type": "diesel",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1493,
+        "power_kw": 85,
+        "claimed_efficiency": "21.0 km/l",
+        "airbags": 6,
+        "boot_litres": 433,
+        "length_mm": 4330,
+        "width_mm": 1790,
+        "height_mm": 1635,
+        "wheelbase_mm": 2610,
+        "ground_clearance_mm": 190,
+        "features": [
+          "10.25-inch touchscreen",
+          "Panoramic sunroof",
+          "Forward collision warning",
+          "Powered driver seat"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Abyss Black",
+          "Titan Grey",
+          "Fiery Red"
+        ]
+      },
+      "brochure": "data/documents/vehicles/halcyon-terra.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1350000",
+          "registration": "135000",
+          "insurance": "54000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "1350000",
+          "registration": "175500",
+          "insurance": "54000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "hal-terra-pro-plus-at",
+      "model_key": "halcyon-terra",
+      "make": "Halcyon",
+      "model": "Terra",
+      "variant": "Pro+ AT",
+      "body_type": "suv",
+      "fuel_type": "diesel",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1493,
+        "power_kw": 85,
+        "claimed_efficiency": "18.5 km/l",
+        "airbags": 6,
+        "boot_litres": 433,
+        "length_mm": 4330,
+        "width_mm": 1790,
+        "height_mm": 1635,
+        "wheelbase_mm": 2610,
+        "ground_clearance_mm": 190,
+        "features": [
+          "10.25-inch touchscreen",
+          "Panoramic sunroof",
+          "Forward collision warning",
+          "Powered driver seat",
+          "Level 2 ADAS",
+          "Ventilated seats",
+          "Bose-style 8-speaker audio"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Abyss Black",
+          "Titan Grey",
+          "Fiery Red"
+        ]
+      },
+      "brochure": "data/documents/vehicles/halcyon-terra.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1620000",
+          "registration": "162000",
+          "insurance": "64800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "hal-family-7",
+      "model_key": "halcyon-family",
+      "make": "Halcyon",
+      "model": "Family",
+      "variant": "7-Seater",
+      "body_type": "mpv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 7,
+      "specs": {
+        "engine_cc": 1497,
+        "power_kw": 77,
+        "claimed_efficiency": "16.8 km/l",
+        "airbags": 6,
+        "boot_litres": 216,
+        "length_mm": 4500,
+        "width_mm": 1775,
+        "height_mm": 1750,
+        "wheelbase_mm": 2780,
+        "features": [
+          "Sliding rear doors",
+          "Rear sunshades",
+          "Second-row USB-C ports"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "White",
+          "Bronze"
+        ]
+      },
+      "brochure": "data/documents/vehicles/halcyon-family.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1120000",
+          "registration": "112000",
+          "insurance": "44800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "nim-cruze-zeta",
+      "model_key": "nimbus-cruze",
+      "make": "Nimbus",
+      "model": "Cruze",
+      "variant": "Zeta",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1197,
+        "power_kw": 66,
+        "claimed_efficiency": "22.4 km/l",
+        "airbags": 6,
+        "boot_litres": 339,
+        "length_mm": 3990,
+        "width_mm": 1745,
+        "height_mm": 1500,
+        "wheelbase_mm": 2520,
+        "features": [
+          "9-inch touchscreen",
+          "Wireless smartphone mirroring",
+          "Rear camera",
+          "LED DRLs"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Nexa Blue",
+          "Splendid Silver"
+        ]
+      },
+      "brochure": "data/documents/vehicles/nimbus-cruze.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "840000",
+          "registration": "84000",
+          "insurance": "33600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "840000",
+          "registration": "109200",
+          "insurance": "33600",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "nim-cruze-alpha-at",
+      "model_key": "nimbus-cruze",
+      "make": "Nimbus",
+      "model": "Cruze",
+      "variant": "Alpha AT",
+      "body_type": "hatchback",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1197,
+        "power_kw": 66,
+        "claimed_efficiency": "22.9 km/l",
+        "airbags": 6,
+        "boot_litres": 339,
+        "length_mm": 3990,
+        "width_mm": 1745,
+        "height_mm": 1500,
+        "wheelbase_mm": 2520,
+        "features": [
+          "9-inch touchscreen",
+          "Wireless smartphone mirroring",
+          "Rear camera",
+          "LED DRLs",
+          "Head-up display",
+          "360-degree camera"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Nexa Blue",
+          "Splendid Silver"
+        ]
+      },
+      "brochure": "data/documents/vehicles/nimbus-cruze.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "960000",
+          "registration": "96000",
+          "insurance": "38400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "nim-arc-d",
+      "model_key": "nimbus-arc",
+      "make": "Nimbus",
+      "model": "Arc",
+      "variant": "D",
+      "body_type": "sedan",
+      "fuel_type": "diesel",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1498,
+        "power_kw": 74,
+        "claimed_efficiency": "24.7 km/l",
+        "airbags": 6,
+        "boot_litres": 420,
+        "length_mm": 3995,
+        "width_mm": 1735,
+        "height_mm": 1505,
+        "features": [
+          "Cruise control",
+          "Rear AC vents",
+          "Auto-dimming mirror"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "White",
+          "Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/nimbus-arc.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "960000",
+          "registration": "96000",
+          "insurance": "38400",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sol-hybrid-zx",
+      "model_key": "solace-hybrid",
+      "make": "Solace",
+      "model": "Hybrid",
+      "variant": "ZX e-HEV",
+      "body_type": "sedan",
+      "fuel_type": "hybrid",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1498,
+        "power_kw": 93,
+        "claimed_efficiency": "27.1 km/l",
+        "airbags": 6,
+        "boot_litres": 410,
+        "length_mm": 4550,
+        "width_mm": 1748,
+        "height_mm": 1475,
+        "wheelbase_mm": 2650,
+        "features": [
+          "Electric-only drive mode in traffic",
+          "Head-up display",
+          "Level 2 ADAS"
+        ],
+        "warranty": "3 years / 1,00,000 km; hybrid battery 8 years / 1,60,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Pearl White",
+          "Meteoroid Grey"
+        ]
+      },
+      "brochure": "data/documents/vehicles/solace-hybrid.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "1950000",
+          "registration": "195000",
+          "insurance": "78000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        },
+        {
+          "region": "IN-KA",
+          "ex_showroom": "1950000",
+          "registration": "253500",
+          "insurance": "78000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "ter-voltmax-lr",
+      "model_key": "terra-volt-max",
+      "make": "Terra",
+      "model": "Volt Max",
+      "variant": "Long Range",
+      "body_type": "suv",
+      "fuel_type": "electric",
+      "category": "private",
+      "transmission": "automatic",
+      "seating": 5,
+      "specs": {
+        "battery_kwh": 60,
+        "power_kw": 150,
+        "claimed_range_km": 520,
+        "airbags": 6,
+        "dc_fast_charge_kw": 150,
+        "length_mm": 4500,
+        "width_mm": 1860,
+        "height_mm": 1640,
+        "wheelbase_mm": 2700,
+        "features": [
+          "Panoramic glass roof",
+          "Vehicle-to-load",
+          "Level 2 ADAS",
+          "Over-the-air updates"
+        ],
+        "warranty": "3 years / 1,25,000 km; battery 8 years / 1,60,000 km",
+        "service_interval": "Every 15,000 km or 12 months",
+        "colours": [
+          "Pristine White",
+          "Empowered Oxide"
+        ]
+      },
+      "brochure": "data/documents/vehicles/terra-volt-max.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "2400000",
+          "registration": "24000",
+          "insurance": "96000",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "ter-compact-mt",
+      "model_key": "terra-compact",
+      "make": "Terra",
+      "model": "Compact",
+      "variant": "MT",
+      "body_type": "suv",
+      "fuel_type": "petrol",
+      "category": "private",
+      "transmission": "manual",
+      "seating": 5,
+      "specs": {
+        "engine_cc": 1199,
+        "power_kw": 88,
+        "claimed_efficiency": "17.0 km/l",
+        "airbags": 6,
+        "boot_litres": 350,
+        "length_mm": 3995,
+        "width_mm": 1790,
+        "height_mm": 1620,
+        "ground_clearance_mm": 209,
+        "features": [
+          "Six airbags",
+          "Electronic stability control",
+          "Reverse camera"
+        ],
+        "warranty": "3 years / 1,00,000 km",
+        "service_interval": "Every 10,000 km or 12 months",
+        "colours": [
+          "Red",
+          "White"
+        ]
+      },
+      "brochure": "data/documents/vehicles/terra-compact.md",
+      "prices": [
+        {
+          "region": "IN-MH",
+          "ex_showroom": "820000",
+          "registration": "82000",
+          "insurance": "32800",
+          "other_charges": "15000",
+          "price_date": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

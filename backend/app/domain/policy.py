@@ -108,6 +108,17 @@ class RoundingRule(CitedRule):
     principal_step: Decimal = Decimal("1000")
 
 
+class ActiveLoansRule(CitedRule):
+    max_active_loans: int = Field(ge=0, le=20)
+
+
+class CreditRiskRule(CitedRule):
+    """Applications passing every other rule must reach this approval probability from the validated model."""
+
+    model_name: str = Field(min_length=1, max_length=64)
+    min_approval_probability: Decimal = Field(gt=0, lt=1)
+
+
 class PolicyRules(_Strict):
     credit_score: CreditScoreRule
     income: IncomeRule
@@ -120,6 +131,8 @@ class PolicyRules(_Strict):
     processing_fee: FeeRule
     vehicle: VehicleRule
     rounding: RoundingRule
+    active_loans: ActiveLoansRule | None = None
+    credit_risk: CreditRiskRule | None = None
 
 
 class PolicyDocument(_Strict):
@@ -145,7 +158,7 @@ class PolicyDocument(_Strict):
         known = set(clause_ids)
         for name in PolicyRules.model_fields:
             rule = getattr(self.rules, name)
-            if rule.clause not in known:
+            if rule is not None and rule.clause not in known:
                 raise ValueError(f"rule '{name}' cites unknown clause '{rule.clause}'")
         if self.effective_to and self.effective_to < self.effective_from:
             raise ValueError("effective_to precedes effective_from")

@@ -135,18 +135,21 @@ export default function PolicyDetailPage() {
                 </div>
                 <table className="table">
                   <tbody>
-                    {Object.entries(p.document.rules).map(([name, rule]) => {
-                      const { clause, ...params } = rule;
-                      return (
-                        <tr key={name}>
-                          <td>
-                            <strong>{humanize(name)}</strong>
-                            <Cite id={clause} />
-                          </td>
-                          <td className="mono">{JSON.stringify(params)}</td>
-                        </tr>
-                      );
-                    })}
+                    {Object.entries(p.document.rules).flatMap(
+                      ([name, rule]) => {
+                        if (!rule) return [];
+                        const { clause, ...params } = rule;
+                        return [
+                          <tr key={name}>
+                            <td>
+                              <strong>{humanize(name)}</strong>
+                              <Cite id={clause} />
+                            </td>
+                            <td className="mono">{JSON.stringify(params)}</td>
+                          </tr>,
+                        ];
+                      },
+                    )}
                   </tbody>
                 </table>
               </div>

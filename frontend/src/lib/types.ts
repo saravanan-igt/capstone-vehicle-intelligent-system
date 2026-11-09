@@ -35,6 +35,7 @@ export interface ApplicantInput {
   employment_category: EmploymentCategory | null;
   employment_months: number | null;
   existing_monthly_obligations: string | null;
+  active_loans: number | null;
   requested_principal: string | null;
   requested_tenure_months: number | null;
   down_payment_available: string | null;
@@ -260,7 +261,10 @@ export interface PolicyDetail extends PolicySummary {
     source_document: string;
     synthetic: boolean;
     clauses: Clause[];
-    rules: Record<string, Record<string, unknown> & { clause: string }>;
+    rules: Record<
+      string,
+      (Record<string, unknown> & { clause: string }) | null
+    >;
   };
 }
 

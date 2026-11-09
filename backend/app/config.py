@@ -1,5 +1,14 @@
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
+
+
+def assets_dir() -> Path:
+    """Data, documents, models and vector store. Repository root locally; /app/assets in the container."""
+    if os.getenv("ASSETS_DIR"):
+        return Path(os.environ["ASSETS_DIR"])
+    repo_root = Path(__file__).resolve().parents[2]
+    return repo_root if (repo_root / "data" / "raw").exists() else Path(__file__).resolve().parents[1] / "assets"
 
 
 def _bool(name: str, default: bool) -> bool:

@@ -1,0 +1,51 @@
+id,make,model,variant,body_type,fuel_type,category,transmission,seating,region,ex_showroom,registration,insurance,other_charges,price_date,engine_cc,battery_kwh,power_kw,claimed_efficiency,claimed_range_km,airbags
+aur-breeze-lxi,Aurora,Breeze,LXi,hatchback,petrol,private,manual,5,IN-MH,650000,65000,26000,15000,2026-10-01,1197,,61,20.1 km/l,,6
+aur-breeze-lxi,Aurora,Breeze,LXi,hatchback,petrol,private,manual,5,IN-KA,650000,84500,26000,15000,2026-10-01,1197,,61,20.1 km/l,,6
+aur-breeze-zxi-amt,Aurora,Breeze,ZXi AMT,hatchback,petrol,private,automatic,5,IN-MH,780000,78000,31200,15000,2026-10-01,1197,,61,19.4 km/l,,6
+aur-vista-sx,Aurora,Vista,SX,sedan,petrol,private,manual,5,IN-MH,1150000,115000,46000,15000,2026-10-01,1497,,85,18.0 km/l,,6
+aur-vista-sx,Aurora,Vista,SX,sedan,petrol,private,manual,5,IN-KA,1150000,149500,46000,15000,2026-10-01,1497,,85,18.0 km/l,,6
+aur-vista-sxo-cvt,Aurora,Vista,SX(O) CVT,sedan,petrol,private,automatic,5,IN-MH,1390000,139000,55600,15000,2026-10-01,1497,,85,17.2 km/l,,6
+aur-nano-std,Aurora,Nano Plus,STD,hatchback,petrol,private,manual,4,IN-MH,460000,46000,18400,15000,2026-10-01,998,,49,24.4 km/l,,2
+aur-nano-std,Aurora,Nano Plus,STD,hatchback,petrol,private,manual,4,IN-KA,460000,59800,18400,15000,2026-10-01,998,,49,24.4 km/l,,2
+aur-nano-vxi,Aurora,Nano Plus,VXi,hatchback,petrol,private,manual,4,IN-MH,540000,54000,21600,15000,2026-10-01,998,,49,24.1 km/l,,2
+aur-quest-cng,Aurora,Quest,S-CNG,suv,cng,private,manual,5,IN-MH,990000,99000,39600,15000,2026-10-01,1462,,64,25.5 km/kg,,6
+aur-quest-zxi-at,Aurora,Quest,ZXi AT,suv,petrol,private,automatic,5,IN-MH,1240000,124000,49600,15000,2026-10-01,1462,,75,19.8 km/l,,6
+aur-quest-zxi-at,Aurora,Quest,ZXi AT,suv,petrol,private,automatic,5,IN-KA,1240000,161200,49600,15000,2026-10-01,1462,,75,19.8 km/l,,6
+kes-trail-s,Kestrel,Trail,S,suv,diesel,private,manual,5,IN-MH,1680000,168000,67200,15000,2026-10-01,1493,,85,19.1 km/l,,6
+kes-trail-s,Kestrel,Trail,S,suv,diesel,private,manual,5,IN-KA,1680000,218400,67200,15000,2026-10-01,1493,,85,19.1 km/l,,6
+kes-trail-x-4x4,Kestrel,Trail,X 4x4,suv,diesel,private,automatic,7,IN-MH,2450000,245000,98000,15000,2026-10-01,2184,,128,14.8 km/l,,6
+kes-volt-ev,Kestrel,Volt,Long Range,suv,electric,private,automatic,5,IN-MH,1890000,18900,75600,15000,2026-10-01,,45,110,,465,6
+kes-ridge-e,Kestrel,Ridge,E,suv,petrol,private,manual,5,IN-MH,890000,89000,35600,15000,2026-10-01,1199,,65,17.4 km/l,,6
+kes-ridge-e,Kestrel,Ridge,E,suv,petrol,private,manual,5,IN-KA,890000,115700,35600,15000,2026-10-01,1199,,65,17.4 km/l,,6
+kes-ridge-s,Kestrel,Ridge,S,suv,petrol,private,manual,5,IN-MH,1020000,102000,40800,15000,2026-10-01,1199,,65,17.4 km/l,,6
+kes-ridge-s-turbo-at,Kestrel,Ridge,S Turbo DCT,suv,petrol,private,automatic,5,IN-MH,1210000,121000,48400,15000,2026-10-01,1199,,88,16.2 km/l,,6
+van-city-e,Vanta,City,E,hatchback,electric,private,automatic,4,IN-MH,990000,9900,39600,15000,2026-10-01,,26,55,,315,2
+van-city-e,Vanta,City,E,hatchback,electric,private,automatic,4,IN-KA,990000,9900,39600,15000,2026-10-01,,26,55,,315,2
+van-spark-ev-mr,Vanta,Spark EV,Medium Range,hatchback,electric,private,automatic,5,IN-MH,790000,7900,31600,15000,2026-10-01,,25,45,,250,2
+van-spark-ev-lr,Vanta,Spark EV,Long Range,hatchback,electric,private,automatic,5,IN-MH,920000,9200,36800,15000,2026-10-01,,30,55,,320,6
+van-spark-ev-lr,Vanta,Spark EV,Long Range,hatchback,electric,private,automatic,5,IN-KA,920000,9200,36800,15000,2026-10-01,,30,55,,320,6
+van-prime-gt,Vanta,Prime,GT Hybrid,sedan,hybrid,private,automatic,5,IN-MH,3200000,320000,128000,15000,2026-10-01,1987,,137,23.2 km/l,,8
+van-atlas-7,Vanta,Atlas,7-Seater,mpv,petrol,private,manual,7,IN-MH,1550000,155000,62000,15000,2026-10-01,1462,,75,17.5 km/l,,4
+ori-hauler-cargo,Orion,Hauler,Cargo,van,diesel,commercial,manual,2,IN-MH,1250000,125000,50000,15000,2026-10-01,1499,,,,,2
+ori-metro-cng,Orion,Metro,CNG,hatchback,cng,private,manual,5,IN-MH,720000,72000,28800,15000,2026-10-01,998,,42,32.7 km/kg,,2
+ori-ridgeback,Orion,Ridgeback Pickup,Single Cab,van,diesel,commercial,manual,2,IN-MH,1050000,105000,42000,15000,2026-10-01,2523,,,,,2
+lum-pulse,Lumen,Pulse,Standard,suv,petrol,private,manual,5,IN-MH,980000,98000,,15000,2026-10-01,1199,,66,18.6 km/l,,6
+lum-pulse-turbo,Lumen,Pulse,Turbo,suv,petrol,private,automatic,5,IN-MH,1210000,121000,48400,15000,2025-01-15,999,,88,17.0 km/l,,6
+lum-glide-s-cng,Lumen,Glide,S CNG,sedan,cng,private,manual,5,IN-MH,840000,84000,33600,15000,2026-10-01,1197,,57,31.1 km/kg,,6
+lum-glide-vx,Lumen,Glide,VX,sedan,petrol,private,manual,5,IN-MH,760000,76000,30400,15000,2026-10-01,1197,,66,20.0 km/l,,6
+lum-glide-vx,Lumen,Glide,VX,sedan,petrol,private,manual,5,IN-KA,760000,98800,30400,15000,2026-10-01,1197,,66,20.0 km/l,,6
+zep-grand,Zephyr,Grand,Signature,suv,diesel,private,automatic,7,IN-MH,6200000,620000,248000,15000,2026-10-01,2993,,195,12.4 km/l,,9
+zep-coupe,Zephyr,Coupe,Performance,coupe,petrol,private,automatic,4,IN-MH,8500000,850000,340000,15000,2026-10-01,2998,,285,9.8 km/l,,8
+zep-executive-450,Zephyr,Executive,450 Premium,sedan,petrol,private,automatic,5,IN-MH,4800000,480000,192000,15000,2026-10-01,1999,,190,13.5 km/l,,8
+hal-terra-pro,Halcyon,Terra,Pro,suv,diesel,private,manual,5,IN-MH,1350000,135000,54000,15000,2026-10-01,1493,,85,21.0 km/l,,6
+hal-terra-pro,Halcyon,Terra,Pro,suv,diesel,private,manual,5,IN-KA,1350000,175500,54000,15000,2026-10-01,1493,,85,21.0 km/l,,6
+hal-terra-pro-plus-at,Halcyon,Terra,Pro+ AT,suv,diesel,private,automatic,5,IN-MH,1620000,162000,64800,15000,2026-10-01,1493,,85,18.5 km/l,,6
+hal-family-7,Halcyon,Family,7-Seater,mpv,petrol,private,manual,7,IN-MH,1120000,112000,44800,15000,2026-10-01,1497,,77,16.8 km/l,,6
+nim-cruze-zeta,Nimbus,Cruze,Zeta,hatchback,petrol,private,manual,5,IN-MH,840000,84000,33600,15000,2026-10-01,1197,,66,22.4 km/l,,6
+nim-cruze-zeta,Nimbus,Cruze,Zeta,hatchback,petrol,private,manual,5,IN-KA,840000,109200,33600,15000,2026-10-01,1197,,66,22.4 km/l,,6
+nim-cruze-alpha-at,Nimbus,Cruze,Alpha AT,hatchback,petrol,private,automatic,5,IN-MH,960000,96000,38400,15000,2026-10-01,1197,,66,22.9 km/l,,6
+nim-arc-d,Nimbus,Arc,D,sedan,diesel,private,manual,5,IN-MH,960000,96000,38400,15000,2026-10-01,1498,,74,24.7 km/l,,6
+sol-hybrid-zx,Solace,Hybrid,ZX e-HEV,sedan,hybrid,private,automatic,5,IN-MH,1950000,195000,78000,15000,2026-10-01,1498,,93,27.1 km/l,,6
+sol-hybrid-zx,Solace,Hybrid,ZX e-HEV,sedan,hybrid,private,automatic,5,IN-KA,1950000,253500,78000,15000,2026-10-01,1498,,93,27.1 km/l,,6
+ter-voltmax-lr,Terra,Volt Max,Long Range,suv,electric,private,automatic,5,IN-MH,2400000,24000,96000,15000,2026-10-01,,60,150,,520,6
+ter-compact-mt,Terra,Compact,MT,suv,petrol,private,manual,5,IN-MH,820000,82000,32800,15000,2026-10-01,1199,,88,17.0 km/l,,6

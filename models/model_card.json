@@ -1,0 +1,113 @@
+{
+  "name": "vla-eligibility",
+  "version": "2026.11.09",
+  "algorithm": "gradient_boosting",
+  "trained_at": "2026-11-09T07:20:22+00:00",
+  "sklearn_version": "1.9.1",
+  "features": [
+    "monthly_income",
+    "credit_score",
+    "employment_months",
+    "existing_emi",
+    "active_loans",
+    "requested_amount",
+    "tenure_months",
+    "down_payment",
+    "emi_to_income",
+    "loan_to_annual_income",
+    "down_payment_ratio",
+    "employment_category"
+  ],
+  "positive_class": "Approved",
+  "decision_threshold": 0.83,
+  "cost_assumption": {
+    "false_approval": 5.0,
+    "false_rejection": 1.0
+  },
+  "training_data": {
+    "file": "loan_applications.csv",
+    "sha256": "004d99e7aaabb8afb71a0135122be48262415bdf64943e5ee8cdbb7b81f19ee4",
+    "rows_raw": 12120,
+    "rows_clean": 12000,
+    "train_rows": 9600,
+    "test_rows": 2400,
+    "approval_rate": 0.5333
+  },
+  "comparison_cv": [
+    {
+      "model": "gradient_boosting",
+      "best_params": "{\"clf__learning_rate\": 0.1, \"clf__max_depth\": 3}",
+      "cv_roc_auc": 0.9626,
+      "cv_pr_auc": 0.96,
+      "cv_brier": 0.0607,
+      "cv_false_approval_rate": 0.056,
+      "cv_false_rejection_rate": 0.2016,
+      "cv_expected_cost_per_application": 0.2382,
+      "cv_threshold": 0.83
+    },
+    {
+      "model": "random_forest",
+      "best_params": "{\"clf__max_depth\": 14, \"clf__min_samples_leaf\": 5}",
+      "cv_roc_auc": 0.9615,
+      "cv_pr_auc": 0.9578,
+      "cv_brier": 0.0617,
+      "cv_false_approval_rate": 0.06,
+      "cv_false_rejection_rate": 0.1916,
+      "cv_expected_cost_per_application": 0.2423,
+      "cv_threshold": 0.8
+    },
+    {
+      "model": "decision_tree",
+      "best_params": "{\"clf__max_depth\": 8, \"clf__min_samples_leaf\": 50}",
+      "cv_roc_auc": 0.9458,
+      "cv_pr_auc": 0.9292,
+      "cv_brier": 0.0662,
+      "cv_false_approval_rate": 0.0973,
+      "cv_false_rejection_rate": 0.1287,
+      "cv_expected_cost_per_application": 0.2957,
+      "cv_threshold": 0.8
+    },
+    {
+      "model": "logistic_regression",
+      "best_params": "{\"clf__C\": 10.0}",
+      "cv_roc_auc": 0.8614,
+      "cv_pr_auc": 0.8421,
+      "cv_brier": 0.1478,
+      "cv_false_approval_rate": 0.0652,
+      "cv_false_rejection_rate": 0.5996,
+      "cv_expected_cost_per_application": 0.4719,
+      "cv_threshold": 0.82
+    }
+  ],
+  "test_metrics": {
+    "roc_auc": 0.9603,
+    "pr_auc": 0.9578,
+    "precision_approved": 0.9413,
+    "recall_approved": 0.7891,
+    "f1": 0.8585,
+    "brier": 0.0635,
+    "false_approval_rate": 0.0562,
+    "false_rejection_rate": 0.2109,
+    "expected_cost_per_application": 0.2437,
+    "threshold": 0.83,
+    "tp": 1010,
+    "fp": 63,
+    "tn": 1057,
+    "fn": 270
+  },
+  "reference_values": {
+    "monthly_income": 54500.0,
+    "credit_score": 705.5,
+    "employment_months": 38.0,
+    "existing_emi": 4300.0,
+    "active_loans": 1.0,
+    "requested_amount": 900000.0,
+    "tenure_months": 60.0,
+    "down_payment": 190000.0,
+    "emi_to_income": 0.09117154212072605,
+    "loan_to_annual_income": 1.490861682705875,
+    "down_payment_ratio": 0.2,
+    "employment_category": "salaried"
+  },
+  "artifact_sha256": "3dfd587c8e3c447f70e1d109f774caad3c3190eab4005435b15bcbf55a482185"
+}

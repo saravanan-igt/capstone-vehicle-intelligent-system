@@ -1,1 +1,5 @@
 *.sh text eol=lf
+# Hash-checked build artefacts must never be newline-converted.
+*.joblib binary
+*.npy binary
+*.png binary

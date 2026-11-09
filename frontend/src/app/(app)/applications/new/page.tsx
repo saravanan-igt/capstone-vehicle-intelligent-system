@@ -22,6 +22,7 @@ type FormState = Record<
   | "employment_category"
   | "employment_months"
   | "existing_monthly_obligations"
+  | "active_loans"
   | "requested_principal"
   | "requested_tenure_months"
   | "down_payment_available"
@@ -39,6 +40,7 @@ const EMPTY: FormState = {
   employment_category: "salaried",
   employment_months: "",
   existing_monthly_obligations: "0",
+  active_loans: "0",
   requested_principal: "",
   requested_tenure_months: "60",
   down_payment_available: "",
@@ -78,6 +80,12 @@ function validate(f: FormState): Partial<Record<keyof FormState, string>> {
     e.employment_months = "Months must be 0–720";
   }
   if (
+    f.active_loans !== "" &&
+    (!INT.test(f.active_loans) || +f.active_loans > 50)
+  ) {
+    e.active_loans = "Active loans must be 0–50";
+  }
+  if (
     f.requested_tenure_months !== "" &&
     (!INT.test(f.requested_tenure_months) ||
       +f.requested_tenure_months < 1 ||
@@ -107,6 +115,7 @@ function toPayload(
     ) as ApplicantInput["employment_category"],
     employment_months: n(f.employment_months),
     existing_monthly_obligations: s(f.existing_monthly_obligations),
+    active_loans: n(f.active_loans),
     requested_principal: s(f.requested_principal),
     requested_tenure_months: n(f.requested_tenure_months),
     down_payment_available: s(f.down_payment_available),
@@ -128,6 +137,7 @@ function fromInput(i: ApplicantInput): FormState {
     employment_category: v(i.employment_category),
     employment_months: v(i.employment_months),
     existing_monthly_obligations: v(i.existing_monthly_obligations),
+    active_loans: v(i.active_loans ?? null),
     requested_principal: v(i.requested_principal),
     requested_tenure_months: v(i.requested_tenure_months),
     down_payment_available: v(i.down_payment_available),
@@ -352,6 +362,10 @@ function ApplicationForm() {
             "Existing monthly debt payments",
             { help: "EMIs, card minimums, etc." },
           )}
+          {field("active_loans", "Active loans", {
+            inputMode: "numeric",
+            help: "Loans currently being repaid",
+          })}
 
           <div className="fieldset-title">Loan request</div>
           {field("requested_principal", "Requested loan amount")}

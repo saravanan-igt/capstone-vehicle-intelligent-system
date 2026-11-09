@@ -8,7 +8,7 @@
   "jurisdiction": "IN",
   "effective_from": "2026-01-01",
   "effective_to": null,
-  "source_document": "NW-AUTO-STD-2026.1.md",
+  "source_document": "data/documents/policy/NW-AUTO-STD-2026.1.md",
   "synthetic": true,
   "clauses": [
     {
@@ -17,6 +17,13 @@
       "page": 1,
       "title": "Scope",
       "text": "This policy governs indicative eligibility for fixed-rate loans on new private passenger vehicles in India, denominated in INR. It is a synthetic document created for a capstone demonstration and is not an offer of credit."
+    },
+    {
+      "id": "NW-1.2",
+      "section": "1.2",
+      "page": 1,
+      "title": "Purpose",
+      "text": "The policy sets out who may borrow, how much may be lent, on what terms, and which vehicles may be financed. Every automated decision must cite the clause it relies on. Where this policy is silent, no automated rejection may be made on that ground."
     },
     {
       "id": "NW-2.1",
@@ -38,6 +45,20 @@
       "page": 1,
       "title": "Employment",
       "text": "Eligible employment categories are salaried and self-employed. Salaried applicants require at least 6 months of continuous employment. Self-employed applicants require at least 24 months in business."
+    },
+    {
+      "id": "NW-2.4",
+      "section": "2.4",
+      "page": 1,
+      "title": "Active loans",
+      "text": "Applicants may have at most 3 active loans of any type at the time of application."
+    },
+    {
+      "id": "NW-2.5",
+      "section": "2.5",
+      "page": 1,
+      "title": "Applicant-specific income evidence",
+      "text": "For self-employed applicants, qualifying income is the average monthly income shown in the last two income-tax returns. For salaried applicants, qualifying income is the net monthly salary credited to the bank account over the last three months. Rental and investment income may be included only if it has been received for at least 12 months."
     },
     {
       "id": "NW-3.1",
@@ -75,6 +96,13 @@
       "text": "The loan may not exceed 85% of the vehicle on-road price, being the ex-showroom price plus registration, insurance and other mandatory charges."
     },
     {
+      "id": "NW-3.7",
+      "section": "3.7",
+      "page": 2,
+      "title": "Credit risk assessment",
+      "text": "Applications that satisfy sections 2 and 3 are scored by the lender's validated credit-risk model (vla-eligibility). An application is approved only if the model's estimated approval probability is at least 0.83; otherwise it is declined on credit-risk grounds and the applicant may request a manual review under section 5."
+    },
+    {
       "id": "NW-3.6",
       "section": "3.6",
       "page": 3,
@@ -94,31 +122,90 @@
       "page": 3,
       "title": "Rounding",
       "text": "EMIs are rounded half-up to the nearest 0.01 rupee. The eligible principal is rounded down to the nearest INR 1,000."
+    },
+    {
+      "id": "NW-5.1",
+      "section": "5.1",
+      "page": 3,
+      "title": "Manual review",
+      "text": "An applicant declined on credit-risk grounds under clause 3.7 may request a manual review by a credit officer. Manual review cannot override sections 2, 3.1, 3.3, 3.4 or 3.5."
+    },
+    {
+      "id": "NW-5.2",
+      "section": "5.2",
+      "page": 3,
+      "title": "Co-applicants",
+      "text": "A spouse or parent may join as co-applicant. Co-applicant income is added to qualifying income only after manual review and is never applied by the automated assessment."
+    },
+    {
+      "id": "NW-5.3",
+      "section": "5.3",
+      "page": 3,
+      "title": "First-time borrowers",
+      "text": "Applicants with no credit history cannot be assessed automatically and are referred to a credit officer."
+    },
+    {
+      "id": "NW-6.2",
+      "section": "6.2",
+      "page": 3,
+      "title": "Additional documents for salaried applicants: salary slips for the last three months and the latest Form 16",
+      "text": "Additional documents for self-employed applicants: income-tax returns for the last two years and proof of business continuity."
     }
   ],
   "rules": {
     "credit_score": {
       "clause": "NW-2.1",
       "min_score": 650,
-      "accepted_providers": ["CIBIL", "EXPERIAN"]
+      "accepted_providers": [
+        "CIBIL",
+        "EXPERIAN"
+      ]
     },
-    "income": { "clause": "NW-2.2", "min_monthly_income": "25000" },
+    "income": {
+      "clause": "NW-2.2",
+      "min_monthly_income": "25000"
+    },
     "employment": {
       "clause": "NW-2.3",
-      "allowed_categories": ["salaried", "self_employed"],
-      "min_months": { "salaried": 6, "self_employed": 24 }
+      "allowed_categories": [
+        "salaried",
+        "self_employed"
+      ],
+      "min_months": {
+        "salaried": 6,
+        "self_employed": 24
+      }
     },
-    "debt_service": { "clause": "NW-3.1", "max_ratio": "0.50" },
+    "debt_service": {
+      "clause": "NW-3.1",
+      "max_ratio": "0.50"
+    },
     "interest_rate": {
       "clause": "NW-3.2",
       "basis": "nominal_annual_monthly_compounding",
       "bands": [
-        { "min_score": 750, "max_score": 900, "annual_rate": "0.0875" },
-        { "min_score": 700, "max_score": 749, "annual_rate": "0.0975" },
-        { "min_score": 650, "max_score": 699, "annual_rate": "0.1125" }
+        {
+          "min_score": 750,
+          "max_score": 900,
+          "annual_rate": "0.0875"
+        },
+        {
+          "min_score": 700,
+          "max_score": 749,
+          "annual_rate": "0.0975"
+        },
+        {
+          "min_score": 650,
+          "max_score": 699,
+          "annual_rate": "0.1125"
+        }
       ]
     },
-    "tenure": { "clause": "NW-3.3", "min_months": 12, "max_months": 84 },
+    "tenure": {
+      "clause": "NW-3.3",
+      "min_months": 12,
+      "max_months": 84
+    },
     "principal": {
       "clause": "NW-3.4",
       "min_amount": "100000",
@@ -138,13 +225,24 @@
     },
     "vehicle": {
       "clause": "NW-4.1",
-      "excluded_categories": ["commercial"],
+      "excluded_categories": [
+        "commercial"
+      ],
       "max_price_age_days": 120
     },
     "rounding": {
       "clause": "NW-4.2",
       "emi_step": "0.01",
       "principal_step": "1000"
+    },
+    "active_loans": {
+      "clause": "NW-2.4",
+      "max_active_loans": 3
+    },
+    "credit_risk": {
+      "clause": "NW-3.7",
+      "model_name": "vla-eligibility",
+      "min_approval_probability": "0.83"
     }
   }
 }

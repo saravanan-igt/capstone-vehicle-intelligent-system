@@ -7,6 +7,9 @@ backend/data/
 backend/backups/
 backups/
 
+# Notebooks
+.ipynb_checkpoints/
+
 # Terraform
 .terraform/
 

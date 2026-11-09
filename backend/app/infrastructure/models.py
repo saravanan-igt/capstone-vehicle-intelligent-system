@@ -159,6 +159,7 @@ class Explanation(Base):
     model: Mapped[str | None] = mapped_column(String(64), nullable=True)
     content_json: Mapped[str] = mapped_column(Text)
     fallback_reason: Mapped[str | None] = mapped_column(Text, nullable=True)
+    sources_json: Mapped[str | None] = mapped_column(Text, nullable=True)  # retrieved policy chunks
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
 

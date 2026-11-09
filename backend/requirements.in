@@ -11,3 +11,8 @@ PyJWT[crypto]==2.15.1
 bullmq==3.5.0
 redis==8.1.0
 prometheus-client==0.26.0
+# Eligibility model inference + vector search (verified against PyPI on 2026-11-09).
+scikit-learn==1.9.1
+pandas==3.1.1
+numpy==2.5.4
+joblib==1.6.0

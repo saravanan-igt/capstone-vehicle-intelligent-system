@@ -39,6 +39,11 @@ const CALC_LABELS: [string, string, "money" | "rate" | "plain"][] = [
   ["emi", "EMI", "money"],
   ["processing_fee", "Processing fee (upfront)", "money"],
   ["total_repayment", "Total of EMIs", "money"],
+  [
+    "model_approval_probability",
+    "Credit-risk model approval probability",
+    "plain",
+  ],
 ];
 
 export default function ApplicationDetailPage() {

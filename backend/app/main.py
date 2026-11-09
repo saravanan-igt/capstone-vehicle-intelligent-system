@@ -12,12 +12,13 @@ from fastapi.responses import JSONResponse
 from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
 from sqlalchemy import text
 
+from app.api.brief import router as brief_router
 from app.api.v1 import router
 from app.application.errors import AppError
-from app.config import Settings
+from app.config import Settings, assets_dir
 from app.infrastructure.db import init_schema, make_engine, make_session_factory, session_scope
 from app.infrastructure.document_ai import DocumentAI, build_document_ai
-from app.infrastructure.gemini import Explainer, build_explainer
+from app.infrastructure.gemini import Explainer, build_explainer, build_vehicle_answerer
 from app.infrastructure.observability import (
     HTTP_LATENCY,
     HTTP_REQUESTS,
@@ -28,6 +29,9 @@ from app.infrastructure.observability import (
 from app.infrastructure.oidc import OidcVerifier
 from app.infrastructure.quota import Quota, RedisQuota, build_quota
 from app.infrastructure.storage import DocumentStore, LocalDocumentStore
+from app.ml.model import EligibilityModel, RiskModel
+from app.rag.knowledge import KnowledgeBase
+from app.rag.qa import VehicleAnswerer
 from app.seed.seed import seed
 
 log = logging.getLogger("vla")
@@ -42,7 +46,8 @@ def _error(status: int, code: str, message: str, cid: str | None, details: objec
 def create_app(settings: Settings | None = None, explainer: Explainer | None = None,
                today: Callable[[], date] | None = None, document_ai: DocumentAI | None = None,
                document_store: DocumentStore | None = None, oidc: OidcVerifier | None = None,
-               quota: Quota | None = None) -> FastAPI:
+               quota: Quota | None = None, eligibility_model: RiskModel | None = None,
+               knowledge: KnowledgeBase | None = None, answerer: VehicleAnswerer | None = None) -> FastAPI:
     settings = settings or Settings()
     configure_logging(settings.json_logs)
     engine = make_engine(settings.database_url)
@@ -67,6 +72,11 @@ def create_app(settings: Settings | None = None, explainer: Explainer | None = N
         settings.gemini_api_key, settings.gemini_model, settings.gemini_document_timeout_ms, settings.ai_enabled)
     app.state.document_store = document_store or LocalDocumentStore(settings.document_storage_dir)
     app.state.today = today or (lambda: datetime.now(timezone.utc).date())
+    app.state.eligibility_model = eligibility_model or EligibilityModel.load(assets_dir() / "models")
+    ai_key = settings.gemini_api_key if settings.ai_enabled else None
+    app.state.knowledge = knowledge or KnowledgeBase.load(assets_dir() / "vectorstore", ai_key)
+    app.state.answerer = answerer or build_vehicle_answerer(settings.gemini_api_key, settings.gemini_model,
+                                                            settings.gemini_timeout_ms, settings.ai_enabled)
     app.state.oidc = oidc or (OidcVerifier(settings.oidc_issuer, settings.oidc_audience, settings.oidc_jwks_url,
                                            settings.oidc_token_use, settings.oidc_required_scope)
                               if settings.auth_mode == "oidc" and settings.oidc_issuer and settings.oidc_audience
@@ -125,8 +135,11 @@ def create_app(settings: Settings | None = None, explainer: Explainer | None = N
             conn.execute(text("SELECT 1"))
         quota_state = app.state.quota
         cache = ("ok" if quota_state.ping() else "degraded") if isinstance(quota_state, RedisQuota) else "disabled"
+        model = app.state.eligibility_model
         return {"status": "ready", "ai": app.state.explainer.name, "document_ai": app.state.document_ai.name,
-                "cache": cache, "document_processing": settings.document_processing}
+                "cache": cache, "document_processing": settings.document_processing,
+                "model": f"{model.card['name']}@{model.card['version']}" if model else "unavailable",
+                "knowledge": app.state.knowledge.name if app.state.knowledge else "unavailable"}
 
     if settings.metrics_enabled:
         # Scraped inside the cluster only; the BFF proxies nothing outside /v1.
@@ -135,4 +148,5 @@ def create_app(settings: Settings | None = None, explainer: Explainer | None = N
             return Response(generate_latest(REGISTRY), media_type=CONTENT_TYPE_LATEST)
 
     app.include_router(router)
+    app.include_router(brief_router)
     return app

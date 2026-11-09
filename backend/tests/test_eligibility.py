@@ -6,10 +6,16 @@ import pytest
 from pydantic import ValidationError
 
 from app.domain.applicant import ApplicantInput
-from app.domain.eligibility import evaluate, select_policy
+from app.domain.eligibility import EvaluationResult, select_policy
+from app.domain.eligibility import evaluate as engine_evaluate
 from app.domain.money import emi, floor_to, monthly_rate_from_nominal_annual, principal_for_emi, round_half_up
 from app.domain.policy import PolicyDocument
 from tests.conftest import GOOD_APPLICANT, nw_policy
+
+
+def evaluate(a: ApplicantInput, p: PolicyDocument, approval_probability: float | None = 0.99) -> EvaluationResult:
+    """Policy-rule tests assume the credit-risk model approves; its own tests pass explicit scores."""
+    return engine_evaluate(a, p, approval_probability)
 
 
 def applicant(**overrides: Any) -> ApplicantInput:
@@ -156,3 +162,44 @@ def test_policy_schema_rejects_uncited_and_overlapping_rules() -> None:
         policy_with(lambda d: d["rules"]["interest_rate"]["bands"][1].update(max_score=760))
     with pytest.raises(ValidationError):
         policy_with(lambda d: d["rules"]["processing_fee"].update(financed=True))
+
+
+@pytest.mark.parametrize(("loans", "ok"), [(3, True), (4, False)])
+def test_active_loans_cap_is_cited(loans: int, ok: bool) -> None:
+    res = evaluate(applicant(active_loans=loans), nw_policy())
+    assert (res.outcome == "APPROVED") is ok
+    if not ok:
+        assert res.reason_codes == ["ACTIVE_LOANS_ABOVE_MAX"] and res.citations == ["NW-2.4"]
+
+
+def test_active_loans_is_required() -> None:
+    res = evaluate(applicant(active_loans=None), nw_policy())
+    assert res.status == "INCOMPLETE" and "active_loans" in res.missing_fields
+
+
+@pytest.mark.parametrize(("probability", "outcome"), [(0.83, "APPROVED"), (0.8299, "REJECTED"), (0.2, "REJECTED")])
+def test_credit_risk_threshold_is_policy_defined(probability: float, outcome: str) -> None:
+    res = evaluate(applicant(), nw_policy(), approval_probability=probability)
+    assert res.outcome == outcome
+    assert res.calculations["model_approval_probability"] == str(round(probability, 4))
+    assert "NW-3.7" in res.citations
+    if outcome == "REJECTED":
+        assert res.reason_codes == ["CREDIT_RISK_BELOW_THRESHOLD"] and res.eligible_principal == 0
+
+
+def test_model_cannot_override_a_policy_rejection() -> None:
+    res = evaluate(applicant(active_loans=5), nw_policy(), approval_probability=0.999)
+    assert res.outcome == "REJECTED" and res.reason_codes == ["ACTIVE_LOANS_ABOVE_MAX"]
+    assert "model_approval_probability" not in res.calculations
+
+
+def test_missing_model_score_needs_review_not_approval() -> None:
+    res = evaluate(applicant(), nw_policy(), approval_probability=None)
+    assert res.status == "NEEDS_REVIEW" and res.reason_codes == ["CREDIT_RISK_MODEL_UNAVAILABLE"]
+    assert res.citations == ["NW-3.7"] and res.outcome is None
+
+
+def test_policy_without_credit_risk_rule_ignores_model() -> None:
+    plain = policy_with(lambda d: d["rules"].update(credit_risk=None))
+    assert evaluate(applicant(), plain, approval_probability=None).outcome == "APPROVED"
+    assert evaluate(applicant(), plain, approval_probability=0.01).outcome == "APPROVED"

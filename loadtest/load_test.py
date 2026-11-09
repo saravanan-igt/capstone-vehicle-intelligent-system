@@ -26,6 +26,7 @@ def applicant_payload(rng: random.Random) -> dict:
         "income_amount": str(rng.choice([40000, 60000, 90000, 120000, 200000])), "income_frequency": "monthly",
         "credit_score": rng.randint(600, 850), "score_provider": "CIBIL", "employment_category": "salaried",
         "employment_months": rng.randint(3, 120), "existing_monthly_obligations": str(rng.choice([0, 5000, 15000])),
+        "active_loans": rng.randint(0, 3),
         "requested_principal": str(rng.choice([300000, 800000, 1200000, 2000000])),
         "requested_tenure_months": rng.choice([36, 60, 84]),
         "down_payment_available": str(rng.choice([50000, 200000, 400000])),

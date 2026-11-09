@@ -25,7 +25,7 @@ def test_1_approved_with_affordable_vehicles(client: TestClient) -> None:
     assert d["status"] == "COMPLETED" and d["outcome"] == "APPROVED"
     assert d["eligible_principal"] == "1200000.00"
     snap = d["snapshot"]
-    assert snap["policy"]["policy_code"] == "NW-AUTO-STD" and snap["engine_version"] == "1.0.0"
+    assert snap["policy"]["policy_code"] == "NW-AUTO-STD" and snap["engine_version"] == "1.1.0"
     assert snap["input_provenance"]["verified"] is False
     vehicles = client.get(f"/v1/decisions/{d['id']}/vehicles", headers=ALICE).json()
     statuses = {i["vehicle"]["id"]: i["assessment"]["status"] for i in vehicles["items"]}
@@ -184,7 +184,7 @@ def test_pagination_and_dashboard(client: TestClient) -> None:
     ids = {a["id"] for a in page1["items"]} | {a["id"] for a in page2["items"]}
     assert len(ids) == 3
     dash = client.get("/v1/dashboard", headers=OMAR).json()
-    assert dash["approved"] == 3 and dash["vehicles_in_catalogue"] == 16
+    assert dash["approved"] == 3 and dash["vehicles_in_catalogue"] == 38
     assert client.get("/v1/dashboard", headers=BEN).json()["applications_total"] == 0
 
 

@@ -20,6 +20,7 @@ REQUIRED_FIELDS: tuple[str, ...] = (
     "employment_category",
     "employment_months",
     "existing_monthly_obligations",
+    "active_loans",
     "requested_principal",
     "requested_tenure_months",
     "down_payment_available",
@@ -41,6 +42,7 @@ class ApplicantInput(BaseModel):
     employment_category: EmploymentCategory | None = None
     employment_months: int | None = Field(default=None, ge=0, le=720)
     existing_monthly_obligations: Money | None = Field(default=None, ge=0, max_digits=14, decimal_places=2)
+    active_loans: int | None = Field(default=None, ge=0, le=50)
     requested_principal: Money | None = Field(default=None, gt=0, max_digits=14, decimal_places=2)
     requested_tenure_months: int | None = Field(default=None, ge=1, le=480)
     down_payment_available: Money | None = Field(default=None, ge=0, max_digits=14, decimal_places=2)

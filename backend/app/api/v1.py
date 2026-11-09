@@ -70,7 +70,8 @@ def update_application(app_id: str, body: ApplicantInput, p: PrincipalDep, sessi
 @router.post("/applications/{app_id}/evaluate", tags=["decisions"])
 def evaluate(app_id: str, request: Request, response: Response, p: PrincipalDep, session: SessionDep,
              cid: CidDep, idempotency_key: IdemKey = None) -> dict[str, Any]:
-    decision, created = svc.evaluate_application(session, p, app_id, idempotency_key, _today(request), cid)
+    decision, created = svc.evaluate_application(session, p, app_id, idempotency_key, _today(request), cid,
+                                                 request.app.state.eligibility_model)
     session.commit()
     response.status_code = 201 if created else 200
     if not created:
@@ -89,15 +90,16 @@ def get_decision(decision_id: str, p: PrincipalDep, session: SessionDep) -> dict
 
 
 @router.post("/decisions/{decision_id}/replay", tags=["decisions"])
-def replay(decision_id: str, p: PrincipalDep, session: SessionDep) -> dict[str, Any]:
-    return svc.replay_decision(session, p, decision_id)
+def replay(decision_id: str, request: Request, p: PrincipalDep, session: SessionDep) -> dict[str, Any]:
+    return svc.replay_decision(session, p, decision_id, request.app.state.eligibility_model)
 
 
 @router.post("/decisions/{decision_id}/explanation", tags=["explanations"])
 def explain(decision_id: str, request: Request, p: PrincipalDep, session: SessionDep, cid: CidDep,
             refresh: bool = False) -> dict[str, Any]:
     state = request.app.state
-    result = svc.explain_decision(session, p, decision_id, state.explainer, refresh, cid, state.quota)
+    result = svc.explain_decision(session, p, decision_id, state.explainer, refresh, cid, state.quota,
+                                  state.knowledge)
     session.commit()
     EXPLANATIONS.labels(result["source"]).inc()
     if result["fallback_reason"] == svc.AI_BUDGET_EXHAUSTED:

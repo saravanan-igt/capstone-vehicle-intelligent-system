@@ -75,7 +75,9 @@ services:
     restart: unless-stopped
 
   migrate:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     command: ["python", "-m", "app.ops.migrate"]
     environment:
       DATABASE_ADMIN_URL: postgresql://vla_owner:${POSTGRES_OWNER_PASSWORD}@db:5432/vla
@@ -85,7 +87,9 @@ services:
     restart: "no"
 
   api:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     environment:
       <<: *backend-env
       DATABASE_URL: postgresql://vla_app:${POSTGRES_APP_PASSWORD}@db:5432/vla
@@ -106,7 +110,9 @@ services:
     restart: unless-stopped
 
   worker:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     command: ["python", "-m", "app.worker"]
     environment:
       <<: *backend-env
@@ -150,6 +156,19 @@ services:
       APP_BASE_URL: ${APP_BASE_URL:-http://localhost:3000}
     ports:
       - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Streamlit frontend (the brief's UI). Server-side BFF in dev auth mode; talks only to the API.
+  streamlit:
+    build: ./streamlit_app
+    environment:
+      API_URL: http://api:8000
+      DEV_BFF_SHARED_SECRET: ${DEV_BFF_SHARED_SECRET:?set DEV_BFF_SHARED_SECRET in .env}
+    ports:
+      - "8501:8501"
     depends_on:
       api:
         condition: service_healthy

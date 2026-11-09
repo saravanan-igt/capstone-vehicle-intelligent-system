@@ -20,23 +20,26 @@ Missing data, an unsupported score provider, a currency/jurisdiction mismatch, a
 
 ## 2. Assumptions register
 
-The brief was cut off after "requested tenure a". Everything below that point is an assumption, not an original requirement.
+The first working brief was cut off after "requested tenure a", so A1–A13 were assumptions. The official capstone brief arrived later; A14–A16 record the decisions taken to meet it, and the README maps each of its requirements to the implementation.
 
-| ID  | Assumption                                                                                                                                                                                                                                                                   | Status           |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| A1  | Market: India, INR, new private passenger vehicles; one product `new-car-fixed` per tenant                                                                                                                                                                                   | Assumed          |
-| A2  | Tenant = **lender**. Dealerships are not modelled yet; they would be a separate tenant kind with offer/availability relationships                                                                                                                                            | Assumed          |
-| A3  | Credit score range 300–900; accepted bureaus are defined per policy                                                                                                                                                                                                          | Assumed          |
-| A4  | Rates are a fixed nominal annual rate compounded monthly (r = annual/12). Other bases are rejected by the schema                                                                                                                                                             | Assumed          |
-| A5  | Processing fees are paid upfront, not financed (engine v1). Financed fees would mean re-solving the capacity and LTV limits                                                                                                                                                  | Assumed          |
-| A6  | On-road price = ex-showroom + registration + insurance + other mandatory charges. If any part is missing, the vehicle is **UNVERIFIED**                                                                                                                                      | Assumed          |
-| A7  | Vehicle matching uses the **pre-vehicle borrowing capacity** (min of repayment capacity and product cap), not the requested amount. Per vehicle, the loan is capped by LTV, and affordability requires `contribution + fees ≤ available cash`                                | Assumed          |
-| A8  | Principal is floored to ₹1,000 and the EMI is rounded half-up to ₹0.01 (policy-defined)                                                                                                                                                                                      | Synthetic policy |
-| A9  | Applicant inputs are self-declared and unverified. Bureau/income verification integrations are out of scope                                                                                                                                                                  | Assumed          |
-| A10 | No age, gender, religion or other unrelated sensitive attributes are collected. Extra fields are rejected (`extra=forbid`)                                                                                                                                                   | Decision         |
-| A11 | Policy precedence: same product, effective on date, latest `effective_from` wins; equal start dates = POLICY_CONFLICT (needs review); publish blocks same-date duplicates                                                                                                    | Decision         |
-| A12 | Capacity targets in §7 are **assumptions**, not measurements                                                                                                                                                                                                                 | Assumed          |
-| A13 | Policies arrive as scanned documents. OCR and extraction run **in-request** by default (user decision 2026-11-09); the BFF waits up to 180 s. `DOCUMENT_PROCESSING=queue` (full stack) runs them as durable background jobs, with the same document states plus `PROCESSING` | Decision         |
+| ID  | Assumption                                                                                                                                                                                                                                                                                                                                                                       | Status           |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| A1  | Market: India, INR, new private passenger vehicles; one product `new-car-fixed` per tenant                                                                                                                                                                                                                                                                                       | Assumed          |
+| A2  | Tenant = **lender**. Dealerships are not modelled yet; they would be a separate tenant kind with offer/availability relationships                                                                                                                                                                                                                                                | Assumed          |
+| A3  | Credit score range 300–900; accepted bureaus are defined per policy                                                                                                                                                                                                                                                                                                              | Assumed          |
+| A4  | Rates are a fixed nominal annual rate compounded monthly (r = annual/12). Other bases are rejected by the schema                                                                                                                                                                                                                                                                 | Assumed          |
+| A5  | Processing fees are paid upfront, not financed (engine v1). Financed fees would mean re-solving the capacity and LTV limits                                                                                                                                                                                                                                                      | Assumed          |
+| A6  | On-road price = ex-showroom + registration + insurance + other mandatory charges. If any part is missing, the vehicle is **UNVERIFIED**                                                                                                                                                                                                                                          | Assumed          |
+| A7  | Vehicle matching uses the **pre-vehicle borrowing capacity** (min of repayment capacity and product cap), not the requested amount. Per vehicle, the loan is capped by LTV, and affordability requires `contribution + fees ≤ available cash`                                                                                                                                    | Assumed          |
+| A8  | Principal is floored to ₹1,000 and the EMI is rounded half-up to ₹0.01 (policy-defined)                                                                                                                                                                                                                                                                                          | Synthetic policy |
+| A9  | Applicant inputs are self-declared and unverified. Bureau/income verification integrations are out of scope                                                                                                                                                                                                                                                                      | Assumed          |
+| A10 | No age, gender, religion or other unrelated sensitive attributes are collected. Extra fields are rejected (`extra=forbid`)                                                                                                                                                                                                                                                       | Decision         |
+| A11 | Policy precedence: same product, effective on date, latest `effective_from` wins; equal start dates = POLICY_CONFLICT (needs review); publish blocks same-date duplicates                                                                                                                                                                                                        | Decision         |
+| A12 | Capacity targets in §7 are **assumptions**, not measurements                                                                                                                                                                                                                                                                                                                     | Assumed          |
+| A13 | Policies arrive as scanned documents. OCR and extraction run **in-request** by default (user decision 2026-11-09); the BFF waits up to 180 s. `DOCUMENT_PROCESSING=queue` (full stack) runs them as durable background jobs, with the same document states plus `PROCESSING`                                                                                                     | Decision         |
+| A14 | The official capstone brief (`Capstone_Req.txt`) requires a model **trained on historical loan data**. The model's approval probability is applied as a policy rule (NW-3.7 / SB-C7): it can decline an application that passes the written rules, never approve one they reject; if it is unavailable the application goes to manual review. See [EVALUATION.md](EVALUATION.md) | Decision         |
+| A15 | Both frontends are kept: Streamlit (the brief's suggested UI, applicant journey) and Next.js (dashboard, policy administration, audit). Both are server-side BFFs over the same API                                                                                                                                                                                              | Decision         |
+| A16 | Embeddings: Gemini `gemini-embedding-001` when a key is configured; otherwise a deterministic local TF-IDF index, so retrieval works offline and in CI                                                                                                                                                                                                                           | Decision         |
 
 Questions that would materially change the implementation (still open): the real lender policy documents; whether dealerships are tenants; whether financed fees or insurance are in scope; which identity provider the target organisation already uses.
 
@@ -48,21 +51,26 @@ A **modular monolith** (FastAPI) with hexagonal boundaries. The domain does not 
 flowchart LR
   subgraph Browser
     UI[Next.js UI]
+    SUI[Streamlit UI]
   end
-  subgraph Web[Next.js server - BFF]
-    BFF[/api/bff proxy + session/]
+  subgraph Web[Server-side BFFs]
+    BFF[/Next.js /api/bff proxy + session/]
+    ST[Streamlit server]
   end
   subgraph API[FastAPI modular monolith]
-    R[api/v1 routes] --> S[application services + authz]
+    R[/v1 + brief routes: /predict /loan-amount /vehicles /explain/] --> S[application services + authz]
     S --> D[domain: policy, eligibility, affordability, explanation]
+    S --> M[ml: saved eligibility model, hash-checked]
+    S --> K[rag: vector index, scoped retrieval]
     S --> DB[(SQLite local / PostgreSQL prod)]
-    S --> G[Gemini adapter]
+    S --> G[Gemini adapter: explain, answer, embed]
   end
   UI -- same-origin, HttpOnly cookie --> BFF -- service credential + user identity --> R
-  G -- minimised facts + cited clauses --> Gemini[(Gemini API)]
+  SUI -- websocket --> ST -- service credential + user identity --> R
+  G -- minimised facts + retrieved clauses --> Gemini[(Gemini API)]
 ```
 
-**Module map:** identity and authorization (`application/security.py`, `api/deps.py`) · tenants and config (`Tenant`) · applications · policies (versioning, publication) · eligibility engine (`domain/eligibility.py`) · loan maths (`domain/money.py`) · catalogue and affordability (`domain/affordability.py`) · explanations (`domain/explanation.py`, `infrastructure/gemini.py`) · audit (`AuditEvent`).
+**Module map:** identity and authorization (`application/security.py`, `api/deps.py`) · tenants and config (`Tenant`) · applications · policies (versioning, publication) · eligibility engine (`domain/eligibility.py`) · loan maths (`domain/money.py`) · catalogue and affordability (`domain/affordability.py`) · eligibility model (`ml/`) · retrieval (`rag/`) · brief use cases (`application/advisor.py`, `api/brief.py`) · explanations (`domain/explanation.py`, `infrastructure/gemini.py`) · audit (`AuditEvent`).
 
 ### Application evaluation sequence
 
@@ -166,7 +174,33 @@ The workflow runs in-request, a decision recorded in A13.
 5. **Human review:** the reviewer compares each draft rule with the original and the transcribed pages, edits it if needed, and confirms. The server re-validates the schema and requires every clause to appear **verbatim on its cited page** (`CLAUSES_NOT_GROUNDED` otherwise). Only then is a `DRAFT` policy version created, and the audit record notes whether the reviewer edited the AI draft.
 6. **Publication:** this remains the existing, separately authorised step. Explanations keep using the clauses of the exact policy version recorded in the decision snapshot.
 
-**Limits:** OCR is only as accurate as the model, so the reviewer must check numbers against the original. A clause that spans a page break must be split into one clause per page. There is no embedding-based retrieval and no policy Q&A endpoint yet.
+**Limits:** OCR is only as accurate as the model, so the reviewer must check numbers against the original. A clause that spans a page break must be split into one clause per page. Keyword search over uploaded documents serves reviewers; embedding retrieval (below) covers the published policy and brochure corpus.
+
+### Eligibility model (capstone brief 5.1)
+
+- **Training** is offline (`python -m app.ml.train`, notebooks in `notebooks/`). Four models are compared by cost-weighted cross-validation; gradient boosting is selected and its threshold (0.83) minimises expected cost with false approvals costing 5× false rejections ([EVALUATION.md](EVALUATION.md)).
+- **Serving:** the API loads `models/eligibility_model.joblib` read-only and refuses it unless its SHA-256 matches `model_card.json`. Scoring returns the probability plus the top factors (change in probability when a feature is replaced by the training median).
+- **Decision role:** the engine (v1.1.0) evaluates every written rule first. Only if all pass does it compare the probability with the policy's `credit_risk` rule. A low score gives `REJECTED / CREDIT_RISK_BELOW_THRESHOLD` (cited); a missing model gives `NEEDS_REVIEW`. The probability is recorded in the snapshot, so replay is exact; replay also reports whether the current model artifact is the one that decided.
+
+### Retrieval-augmented generation (capstone brief 5.4, 5.5)
+
+```mermaid
+flowchart LR
+  DOCS[data/documents: policy .md/.json, brochures .md] --> CH[chunking: clause / brochure section + metadata]
+  CH --> EMB[embed: Gemini gemini-embedding-001 or local TF-IDF]
+  EMB --> VS[(vectorstore/: vectors.npy + chunks.json + manifest)]
+  Q[question or decision reasons] --> QE[embed query] --> VS
+  VS -- filtered by policy version / model_key --> HITS[top-k + similarity]
+  HITS -->|below threshold or no key-term overlap| IDK["I don't know"]
+  HITS --> LLM[Gemini draft, temperature 0, JSON schema]
+  LLM --> V{numbers + citations grounded?}
+  V -- yes --> OUT[answer + sources]
+  V -- no --> EXT[extractive / template answer + sources]
+```
+
+- The index is built offline (`python -m app.rag.ingest`) and shipped with the image; a test fails if the documents change without re-indexing.
+- Explanations retrieve only from the decision's exact policy version; the retrieved clause ids become citable and are stored with the explanation (`explanations.sources_json`, migration 0005).
+- Vehicle Q&A retrieves only from the selected model's brochure and is audited (`vehicle.question_answered`).
 
 ## 6. Security
 

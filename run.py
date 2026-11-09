@@ -6,14 +6,17 @@
     python run.py --test          # also run backend tests and the frontend type-check
     python run.py --skip-install  # reuse existing .venv and node_modules
     python run.py --no-browser    # do not open a browser window
+    python run.py --reset-db      # delete the local SQLite demo database first (re-seeds current policies)
+    python run.py --no-streamlit  # only the Next.js dashboard
 
 What it does:
 1. Checks Python (3.12+) and Node.js (20.9+) and that the ports are free.
 2. Creates .env from .env.example with random local secrets (an existing .env is never overwritten).
-3. Backend: creates backend/.venv, installs dependencies, and applies migrations and seed data (SQLite).
+3. Backend: creates backend/.venv, installs dependencies, checks the saved model and vector index (rebuilds
+   them if missing), and applies migrations and seed data (SQLite).
 4. Frontend: npm ci, then a production build.
-5. Starts the API and the web app, waits until both are healthy, then opens http://localhost:<port>.
-Press Ctrl+C to stop both."""
+5. Starts the API, the Next.js dashboard and the Streamlit app, waits until healthy, then opens the browser.
+Press Ctrl+C to stop everything."""
 
 import argparse
 import os
@@ -33,6 +36,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 BACKEND = ROOT / "backend"
 FRONTEND = ROOT / "frontend"
+STREAMLIT = ROOT / "streamlit_app"
 WINDOWS = platform.system() == "Windows"
 VENV_PYTHON = BACKEND / ".venv" / ("Scripts/python.exe" if WINDOWS else "bin/python")
 MIN_PYTHON = (3, 12)
@@ -98,7 +102,7 @@ def ensure_env_file() -> dict[str, str]:
     return values
 
 
-def setup_backend(skip_install: bool, settings: dict[str, str], test: bool) -> None:
+def setup_backend(skip_install: bool, settings: dict[str, str], test: bool, reset_db: bool) -> None:
     step("Backend: virtual environment and dependencies")
     if not VENV_PYTHON.exists():
         run([sys.executable, "-m", "venv", ".venv"], BACKEND)
@@ -107,6 +111,20 @@ def setup_backend(skip_install: bool, settings: dict[str, str], test: bool) -> N
         # The hashed lockfiles are generated for Linux containers; Windows resolves from the pinned inputs.
         requirements = "requirements-dev.in" if WINDOWS else "requirements-dev.lock"
         run([str(VENV_PYTHON), "-m", "pip", "install", "--quiet", "-r", requirements], BACKEND)
+        run([str(VENV_PYTHON), "-m", "pip", "install", "--quiet", "-r", str(STREAMLIT / "requirements.txt")],
+            BACKEND)
+    step("Backend: eligibility model and vector index")
+    if not (ROOT / "models" / "eligibility_model.joblib").exists():
+        if not (ROOT / "data" / "raw" / "loan_applications.csv").exists():
+            run([str(VENV_PYTHON), str(ROOT / "data" / "generate_loans.py")], ROOT)
+        run([str(VENV_PYTHON), "-m", "app.ml.train"], BACKEND)
+    if not (ROOT / "vectorstore" / "local" / "manifest.json").exists():
+        run([str(VENV_PYTHON), "-m", "app.rag.ingest"], BACKEND, backend_env(settings))
+    print("   model and vector index present")
+    if reset_db:
+        for suffix in ("", "-wal", "-shm"):
+            (BACKEND / "data" / f"vla.db{suffix}").unlink(missing_ok=True)
+        print("   removed the local SQLite demo database")
     step("Backend: database migrations and seed data")
     run([str(VENV_PYTHON), "-m", "app.ops.migrate"], BACKEND, backend_env(settings))
     if test:
@@ -185,13 +203,17 @@ def main() -> None:
     parser.add_argument("--test", action="store_true", help="run backend tests and the frontend type-check")
     parser.add_argument("--skip-install", action="store_true", help="reuse installed dependencies")
     parser.add_argument("--no-browser", action="store_true", help="do not open the browser")
+    parser.add_argument("--reset-db", action="store_true", help="delete the local SQLite demo database first")
+    parser.add_argument("--no-streamlit", action="store_true", help="do not start the Streamlit app")
     parser.add_argument("--backend-port", type=int, default=8000)
     parser.add_argument("--frontend-port", type=int, default=3000)
+    parser.add_argument("--streamlit-port", type=int, default=8501)
     args = parser.parse_args()
 
-    npm = check_prerequisites([args.backend_port, args.frontend_port])
+    ports = [args.backend_port, args.frontend_port] + ([] if args.no_streamlit else [args.streamlit_port])
+    npm = check_prerequisites(ports)
     settings = ensure_env_file()
-    setup_backend(args.skip_install, settings, args.test)
+    setup_backend(args.skip_install, settings, args.test, args.reset_db)
     setup_frontend(npm, args.skip_install, args.dev, args.test)
 
     step("Starting the application")
@@ -205,10 +227,22 @@ def main() -> None:
         procs.append(start(web_cmd, FRONTEND, frontend_env(settings, args.backend_port, args.frontend_port)))
         url = f"http://localhost:{args.frontend_port}"
         wait_for(f"{url}/login", "Web app", procs)
-        print(f"\n   Capstone is running at {url}  (API docs: http://127.0.0.1:{args.backend_port}/docs)")
+        streamlit_url = f"http://localhost:{args.streamlit_port}"
+        if not args.no_streamlit:
+            streamlit_cmd = [str(VENV_PYTHON), "-m", "streamlit", "run", "app.py", "--server.port",
+                             str(args.streamlit_port), "--server.address", "127.0.0.1"]
+            procs.append(start(streamlit_cmd, STREAMLIT, {**backend_env(settings),
+                                                          "API_URL": f"http://127.0.0.1:{args.backend_port}"}))
+            wait_for(f"http://127.0.0.1:{args.streamlit_port}/_stcore/health", "Streamlit app", procs)
+        print(f"\n   Capstone dashboard (Next.js): {url}")
+        if not args.no_streamlit:
+            print(f"   Capstone advisor (Streamlit): {streamlit_url}")
+        print(f"   API docs: http://127.0.0.1:{args.backend_port}/docs")
         print("   Sign in with a demo identity, e.g. Alice (applicant) or Priya (policy admin). Ctrl+C to stop.\n")
         if not args.no_browser:
             webbrowser.open(url)
+            if not args.no_streamlit:
+                webbrowser.open(streamlit_url)
         while all(p.poll() is None for p in procs):
             time.sleep(1)
         print("\nA process exited; shutting down.")

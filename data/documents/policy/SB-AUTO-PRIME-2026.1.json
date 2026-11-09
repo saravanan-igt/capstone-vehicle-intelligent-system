@@ -8,7 +8,7 @@
   "jurisdiction": "IN",
   "effective_from": "2026-01-01",
   "effective_to": null,
-  "source_document": "SB-AUTO-PRIME-2026.1.md",
+  "source_document": "data/documents/policy/SB-AUTO-PRIME-2026.1.md",
   "synthetic": true,
   "clauses": [
     {
@@ -38,6 +38,13 @@
       "page": 1,
       "title": "Employment",
       "text": "Salaried applicants need 12 months of continuous employment; self-employed applicants need 36 months in business. Other categories are ineligible."
+    },
+    {
+      "id": "SB-B4",
+      "section": "B4",
+      "page": 1,
+      "title": "Active loans",
+      "text": "No more than 2 active loans are permitted at the time of application."
     },
     {
       "id": "SB-C1",
@@ -75,6 +82,13 @@
       "text": "Maximum loan-to-value is 80% of the on-road price."
     },
     {
+      "id": "SB-C7",
+      "section": "C7",
+      "page": 2,
+      "title": "Credit risk",
+      "text": "Applications meeting parts B and C are approved only if the validated credit-risk model (vla-eligibility) estimates an approval probability of at least 0.88."
+    },
+    {
       "id": "SB-C6",
       "section": "C6",
       "page": 3,
@@ -94,36 +108,80 @@
       "page": 3,
       "title": "Rounding",
       "text": "EMI rounded half-up to 0.01; principal rounded down to INR 1,000."
+    },
+    {
+      "id": "SB-E1",
+      "section": "E1",
+      "page": 3,
+      "title": "Exceptions",
+      "text": "Exceptions to parts B and C are not permitted for the prime product. Declined applicants may be offered the standard product of another lender."
+    },
+    {
+      "id": "SB-E2",
+      "section": "E2",
+      "page": 3,
+      "title": "Documentation",
+      "text": "Identity and address proof, six months of bank statements, salary slips or two years of tax returns, and the dealer proforma invoice."
     }
   ],
   "rules": {
     "credit_score": {
       "clause": "SB-B1",
       "min_score": 700,
-      "accepted_providers": ["CIBIL"]
+      "accepted_providers": [
+        "CIBIL"
+      ]
     },
-    "income": { "clause": "SB-B2", "min_monthly_income": "40000" },
+    "income": {
+      "clause": "SB-B2",
+      "min_monthly_income": "40000"
+    },
     "employment": {
       "clause": "SB-B3",
-      "allowed_categories": ["salaried", "self_employed"],
-      "min_months": { "salaried": 12, "self_employed": 36 }
+      "allowed_categories": [
+        "salaried",
+        "self_employed"
+      ],
+      "min_months": {
+        "salaried": 12,
+        "self_employed": 36
+      }
     },
-    "debt_service": { "clause": "SB-C1", "max_ratio": "0.40" },
+    "debt_service": {
+      "clause": "SB-C1",
+      "max_ratio": "0.40"
+    },
     "interest_rate": {
       "clause": "SB-C2",
       "basis": "nominal_annual_monthly_compounding",
       "bands": [
-        { "min_score": 750, "max_score": 900, "annual_rate": "0.0925" },
-        { "min_score": 700, "max_score": 749, "annual_rate": "0.105" }
+        {
+          "min_score": 750,
+          "max_score": 900,
+          "annual_rate": "0.0925"
+        },
+        {
+          "min_score": 700,
+          "max_score": 749,
+          "annual_rate": "0.105"
+        }
       ]
     },
-    "tenure": { "clause": "SB-C3", "min_months": 12, "max_months": 60 },
+    "tenure": {
+      "clause": "SB-C3",
+      "min_months": 12,
+      "max_months": 60
+    },
     "principal": {
       "clause": "SB-C4",
       "min_amount": "200000",
       "max_amount": "3000000"
     },
-    "ltv": { "clause": "SB-C5", "max_ratio": "0.80", "basis": "on_road_price" },
+    "ltv": {
+      "clause": "SB-C5",
+      "max_ratio": "0.80",
+      "basis": "on_road_price"
+    },
     "processing_fee": {
       "clause": "SB-C6",
       "rate": "0.015",
@@ -133,13 +191,24 @@
     },
     "vehicle": {
       "clause": "SB-D1",
-      "excluded_categories": ["commercial"],
+      "excluded_categories": [
+        "commercial"
+      ],
       "max_price_age_days": 90
     },
     "rounding": {
       "clause": "SB-D2",
       "emi_step": "0.01",
       "principal_step": "1000"
+    },
+    "active_loans": {
+      "clause": "SB-B4",
+      "max_active_loans": 2
+    },
+    "credit_risk": {
+      "clause": "SB-C7",
+      "model_name": "vla-eligibility",
+      "min_approval_probability": "0.88"
     }
   }
 }
