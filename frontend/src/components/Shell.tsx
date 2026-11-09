@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, type ReactNode } from "react";
 
 import { Icon, type IconName } from "@/components/Icon";
+import { Logo } from "@/components/Logo";
 import { useApi } from "@/lib/api";
 import type { Me } from "@/lib/types";
 
@@ -98,9 +99,7 @@ export function Shell({ children }: { children: ReactNode }) {
       </a>
       <div className="shell">
         <aside className="sidebar" aria-label="Primary">
-          <div className="brand">
-            <span className="brand-mark">V</span>Vehicle_Loan
-          </div>
+          <Logo />
           <nav>
             {NAV.map((group) => {
               const items = group.items.filter(
