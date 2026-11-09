@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Intelligent Vehicle Loan Advisor",
+  title: "Capstone — Intelligent Vehicle Loan Advisor",
   description:
     "Policy-grounded, explainable vehicle-loan eligibility (capstone, synthetic data).",
 };
