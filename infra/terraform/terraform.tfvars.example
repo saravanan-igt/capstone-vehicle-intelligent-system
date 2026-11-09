@@ -1,0 +1,4 @@
+region            = "ap-south-1"
+environment       = "demo"
+github_repository = "CHANGE_ME_OWNER/capstone-vehicle-intelligent-system"
+enable_data_tier  = false

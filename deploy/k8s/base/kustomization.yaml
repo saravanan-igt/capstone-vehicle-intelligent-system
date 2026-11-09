@@ -1,0 +1,17 @@
+# Base manifests for the CURRENT build (Phase 1-2): SQLite + local document store.
+# Consequence: the API is a single replica with a ReadWriteOnce volume (Recreate strategy).
+# Horizontal API scaling requires Phase 5 (PostgreSQL + Alembic + S3 DocumentStore) - see docs/RUNBOOK.md.
+# Namespace and StorageClass are cluster-scoped and live in ../bootstrap (applied once by a cluster admin).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: vla
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: vehicle-loan-advisor
+    includeSelectors: false
+resources:
+  - configmap.yaml
+  - api.yaml
+  - web.yaml
+  - ingress.yaml
+  - networkpolicy.yaml

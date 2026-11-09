@@ -1,0 +1,40 @@
+# Local capstone stack. SQLite is used intentionally for a single-instance demo (see docs/ADR-002).
+# For PostgreSQL + RLS, Redis, the BullMQ worker and OIDC settings use docker-compose.full.yml.
+name: vehicle-loan-advisor
+
+services:
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: sqlite:////app/data/vla.db
+      AUTH_MODE: ${AUTH_MODE:-dev}
+      DEV_BFF_SHARED_SECRET: ${DEV_BFF_SHARED_SECRET:?set DEV_BFF_SHARED_SECRET in .env}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+      GEMINI_TIMEOUT_MS: ${GEMINI_TIMEOUT_MS:-15000}
+      GEMINI_DOCUMENT_TIMEOUT_MS: ${GEMINI_DOCUMENT_TIMEOUT_MS:-150000}
+      MAX_UPLOAD_BYTES: ${MAX_UPLOAD_BYTES:-10485760}
+      DOCUMENT_STORAGE_DIR: /app/data/documents
+      AI_ENABLED: ${AI_ENABLED:-true}
+    volumes:
+      - api-data:/app/data
+    # Not published to the host: only the BFF talks to the API.
+    expose: ["8000"]
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    environment:
+      BACKEND_URL: http://api:8000
+      AUTH_MODE: ${AUTH_MODE:-dev}
+      DEV_BFF_SHARED_SECRET: ${DEV_BFF_SHARED_SECRET:?set DEV_BFF_SHARED_SECRET in .env}
+      INSECURE_COOKIES: ${INSECURE_COOKIES:-true}
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  api-data:

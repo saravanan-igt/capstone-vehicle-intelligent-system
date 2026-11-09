@@ -1,0 +1,150 @@
+{
+  "schema_version": "1",
+  "policy_code": "NW-AUTO-STD",
+  "version": "2026.1",
+  "lender_name": "Northwind Auto Finance (SYNTHETIC)",
+  "product": "new-car-fixed",
+  "currency": "INR",
+  "jurisdiction": "IN",
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "source_document": "NW-AUTO-STD-2026.1.md",
+  "synthetic": true,
+  "clauses": [
+    {
+      "id": "NW-1.1",
+      "section": "1.1",
+      "page": 1,
+      "title": "Scope",
+      "text": "This policy governs indicative eligibility for fixed-rate loans on new private passenger vehicles in India, denominated in INR. It is a synthetic document created for a capstone demonstration and is not an offer of credit."
+    },
+    {
+      "id": "NW-2.1",
+      "section": "2.1",
+      "page": 1,
+      "title": "Credit score",
+      "text": "Applicants must have a credit score of at least 650 from an accepted bureau. Accepted bureaus are CIBIL and EXPERIAN."
+    },
+    {
+      "id": "NW-2.2",
+      "section": "2.2",
+      "page": 1,
+      "title": "Minimum income",
+      "text": "Qualifying monthly income must be at least INR 25,000. Annual income is converted to a monthly figure by dividing by 12."
+    },
+    {
+      "id": "NW-2.3",
+      "section": "2.3",
+      "page": 1,
+      "title": "Employment",
+      "text": "Eligible employment categories are salaried and self-employed. Salaried applicants require at least 6 months of continuous employment. Self-employed applicants require at least 24 months in business."
+    },
+    {
+      "id": "NW-3.1",
+      "section": "3.1",
+      "page": 2,
+      "title": "Debt-service limit",
+      "text": "Total monthly debt obligations, including the proposed EMI, must not exceed 50% of qualifying monthly income. The maximum loan is the principal that the remaining monthly capacity can repay over the chosen tenure."
+    },
+    {
+      "id": "NW-3.2",
+      "section": "3.2",
+      "page": 2,
+      "title": "Interest rates",
+      "text": "Interest is charged at a fixed nominal annual rate compounded monthly, determined by credit score: 750 to 900 at 8.75%; 700 to 749 at 9.75%; 650 to 699 at 11.25%."
+    },
+    {
+      "id": "NW-3.3",
+      "section": "3.3",
+      "page": 2,
+      "title": "Tenure",
+      "text": "Loan tenure must be between 12 and 84 monthly instalments."
+    },
+    {
+      "id": "NW-3.4",
+      "section": "3.4",
+      "page": 2,
+      "title": "Loan amount",
+      "text": "The loan principal must be between INR 1,00,000 and INR 50,00,000."
+    },
+    {
+      "id": "NW-3.5",
+      "section": "3.5",
+      "page": 2,
+      "title": "Loan-to-value",
+      "text": "The loan may not exceed 85% of the vehicle on-road price, being the ex-showroom price plus registration, insurance and other mandatory charges."
+    },
+    {
+      "id": "NW-3.6",
+      "section": "3.6",
+      "page": 3,
+      "title": "Processing fee",
+      "text": "A processing fee of 1% of the loan principal, subject to a minimum of INR 2,500 and a maximum of INR 15,000, is payable upfront and is not financed."
+    },
+    {
+      "id": "NW-4.1",
+      "section": "4.1",
+      "page": 3,
+      "title": "Vehicle restrictions",
+      "text": "Commercial vehicles are excluded. Vehicle prices older than 120 days must be re-verified before affordability is confirmed."
+    },
+    {
+      "id": "NW-4.2",
+      "section": "4.2",
+      "page": 3,
+      "title": "Rounding",
+      "text": "EMIs are rounded half-up to the nearest 0.01 rupee. The eligible principal is rounded down to the nearest INR 1,000."
+    }
+  ],
+  "rules": {
+    "credit_score": {
+      "clause": "NW-2.1",
+      "min_score": 650,
+      "accepted_providers": ["CIBIL", "EXPERIAN"]
+    },
+    "income": { "clause": "NW-2.2", "min_monthly_income": "25000" },
+    "employment": {
+      "clause": "NW-2.3",
+      "allowed_categories": ["salaried", "self_employed"],
+      "min_months": { "salaried": 6, "self_employed": 24 }
+    },
+    "debt_service": { "clause": "NW-3.1", "max_ratio": "0.50" },
+    "interest_rate": {
+      "clause": "NW-3.2",
+      "basis": "nominal_annual_monthly_compounding",
+      "bands": [
+        { "min_score": 750, "max_score": 900, "annual_rate": "0.0875" },
+        { "min_score": 700, "max_score": 749, "annual_rate": "0.0975" },
+        { "min_score": 650, "max_score": 699, "annual_rate": "0.1125" }
+      ]
+    },
+    "tenure": { "clause": "NW-3.3", "min_months": 12, "max_months": 84 },
+    "principal": {
+      "clause": "NW-3.4",
+      "min_amount": "100000",
+      "max_amount": "5000000"
+    },
+    "ltv": {
+      "clause": "NW-3.5",
+      "max_ratio": "0.85",
+      "basis": "on_road_price"
+    },
+    "processing_fee": {
+      "clause": "NW-3.6",
+      "rate": "0.01",
+      "min_amount": "2500",
+      "max_amount": "15000",
+      "financed": false
+    },
+    "vehicle": {
+      "clause": "NW-4.1",
+      "excluded_categories": ["commercial"],
+      "max_price_age_days": 120
+    },
+    "rounding": {
+      "clause": "NW-4.2",
+      "emi_step": "0.01",
+      "principal_step": "1000"
+    }
+  }
+}

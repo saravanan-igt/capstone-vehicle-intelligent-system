@@ -1,0 +1,46 @@
+{
+  "workers": 8,
+  "duration_s": 30.1,
+  "journeys": 1440,
+  "total_requests": 5429,
+  "total_rps": 180.5,
+  "total_errors": 0,
+  "endpoints": {
+    "GET /v1/decisions/{id}/vehicles": {
+      "requests": 1109,
+      "errors": 0,
+      "rps": 36.9,
+      "p50_ms": 32.4,
+      "p95_ms": 72.3,
+      "p99_ms": 87.4,
+      "max_ms": 117.5
+    },
+    "GET /v1/vehicles": {
+      "requests": 1440,
+      "errors": 0,
+      "rps": 47.9,
+      "p50_ms": 29.0,
+      "p95_ms": 65.1,
+      "p99_ms": 80.9,
+      "max_ms": 102.6
+    },
+    "POST /v1/applications": {
+      "requests": 1440,
+      "errors": 0,
+      "rps": 47.9,
+      "p50_ms": 25.0,
+      "p95_ms": 162.2,
+      "p99_ms": 587.8,
+      "max_ms": 1745.7
+    },
+    "POST /v1/applications/{id}/evaluate": {
+      "requests": 1440,
+      "errors": 0,
+      "rps": 47.9,
+      "p50_ms": 27.2,
+      "p95_ms": 140.9,
+      "p99_ms": 457.1,
+      "max_ms": 1972.1
+    }
+  }
+}

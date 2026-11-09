@@ -1,0 +1,161 @@
+# Production-like local stack (Phases 3-5). The default docker-compose.yml stays the simple SQLite demo.
+#   docker compose -f docker-compose.full.yml up --build
+# Adds:
+#   - PostgreSQL with row-level security: the API connects as the RLS-restricted vla_app role.
+#   - A privileged one-shot migrate service.
+#   - Separate Redis instances for cache (evicting) and queue (noeviction + AOF).
+#   - A BullMQ worker; uploads are processed in the background (DOCUMENT_PROCESSING=queue).
+name: vehicle-loan-advisor-full
+
+x-backend-env: &backend-env
+  DOCUMENT_STORAGE_DIR: /app/data/documents
+  GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+  GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+  GEMINI_TIMEOUT_MS: ${GEMINI_TIMEOUT_MS:-15000}
+  GEMINI_DOCUMENT_TIMEOUT_MS: ${GEMINI_DOCUMENT_TIMEOUT_MS:-150000}
+  AI_ENABLED: ${AI_ENABLED:-true}
+  REDIS_CACHE_URL: redis://redis-cache:6379/0
+  REDIS_QUEUE_URL: redis://redis-queue:6379/0
+  DOCUMENT_PROCESSING: queue
+  JSON_LOGS: "true"
+  MIGRATE_ON_STARTUP: "false"
+  SEED_ON_STARTUP: "false"
+
+services:
+  db:
+    image: postgres:18.6-alpine
+    environment:
+      POSTGRES_DB: vla
+      POSTGRES_USER: vla_owner
+      POSTGRES_PASSWORD: ${POSTGRES_OWNER_PASSWORD:?set POSTGRES_OWNER_PASSWORD in .env}
+      POSTGRES_APP_PASSWORD: ${POSTGRES_APP_PASSWORD:?set POSTGRES_APP_PASSWORD in .env}
+    volumes:
+      - pg-data:/var/lib/postgresql
+      - ./deploy/postgres/init-app-role.sh:/docker-entrypoint-initdb.d/10-app-role.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vla_owner -d vla"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+
+  redis-cache:
+    image: redis:8.10.3-alpine
+    command:
+      [
+        "redis-server",
+        "--maxmemory",
+        "128mb",
+        "--maxmemory-policy",
+        "allkeys-lru",
+        "--save",
+        "",
+      ]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+
+  redis-queue:
+    image: redis:8.10.3-alpine
+    command:
+      [
+        "redis-server",
+        "--maxmemory-policy",
+        "noeviction",
+        "--appendonly",
+        "yes",
+      ]
+    volumes:
+      - queue-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+
+  migrate:
+    build: ./backend
+    command: ["python", "-m", "app.ops.migrate"]
+    environment:
+      DATABASE_ADMIN_URL: postgresql://vla_owner:${POSTGRES_OWNER_PASSWORD}@db:5432/vla
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build: ./backend
+    environment:
+      <<: *backend-env
+      DATABASE_URL: postgresql://vla_app:${POSTGRES_APP_PASSWORD}@db:5432/vla
+      AUTH_MODE: ${AUTH_MODE:-dev}
+      DEV_BFF_SHARED_SECRET: ${DEV_BFF_SHARED_SECRET:?set DEV_BFF_SHARED_SECRET in .env}
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_AUDIENCE: ${OIDC_AUDIENCE:-}
+      OIDC_TOKEN_USE: ${OIDC_TOKEN_USE:-}
+      OIDC_REQUIRED_SCOPE: ${OIDC_REQUIRED_SCOPE:-}
+    volumes:
+      - docs-data:/app/data/documents
+    expose: ["8000"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis-cache:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build: ./backend
+    command: ["python", "-m", "app.worker"]
+    environment:
+      <<: *backend-env
+      DATABASE_URL: postgresql://vla_app:${POSTGRES_APP_PASSWORD}@db:5432/vla
+      # Privileged-operation boundary: only the outbox relay reads across tenants.
+      DATABASE_ADMIN_URL: postgresql://vla_owner:${POSTGRES_OWNER_PASSWORD}@db:5432/vla
+    volumes:
+      - docs-data:/app/data/documents
+    expose: ["9100"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis-queue:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9100/metrics')",
+        ]
+      interval: 15s
+      retries: 5
+    stop_grace_period: 3m
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    environment:
+      BACKEND_URL: http://api:8000
+      AUTH_MODE: ${AUTH_MODE:-dev}
+      DEV_BFF_SHARED_SECRET: ${DEV_BFF_SHARED_SECRET:?set DEV_BFF_SHARED_SECRET in .env}
+      INSECURE_COOKIES: ${INSECURE_COOKIES:-true}
+      REDIS_SESSION_URL: redis://redis-cache:6379/1
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-}
+      OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:-}
+      OIDC_SCOPES: ${OIDC_SCOPES:-openid email profile}
+      OIDC_LOGOUT_URL: ${OIDC_LOGOUT_URL:-}
+      APP_BASE_URL: ${APP_BASE_URL:-http://localhost:3000}
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pg-data:
+  queue-data:
+  docs-data:
