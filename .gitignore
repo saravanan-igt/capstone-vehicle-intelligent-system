@@ -6,6 +6,7 @@ __pycache__/
 backend/data/
 backend/backups/
 backups/
+.idea/
 
 # Notebooks
 .ipynb_checkpoints/
