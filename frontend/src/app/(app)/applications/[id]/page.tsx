@@ -131,6 +131,85 @@ export default function ApplicationDetailPage() {
           </div>
         )}
 
+        {app.data && (
+          <div className="grid g-2 mt" style={{ marginBottom: 16 }}>
+            <div className="card">
+              <div className="card-title">
+                <h2>Customer details</h2>
+              </div>
+              <dl className="dl">
+                <dt>Name</dt>
+                <dd>{app.data.applicant?.display_name ?? "—"}</dd>
+                <dt>Email</dt>
+                <dd>{app.data.applicant?.email ?? "—"}</dd>
+                <dt>Customer ID</dt>
+                <dd className="mono">
+                  {app.data.applicant?.user_id ?? app.data.applicant_user_id}
+                </dd>
+                <dt>Application created</dt>
+                <dd>{dateTime(app.data.created_at)}</dd>
+              </dl>
+            </div>
+            <div className="card">
+              <div className="card-title">
+                <h2>Application details</h2>
+              </div>
+              <dl className="dl">
+                <dt>Requested amount</dt>
+                <dd>
+                  {money(
+                    app.data.input.requested_principal,
+                    app.data.input.currency ?? "INR",
+                  )}
+                </dd>
+                <dt>Monthly / annual income</dt>
+                <dd>
+                  {money(
+                    app.data.input.income_amount,
+                    app.data.input.currency ?? "INR",
+                  )}{" "}
+                  {app.data.input.income_frequency &&
+                    `(${app.data.input.income_frequency})`}
+                </dd>
+                <dt>Credit score</dt>
+                <dd>
+                  {app.data.input.credit_score ?? "—"}
+                  {app.data.input.score_provider &&
+                    ` · ${app.data.input.score_provider}`}
+                </dd>
+                <dt>Employment</dt>
+                <dd>
+                  {app.data.input.employment_category
+                    ? humanize(app.data.input.employment_category)
+                    : "—"}
+                  {app.data.input.employment_months !== null &&
+                    ` · ${app.data.input.employment_months} months`}
+                </dd>
+                <dt>Existing obligations</dt>
+                <dd>
+                  {money(
+                    app.data.input.existing_monthly_obligations,
+                    app.data.input.currency ?? "INR",
+                  )}
+                  {app.data.input.active_loans !== null &&
+                    ` · ${app.data.input.active_loans} active loan(s)`}
+                </dd>
+                <dt>Region</dt>
+                <dd>{app.data.input.region ?? "—"}</dd>
+                <dt>Preferred vehicles</dt>
+                <dd>
+                  {[
+                    ...app.data.input.preferred_body_types,
+                    ...app.data.input.preferred_fuel_types,
+                  ]
+                    .map(humanize)
+                    .join(", ") || "—"}
+                </dd>
+              </dl>
+            </div>
+          </div>
+        )}
+
         {decisionState === "none" && app.data && (
           <div className="card">
             <Empty>

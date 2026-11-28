@@ -15,6 +15,27 @@ import streamlit as st
 API_URL = os.getenv("API_URL", "http://127.0.0.1:8000").rstrip("/")
 DEMO_USERS = {"Alice (applicant, Northwind)": "u-alice", "Arjun (applicant, Northwind)": "u-arjun",
               "Ben (applicant, Southbay)": "u-ben"}
+CUSTOMER_PROFILES = {
+    "u-alice": {
+        "income": 85000, "score": 745, "provider": "CIBIL", "category": "salaried",
+        "months": 72, "active": 1, "emi": 12000, "amount": 800000, "tenure": 60,
+        "down": 150000,
+    },
+    "u-arjun": {
+        "income": 75000, "score": 720, "provider": "EXPERIAN", "category": "self_employed",
+        "months": 48, "active": 1, "emi": 6000, "amount": 650000, "tenure": 48,
+        "down": 120000,
+    },
+    "u-ben": {
+        "income": 22000, "score": 580, "provider": "CIBIL", "category": "unemployed",
+        "months": 0, "active": 2, "emi": 9000, "amount": 500000, "tenure": 60,
+        "down": 50000,
+    },
+}
+PROFILE_WIDGET_KEYS = (
+    "income", "score", "provider", "category", "months", "active",
+    "emi", "amount", "tenure", "down", "region",
+)
 BODY_TYPES = ["", "hatchback", "sedan", "suv", "mpv", "coupe"]
 FUEL_TYPES = ["", "petrol", "diesel", "cng", "electric", "hybrid"]
 
@@ -78,8 +99,11 @@ def header() -> None:
         label = st.selectbox("Demo identity", list(DEMO_USERS), key="user_label")
         if DEMO_USERS[label] != st.session_state.user:
             st.session_state.user = DEMO_USERS[label]
+            st.session_state.tabs_epoch = st.session_state.get("tabs_epoch", 0) + 1
             for key in ("decision", "loan", "shortlist", "explanation", "vehicle_id", "answers"):
                 st.session_state.pop(key, None)
+            for widget_key in PROFILE_WIDGET_KEYS:
+                st.session_state.pop(f"{widget_key}_{st.session_state.user}", None)
         try:
             health = httpx.get(f"{API_URL}/health", timeout=5).json()
             st.success(f"API online - model {health.get('model') or 'unavailable'}")
@@ -95,22 +119,42 @@ def header() -> None:
 
 def eligibility_tab() -> None:
     st.subheader("Check your eligibility")
+    profile = CUSTOMER_PROFILES[st.session_state.user]
+    profile_key = st.session_state.user
+    st.caption(
+        f"Profile loaded: income INR {profile['income']:,.0f}, score {profile['score']}, "
+        f"{profile['category']}, {profile['months']} months, {profile['active']} active loans"
+    )
     with st.form("applicant"):
         c1, c2, c3 = st.columns(3)
-        income = c1.number_input("Monthly income (INR)", min_value=0, value=85000, step=1000)
-        score = c2.number_input("Credit score", min_value=300, max_value=900, value=745)
-        provider = c3.selectbox("Credit bureau", ["CIBIL", "EXPERIAN"])
+        income = c1.number_input("Monthly income (INR)", min_value=0, value=profile["income"], step=1000,
+                                 key=f"income_{profile_key}")
+        score = c2.number_input("Credit score", min_value=300, max_value=900, value=profile["score"],
+                                key=f"score_{profile_key}")
+        provider = c3.selectbox("Credit bureau", ["CIBIL", "EXPERIAN"],
+                                index=["CIBIL", "EXPERIAN"].index(profile["provider"]),
+                                key=f"provider_{profile_key}")
         c1, c2, c3 = st.columns(3)
-        category = c1.selectbox("Employment", ["salaried", "self_employed", "student", "unemployed"])
-        months = c2.number_input("Employment experience (months)", min_value=0, max_value=600, value=72)
-        active = c3.number_input("Active loans", min_value=0, max_value=50, value=1)
+        category = c1.selectbox("Employment", ["salaried", "self_employed", "student", "unemployed"],
+                                index=["salaried", "self_employed", "student", "unemployed"].index(profile["category"]),
+                                key=f"category_{profile_key}")
+        months = c2.number_input("Employment experience (months)", min_value=0, max_value=600, value=profile["months"],
+                                 key=f"months_{profile_key}")
+        active = c3.number_input("Active loans", min_value=0, max_value=50, value=profile["active"],
+                                 key=f"active_{profile_key}")
         c1, c2, c3 = st.columns(3)
-        emi = c1.number_input("Existing EMIs per month (INR)", min_value=0, value=12000, step=500)
-        amount = c2.number_input("Loan amount requested (INR)", min_value=0, value=800000, step=10000)
-        tenure = c3.selectbox("Tenure (months)", [12, 24, 36, 48, 60, 72, 84], index=4)
+        emi = c1.number_input("Existing EMIs per month (INR)", min_value=0, value=profile["emi"], step=500,
+                              key=f"emi_{profile_key}")
+        amount = c2.number_input("Loan amount requested (INR)", min_value=0, value=profile["amount"], step=10000,
+                                 key=f"amount_{profile_key}")
+        tenure = c3.selectbox("Tenure (months)", [12, 24, 36, 48, 60, 72, 84],
+                              index=[12, 24, 36, 48, 60, 72, 84].index(profile["tenure"]),
+                              key=f"tenure_{profile_key}")
         c1, c2 = st.columns(2)
-        down = c1.number_input("Down payment available (INR)", min_value=0, value=150000, step=5000)
-        region = c2.selectbox("Region (catalogue prices are for Maharashtra)", ["IN-MH"])
+        down = c1.number_input("Down payment available (INR)", min_value=0, value=profile["down"], step=5000,
+                               key=f"down_{profile_key}")
+        region = c2.selectbox("Region (catalogue prices are for Maharashtra)", ["IN-MH"],
+                              key=f"region_{profile_key}")
         submitted = st.form_submit_button("Check eligibility", type="primary")
     if submitted:
         payload = {"income_amount": str(income), "income_frequency": "monthly", "credit_score": int(score),
@@ -307,17 +351,45 @@ def explanation_tab() -> None:
 
 def main() -> None:
     header()
-    tabs = st.tabs(["Eligibility", "Loan amount", "Vehicles", "Vehicle details", "Explanation"])
+    tabs = st.tabs(
+        ["Eligibility", "Loan amount", "Vehicles", "Vehicle details", "Explanation"],
+        key=f"main_tabs_{st.session_state.get('tabs_epoch', 0)}",
+    )
     with tabs[0]:
         eligibility_tab()
+    decision = st.session_state.get("decision")
+    has_decision = decision is not None
+    is_approved = bool(decision and decision.get("prediction") == "Approved")
+    disabled_tabs = ([] if is_approved else [2, 3, 4]) + ([] if has_decision else [5])
+    if disabled_tabs:
+        selectors = ", ".join(
+            f'[data-testid="stTabs"] [data-testid="stTab"]:nth-child({idx})'
+            for idx in disabled_tabs
+        )
+        st.markdown(
+            f"<style>{selectors} {{ pointer-events: none; opacity: 0.4; cursor: not-allowed; }}</style>",
+            unsafe_allow_html=True,
+        )
     with tabs[1]:
-        loan_tab()
+        if is_approved:
+            loan_tab()
+        else:
+            st.info("Loan amount is unlocked once your application is Approved.")
     with tabs[2]:
-        vehicles_tab()
+        if is_approved:
+            vehicles_tab()
+        else:
+            st.info("Vehicles within budget are unlocked once your application is Approved.")
     with tabs[3]:
-        vehicle_tab()
+        if is_approved:
+            vehicle_tab()
+        else:
+            st.info("Vehicle details are unlocked once your application is Approved.")
     with tabs[4]:
-        explanation_tab()
+        if has_decision:
+            explanation_tab()
+        else:
+            st.info("Check eligibility first to unlock the decision explanation.")
 
 
 main()

@@ -31,6 +31,7 @@ from app.infrastructure.models import (
     Explanation,
     PolicyVersion,
     Tenant,
+    User,
     Vehicle,
     VehiclePrice,
     utcnow,
@@ -83,10 +84,21 @@ def _iso(dt: datetime) -> str:
 
 # ---------- applications ----------
 
-def application_view(app: Application) -> dict[str, Any]:
-    return {"id": app.id, "status": app.status, "applicant_user_id": app.applicant_user_id,
-            "input": json.loads(app.input_json), "row_version": app.row_version,
-            "created_at": _iso(app.created_at), "updated_at": _iso(app.updated_at)}
+def application_view(app: Application, applicant: User | None = None) -> dict[str, Any]:
+    return {
+        "id": app.id,
+        "status": app.status,
+        "applicant_user_id": app.applicant_user_id,
+        "applicant": None if applicant is None else {
+            "user_id": applicant.id,
+            "email": applicant.email,
+            "display_name": applicant.display_name,
+        },
+        "input": json.loads(app.input_json),
+        "row_version": app.row_version,
+        "created_at": _iso(app.created_at),
+        "updated_at": _iso(app.updated_at),
+    }
 
 
 def create_application(session: Session, p: Principal, data: ApplicantInput, cid: str | None) -> Application:
@@ -139,9 +151,14 @@ def list_applications(session: Session, p: Principal, cursor: str | None, limit:
     rows = list(session.scalars(q.order_by(Application.created_at.desc(), Application.id.desc()).limit(limit + 1)))
     page = rows[:limit]
     latest = _latest_decisions(session, p.tenant_id, [a.id for a in page])
+    applicant_ids = [a.applicant_user_id for a in page]
+    applicants = {
+        user.id: user
+        for user in session.scalars(select(User).where(User.id.in_(applicant_ids)))
+    } if applicant_ids else {}
     items = []
     for app in page:
-        view = application_view(app)
+        view = application_view(app, applicants.get(app.applicant_user_id))
         d = latest.get(app.id)
         view["latest_decision"] = None if d is None else {
             "id": d.id, "status": d.status, "outcome": d.outcome, "eligible_principal": d.eligible_principal,

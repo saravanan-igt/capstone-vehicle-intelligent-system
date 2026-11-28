@@ -68,6 +68,11 @@ export interface Application {
   id: string;
   status: WorkflowStatus;
   applicant_user_id: string;
+  applicant: {
+    user_id: string;
+    email: string;
+    display_name: string;
+  } | null;
   input: ApplicantInput;
   row_version: number;
   created_at: string;

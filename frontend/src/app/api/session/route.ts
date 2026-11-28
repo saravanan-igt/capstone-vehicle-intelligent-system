@@ -5,6 +5,12 @@ import { NextRequest, NextResponse } from "next/server";
 const BACKEND = process.env.BACKEND_URL ?? "http://localhost:8000";
 const SECRET = process.env.DEV_BFF_SHARED_SECRET ?? "local-dev-only";
 const DEV = (process.env.AUTH_MODE ?? "dev") === "dev";
+const LENDER_DEMO_USERS = new Set([
+  "u-omar",
+  "u-priya",
+  "u-tara",
+  "u-lena",
+]);
 
 const cookieOpts = {
   httpOnly: true,
@@ -31,6 +37,12 @@ export async function POST(req: NextRequest) {
   } | null;
   const userId = typeof body?.user_id === "string" ? body.user_id : "";
   const tenantId = typeof body?.tenant_id === "string" ? body.tenant_id : "";
+  if (!LENDER_DEMO_USERS.has(userId)) {
+    return NextResponse.json(
+      { error: { code: "FORBIDDEN", message: "Applicant identities cannot sign in to the lender dashboard" } },
+      { status: 403 },
+    );
+  }
   if (
     !/^[a-z0-9\-]{1,64}$/.test(userId) ||
     (tenantId && !/^[a-z0-9\-]{1,64}$/.test(tenantId))

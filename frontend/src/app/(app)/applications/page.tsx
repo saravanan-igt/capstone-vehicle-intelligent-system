@@ -77,6 +77,7 @@ export default function ApplicationsPage() {
               <thead>
                 <tr>
                   <th>Created</th>
+                  <th>Customer</th>
                   <th>Workflow</th>
                   <th>Latest outcome</th>
                   <th className="num">Requested</th>
@@ -90,6 +91,10 @@ export default function ApplicationsPage() {
                     <td>
                       {dateTime(a.created_at)}
                       <div className="mono muted">{a.id.slice(0, 10)}</div>
+                    </td>
+                    <td>
+                      {a.applicant?.display_name ?? "—"}
+                      <div className="muted small">{a.applicant?.email ?? "—"}</div>
                     </td>
                     <td>
                       <StatusBadge value={a.status} />

@@ -12,7 +12,7 @@ from app.application.errors import AppError
 from app.application.security import Principal
 from app.infrastructure.observability import AI_BUDGET_DENIED, EXPLANATIONS
 from app.domain.applicant import ApplicantInput
-from app.infrastructure.models import Tenant
+from app.infrastructure.models import Tenant, User
 
 router = APIRouter(prefix="/v1")
 
@@ -45,7 +45,7 @@ def dashboard(request: Request, p: PrincipalDep, session: SessionDep) -> dict[st
 def create_application(body: ApplicantInput, p: PrincipalDep, session: SessionDep, cid: CidDep) -> dict[str, Any]:
     app = svc.create_application(session, p, body, cid)
     session.commit()
-    return svc.application_view(app)
+    return svc.application_view(app, session.get(User, app.applicant_user_id))
 
 
 @router.get("/applications", tags=["applications"])
@@ -56,7 +56,8 @@ def list_applications(p: PrincipalDep, session: SessionDep, cursor: str | None =
 
 @router.get("/applications/{app_id}", tags=["applications"])
 def get_application(app_id: str, p: PrincipalDep, session: SessionDep) -> dict[str, Any]:
-    return svc.application_view(svc.get_application(session, p, app_id))
+    app = svc.get_application(session, p, app_id)
+    return svc.application_view(app, session.get(User, app.applicant_user_id))
 
 
 @router.patch("/applications/{app_id}", tags=["applications"])
@@ -64,7 +65,7 @@ def update_application(app_id: str, body: ApplicantInput, p: PrincipalDep, sessi
                        if_match: Annotated[int, Header(alias="If-Match")]) -> dict[str, Any]:
     app = svc.update_application(session, p, app_id, body, if_match, cid)
     session.commit()
-    return svc.application_view(app)
+    return svc.application_view(app, session.get(User, app.applicant_user_id))
 
 
 @router.post("/applications/{app_id}/evaluate", tags=["decisions"])

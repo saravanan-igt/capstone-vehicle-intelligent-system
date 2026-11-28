@@ -112,7 +112,15 @@ def test_7_cross_tenant_and_object_level_access_denied(client: TestClient) -> No
         assert client.get(f"/v1/decisions/{d['id']}/vehicles", headers=headers).status_code == 404
         assert client.post(f"/v1/decisions/{d['id']}/explanation", headers=headers).status_code == 404
     assert client.get("/v1/applications", headers=as_user("u-ben", "t-northwind")).status_code == 403
-    assert client.get(f"/v1/applications/{app_id}", headers=OMAR).status_code == 200
+    lender_view = client.get(f"/v1/applications/{app_id}", headers=OMAR)
+    assert lender_view.status_code == 200
+    assert lender_view.json()["applicant"] == {
+        "user_id": "u-alice",
+        "email": "alice@example.test",
+        "display_name": "Alice Applicant",
+    }
+    listed = client.get("/v1/applications", headers=OMAR).json()["items"]
+    assert next(a for a in listed if a["id"] == app_id)["applicant"]["display_name"] == "Alice Applicant"
     assert all(a["id"] != app_id for a in client.get("/v1/applications", headers=LENA).json()["items"])
     assert client.get("/v1/applications", headers={"X-Dev-User": "u-alice"}).status_code == 401
 

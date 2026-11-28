@@ -7,18 +7,6 @@ import { Icon } from "@/components/Icon";
 
 const DEMO_USERS = [
   {
-    id: "u-alice",
-    name: "Alice Applicant",
-    role: "Applicant",
-    tenant: "Northwind Auto Finance",
-  },
-  {
-    id: "u-arjun",
-    name: "Arjun Applicant",
-    role: "Applicant",
-    tenant: "Northwind Auto Finance",
-  },
-  {
     id: "u-omar",
     name: "Omar Officer",
     role: "Loan officer",
@@ -35,12 +23,6 @@ const DEMO_USERS = [
     name: "Tara Tenant Admin",
     role: "Tenant administrator",
     tenant: "Northwind Auto Finance",
-  },
-  {
-    id: "u-ben",
-    name: "Ben Applicant",
-    role: "Applicant",
-    tenant: "Southbay Motor Credit",
   },
   {
     id: "u-lena",
@@ -76,7 +58,7 @@ export default function DevLogin() {
 
   return (
     <>
-      <h2 style={{ marginBottom: 6 }}>Choose a demo identity</h2>
+      <h2 style={{ marginBottom: 6 }}>Choose a lender identity</h2>
       <p className="muted small" style={{ marginTop: 0 }}>
         Local development sign-in only (AUTH_MODE=dev). Set AUTH_MODE=oidc to
         use OIDC (Authorization Code + PKCE) with a server-side session.
